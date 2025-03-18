@@ -9,6 +9,16 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.5.2"
+    "@astrojs/react": "^4.2.1",
+    "@reduxjs/toolkit": "^2.6.1",
+    "astro": "^5.5.2",
+    "gsap": "^3.12.7",
+    "lenis": "^1.2.3",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-redux": "^9.2.0"
+  },
+  "devDependencies": {
+    "sass": "^1.86.0"
   }
 }

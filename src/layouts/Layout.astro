@@ -1,22 +1,37 @@
-<!doctype html>
-<html lang="en">
+---
+import '../styles/global.scss';
+import { ClientRouter } from "astro:transitions";
+// Ожидаем, что каждая страница передаст заголовок, описание и др. как пропсы
+const {
+	title = "Мой сайт",
+	description = "Описание страницы",
+	keywords = "ключевые слова",
+	locale = "ru",
+} = Astro.props;
+---
+
+<html lang={locale}>
 	<head>
+		<ClientRouter />
+		<!-- Анимация переходов -->
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<meta name="keywords" content={keywords} />
+		<!-- Open Graph мета-теги для соцсетей -->
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta
+			property="og:locale"
+			content={locale === "ru" ? "ru_RU" : "en_US"}
+		/>
+		<!-- Можно добавить og:image, если есть общий изображение-превью -->
+		<link rel="icon" type="image/png" href="/favicon.png" />
 	</head>
 	<body>
-		<slot />
+		<main transition:animate="slide">
+			<slot />
+		  </main>		  
 	</body>
 </html>
-
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
