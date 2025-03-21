@@ -1,12 +1,14 @@
 @use '@/styles/_mixins.scss' as *;
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
 
 .about {
     @include flexbox(column);
     justify-content: flex-start;
     width: 100vw;
-    height: 40vh;
-    padding: calc(1vw + 1vh) 10vw;
+    height: 50vh;
+    padding: 0 10vw;
+    gap: 20px;
     background: linear-gradient(to bottom, #211311 0%, #3E211D 100%);
 
     &__title {
@@ -15,17 +17,64 @@
         font-weight: 500;
         font-style: normal;
         color: #ffffff;
-        font-size: calc(2 * (1vw + 1vh));
+        font-size: calc(2.5 * (1vw + 1vh));
         text-align: center;
     }
 
     &__content {
-        & .about__image {}
+        @include flexbox(row);
+        width: 100%;
+        height: 100%;
+        gap: calc(1rem + 3vw);
 
-        & .about__description-wrapper {
-            & .about__description {}
+        &.image {
+            position: relative;
+            width: calc(20 * (1vw + 1vh));
+            height: calc(20 * (1vw + 1vh));
+        }
 
-            & .styled-button {}
+        &.description-wrapper {
+            @include flexbox(column);
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        &.description {
+            @include no-padding();
+            height: auto;
+
+            font-family: "Prata", serif;
+            font-weight: 400;
+            font-style: normal;
+            color: #dfdfdf;
+            font-size: calc(0.8 * (1vw + 1vh));
+        }
+
+        .styled-button {
+            @include no-def-styles();
+            background-color: transparent;
+            border: 1px solid #dbd4d4;
+            border-radius: 15px;
+            padding: calc(0.9 * (1vw + 1vh)) calc(3 * (1vw + 1vh));
+
+            font-family: "Roboto", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 600;
+            font-style: normal;
+            color: #cecbcb;
+            font-size: calc(0.9 * (1vw + 1vh));
+            text-align: center;
+            text-transform: uppercase;
+
+            cursor: pointer;
+
+            transition: all 0.5s ease-in-out;
+
+            &:hover {
+                border: 1px solid #ffffff;
+                color: #ffffff;
+            }
         }
     }
 }

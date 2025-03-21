@@ -7,7 +7,8 @@
     height: 30vh;
     padding: 0 10vw;
     box-sizing: border-box;
-    background: linear-gradient(to bottom, #fff 0%, #cecece 100%);
+    background: linear-gradient(to bottom, #ffffffb7 0%, #cecece83 100%);
+    backdrop-filter: blur(3px);
 
     &__content {
         @include no-padding();
