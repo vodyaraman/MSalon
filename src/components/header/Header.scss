@@ -1,0 +1,103 @@
+@use '@/styles/_mixins.scss' as *;
+@import url('https://fonts.googleapis.com/css2?family=Rouge+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap');
+
+// Font size variables
+$font-header-logo: calc(1.5 * (1vw + 1vh));
+$font-header-link: calc(0.8 * (1vw + 1vh));
+$font-header-burger: calc(0.8 * (1vw + 1vh));
+
+.header {
+    @include flexbox(row);
+    position: sticky;
+    justify-content: space-between;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 60px;
+    background-color: #211311;
+    padding: 0 10vw;
+    box-sizing: border-box;
+    z-index: 10;
+
+    &__logo {
+        @include flexbox(row);
+        gap: 20px;
+        justify-content: flex-start;
+        width: auto;
+        text-wrap: nowrap;
+        cursor: pointer;
+
+        &.text {
+            color: white;
+            font-family: "Rouge Script", cursive;
+            font-weight: 400;
+            font-style: normal;
+            font-size: $font-header-logo;
+        }
+    }
+
+    &__nav-list {
+        @include flexbox(row);
+        gap: calc(20px + 1.5vw);
+        padding: 0 calc(20px + 2.5vw);
+        justify-content: flex-end;
+        width: 100%;
+        box-sizing: border-box;
+
+        .link {
+            @include no-padding();
+            width: auto;
+
+            color: #c5c5c5;
+            font-family: "Rubik", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 300;
+            font-style: normal;
+            font-size: $font-header-link;
+            cursor: pointer;
+
+            transition: color 1s ease;
+
+            &:hover {
+                color: #ffffff;
+            }
+        }
+    }
+
+    &__burger {
+        @include flexbox(row);
+        gap: 10px;
+        background-color: #fff;
+        border-radius: 15px;
+        padding: 5px 10px;
+
+        font-family: "Tenor Sans", sans-serif;
+        font-weight: 500;
+        font-style: normal;
+        font-size: $font-header-burger;
+        cursor: pointer;
+
+        transition: background, color 1s ease;
+
+        &:hover {
+            color: #211311;
+            background-color: #fffbf2;
+        }
+
+        .icon {
+            background-color: transparent;
+        }
+    }
+}
+
+@media (max-width: 699px) {
+    .header {
+        padding: 0 5vw;
+
+        &__nav-list {
+            display: none;
+        }
+    }
+}

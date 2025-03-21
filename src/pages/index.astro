@@ -1,7 +1,16 @@
 ---
+import Header from '../components/header/Header.astro';
 import Layout from '../layouts/Layout.astro';
+import Hero from '../sections/hero_main/HeroMain.astro';
+
+import "@/styles/main/main.scss"
+import Services from '../sections/services/Services.astro';
+
 ---
 
 <Layout>
-	<a href="/blog">Ссылка</a>
+	<Header/>
+	<img src="/backgrounds/main-background.svg" class="main-background"/>
+	<Hero/>
+	<Services/>
 </Layout>
