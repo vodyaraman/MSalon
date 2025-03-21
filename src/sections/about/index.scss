@@ -1,0 +1,31 @@
+@use '@/styles/_mixins.scss' as *;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+.about {
+    @include flexbox(column);
+    justify-content: flex-start;
+    width: 100vw;
+    height: 40vh;
+    padding: calc(1vw + 1vh) 10vw;
+    background: linear-gradient(to bottom, #211311 0%, #3E211D 100%);
+
+    &__title {
+        font-family: "Roboto", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 500;
+        font-style: normal;
+        color: #ffffff;
+        font-size: calc(2 * (1vw + 1vh));
+        text-align: center;
+    }
+
+    &__content {
+        & .about__image {}
+
+        & .about__description-wrapper {
+            & .about__description {}
+
+            & .styled-button {}
+        }
+    }
+}

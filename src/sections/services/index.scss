@@ -7,7 +7,7 @@
     height: 30vh;
     padding: 0 10vw;
     box-sizing: border-box;
-    background: linear-gradient(to bottom, #fff 0%, #D9D9D9 100%);
+    background: linear-gradient(to bottom, #fff 0%, #cecece 100%);
 
     &__content {
         @include no-padding();
@@ -36,7 +36,6 @@
                 color: #D9D9D9;
 
                 .icon {
-                    // здесь пишешь нужные стили, например:
                     filter: brightness(0) invert(1);
                     transform: scale(1.1);
                 }
