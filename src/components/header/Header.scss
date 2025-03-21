@@ -94,7 +94,7 @@ $font-header-burger: calc(0.8 * (1vw + 1vh));
 
 @media (max-width: 699px) {
     .header {
-        padding: 0 5vw;
+        padding: 0 7.5vw 0 10vw;
 
         &__nav-list {
             display: none;
