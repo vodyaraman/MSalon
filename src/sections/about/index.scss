@@ -10,6 +10,8 @@
     padding: 20px 10vw;
     gap: 20px;
     background: linear-gradient(to bottom, #211311 0%, #3E211D 100%);
+    z-index: 2;
+    box-sizing: border-box;
 
     &__title {
         @include no-padding();
@@ -33,16 +35,16 @@
             position: relative;
             width: 80%;
             height: 80%;
-        
+
             img {
-            position: absolute;
-            top: -3px;
-            left: -3px;
-              width: 100%;
-              height: 100%;
-              object-fit: fill;
+                position: absolute;
+                top: -3px;
+                left: -3px;
+                width: 100%;
+                height: 100%;
+                object-fit: fill;
             }
-          }
+        }
 
         &.description-wrapper {
             @include flexbox(column);
@@ -86,6 +88,47 @@
                 border: 1px solid #ffffff;
                 color: #ffffff;
             }
+        }
+    }
+
+    &__fillblock {
+        position: relative;
+        display: flex;
+        width: 100%;
+        height: 300px;
+        z-index: 1;
+        background: linear-gradient(to bottom, #fff6e4 20%, #ffffff00 100%);
+    }
+}
+
+@media (max-width: 800px) {
+    .about {
+        padding: 10px 5vw;
+        height: 70vh;
+
+        &__content {
+            @include flexbox(column);
+
+            .image {
+                width: 90vw;
+                height: 100vh;
+            }
+
+            &.description-wrapper {
+                align-items: center;
+            }
+
+            &.description {
+                text-align: center;
+            }
+
+            .styled-button {
+                &:hover {}
+            }
+        }
+
+        &__fillblock {
+            display: none;
         }
     }
 }

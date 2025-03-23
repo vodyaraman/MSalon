@@ -11,6 +11,7 @@ export default function SmoothScrollEffect() {
 		const lenis = window.lenis;
 
 		lenis.on("scroll", ScrollTrigger.update);
+
 		gsap.ticker.add((time) => {
 			lenis.raf(time * 1000);
 		});
@@ -24,6 +25,8 @@ export default function SmoothScrollEffect() {
 			pinSpacing: false,
 			scrub: true,
 		});
+
+		console.log("Scrolltrigger initialised")
 	}, []);
 
 	return null;

@@ -4,9 +4,12 @@ import Layout from '../layouts/Layout.astro';
 import Hero from '../sections/hero_main/HeroMain.astro';
 
 import "@/styles/main/main.scss"
-import Services from '../sections/services/Services.astro';
+import Services from '../sections/services_main/Services.astro';
 import About from '../sections/about/About.astro';
-import SmoothScrollEffect from '../components/animations/SmoothScrollEffect';
+import Staff from '../sections/staff_main/Staff.astro';
+import Reviews from '../sections/reviews/Reviews.astro';
+import Geo from '../sections/geo/Geo.astro';
+import Footer from '../components/footer/Footer.astro';
 
 ---
 
@@ -16,6 +19,8 @@ import SmoothScrollEffect from '../components/animations/SmoothScrollEffect';
 	<Hero/>
 	<Services/>
 	<About/>
-
-	<SmoothScrollEffect client:only/>
+	<Staff/>
+	<Reviews/>
+	<Geo/>
+	<Footer/>
 </Layout>
