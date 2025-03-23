@@ -3,55 +3,87 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 .hero {
-    @include flexbox(row);
-    width: 100vw;
-    height: calc(100vh - 60px);
-    padding: calc(2rem + 4vw) 10vw 0 10vw;
-    box-sizing: border-box;
-    overflow: hidden;
-  
-    &__article {
+  @include flexbox(row);
+  width: 100vw;
+  height: calc(100vh - 60px);
+  padding: calc(2rem + 4vw) 10vw 0 10vw;
+  box-sizing: border-box;
+  overflow: hidden;
+
+  &__article {
+    @include flexbox(column);
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: calc(2rem + 2vh);
+    height: 100%;
+
+    &.herotext {
       @include flexbox(column);
-      justify-content: flex-start;
-      align-items: flex-start;
-      gap: calc(2rem + 2vh);
-      height: 100%;
-  
+      @include no-padding();
+      max-width: 70%;
+      height: auto;
+      opacity: 0;
+
+      font-family: "Sintony", sans-serif;
+      font-weight: 700;
+      font-style: normal;
+      font-size: calc(6 * (1vw + 1vh));
+      line-height: calc(4.8 * (1vw + 1vh));
+      color: #3E3836;
+    }
+
+    &.subtext {
+      @include flexbox(column);
+      @include no-padding();
+      height: auto;
+      max-width: 50%;
+      opacity: 0;
+
+      font-family: "Roboto", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 500;
+      font-style: normal;
+      color: #3D2A24;
+      font-size: calc(1.2 + (1vw + 1vh));
+    }
+  }
+
+  &__showcase {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 50vw;
+    height: 100vh;
+    object-fit: contain;
+  }
+}
+
+@media (max-width: 700px) {
+  .hero {
+    @include flexbox(column);
+    height: 100%;
+
+    &__article {
+      width: 100%;
+      align-items: center;
+
       &.herotext {
-        @include no-padding();
-        max-width: 70%;
-        height: auto;
-        opacity: 0;
-  
-        font-family: "Sintony", sans-serif;
-        font-weight: 700;
-        font-style: normal;
-        font-size: calc(6 * (1vw + 1vh));
-        line-height: calc(4.8 * (1vw + 1vh));
-        color: #3E3836;
+        width: 100%;
+        max-width: unset;
+        text-align: center;
       }
-  
+
       &.subtext {
-        @include no-padding();
-        height: auto;
-        max-width: 50%;
-        opacity: 0;
-  
-        font-family: "Roboto", sans-serif;
-        font-optical-sizing: auto;
-        font-weight: 500;
-        font-style: normal;
-        color: #3D2A24;
-        font-size: calc(0.8 * (1vw + 1vh));
+        width: 100%;
+        max-width: unset;
+        text-align: center;
       }
     }
 
     &__showcase {
-        position: absolute;
-        right: 0;
-        bottom: 0;
-        width: 50vw;
-        height: 100vh;
-        object-fit: fill;
+      @include flexbox(column);
+      width: 100vw;
+      height: 70vh;
     }
   }
+}

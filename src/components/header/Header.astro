@@ -1,5 +1,7 @@
 ---
 import "./Header.scss"
+import "./burger/BurgerMenu.scss"
+import BurgerMenu from "./burger/BurgerMenu.tsx";
 
 ---
 
@@ -20,5 +22,6 @@ import "./Header.scss"
     <aside class="header__burger">
         МЕНЮ
         <img src="/icons/burger-icon.svg" alt="" class="header__burger icon"/>
+        <BurgerMenu client:load/>
     </aside>
 </header>
