@@ -6,6 +6,7 @@ import Hero from '../sections/hero_main/HeroMain.astro';
 import "@/styles/main/main.scss"
 import Services from '../sections/services/Services.astro';
 import About from '../sections/about/About.astro';
+import SmoothScrollEffect from '../components/animations/SmoothScrollEffect';
 
 ---
 
@@ -15,4 +16,6 @@ import About from '../sections/about/About.astro';
 	<Hero/>
 	<Services/>
 	<About/>
+
+	<SmoothScrollEffect client:only/>
 </Layout>

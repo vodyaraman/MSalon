@@ -2,9 +2,12 @@
 @use 'mixins';
 @use 'responsive';
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
+
 body {
   margin: 0;
   padding: 0;
@@ -14,8 +17,26 @@ body {
   overflow-x: hidden;
 }
 
-
 main {
   position: relative;
   height: 100%;
+}
+
+* {
+  scrollbar-width: thin; /* для Firefox */
+  scrollbar-color: #211311 transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #211311;
+  border-radius: 4px;
 }

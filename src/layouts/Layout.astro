@@ -1,7 +1,8 @@
 ---
+import LenisInit from "../components/lenis/LenisInit";
 import "../styles/global.scss";
 import { ClientRouter } from "astro:transitions";
-// Ожидаем, что каждая страница передаст заголовок, описание и др. как пропсы
+
 const {
 	title = "Салон красоты Марины Севостьяновой",
 	description = "Добро пожаловать в Maria Salon — сеть современных салонов красоты в Москве! Мы работаем только с премиальной косметикой и индивидуальным подходом к каждому клиенту. Посетите наши салоны и откройте для себя мир стиля, роскоши и гармонии. Ваше преображение начинается здесь!",
@@ -35,6 +36,7 @@ const {
 	<body>
 		<main transition:animate="slide">
 			<slot />
+			<LenisInit client:only/>
 		</main>
 	</body>
 </html>
