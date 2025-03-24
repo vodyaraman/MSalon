@@ -1,66 +1,59 @@
 .burger-menu-wrapper {
     position: fixed;
-    top: 0;
-    left: 0;
+    top: 60px;
+    right: 0;
     width: 100vw;
-    height: 100vh;
+    height: calc(100vh - 60px);
     background-color: rgba(0, 0, 0, 0.4);
     z-index: 1000;
     display: flex;
     justify-content: flex-end;
     opacity: 0;
-}
-
-.burger-menu-trigger {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    width: 100%;
-    height: 100%;
-}
-
-.burger-menu {
-    width: 400px;
+  }
+  
+  .burger-menu {
+    width: 33vw;
     height: 100%;
     background-color: #fff;
     position: relative;
-
+  
     &__close {
-        position: absolute;
-        top: 1rem;
-        right: 1.5rem;
-        background: none;
-        border: none;
-        font-size: 2rem;
-        color: #3d2a24;
-        cursor: pointer;
-        z-index: 1001;
+      position: absolute;
+      top: 1rem;
+      right: 1.5rem;
+      background: none;
+      border: none;
+      font-size: 2rem;
+      color: #3d2a24;
+      cursor: pointer;
+      z-index: 1001;
     }
-
+  
     &__nav {
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
-
+  
     &__list {
-        display: flex;
-        flex-direction: column;
-        gap: 2rem;
-        list-style: none;
-        padding: 0;
-        margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
     }
-
+  
     &__item {
-        font-family: "Roboto", sans-serif;
-        font-size: 1.5rem;
-        color: #3d2a24;
-        cursor: pointer;
-
-        &:hover {
-            color: #9a7b6f;
-        }
+      font-family: "Roboto", sans-serif;
+      font-size: 1.5rem;
+      color: #3d2a24;
+      cursor: pointer;
+  
+      &:hover {
+        color: #9a7b6f;
+      }
     }
-}
+  }
+  

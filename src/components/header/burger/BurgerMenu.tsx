@@ -1,50 +1,64 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import gsap from "gsap";
 
 const BurgerMenu = () => {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
-  const burger = useRef<HTMLElement | null>(null);
+  const burgerRef = useRef<HTMLElement | null>(null);
   const [isOpen, setIsOpen] = useState(false);
 
-  const handleOpen = () => {
-    burger.current = document.querySelector(".header__burger");
-    if (!burger.current) return;
+  useEffect(() => {
+    burgerRef.current = document.querySelector(".header__burger");
+    if (burgerRef.current) {
+      burgerRef.current.addEventListener("click", handleOpen);
+    }
+    return () => {
+      burgerRef.current?.removeEventListener("click", handleOpen);
+    };
+  }, []);
 
+  const handleOpen = () => {
+    if (!burgerRef.current) return;
     setIsOpen(true);
 
     requestAnimationFrame(() => {
       if (!wrapperRef.current || !menuRef.current) return;
 
-      // .header__burger уезжает вправо
-      gsap.to(burger.current, {
+      // бургер уезжает вправо
+      gsap.to(burgerRef.current, {
         x: 400,
         duration: 0.6,
         ease: "power2.out",
       });
 
-      // wrapper появляется справа налево
+      // затемнение
       gsap.fromTo(
         wrapperRef.current,
-        { x: '100vw', opacity: 0 },
-        { x: 0, opacity: 1, duration: 0.6, ease: "power2.out" }
+        { opacity: 0 },
+        { opacity: 1, duration: 0.6, ease: "power2.out" }
       );
 
-      // меню внутри wrapper выезжает слева направо
+      // меню появляется справа налево
       gsap.fromTo(
         menuRef.current,
-        { x: -400 },
-        { x: 0, duration: 0.6, ease: "power2.out", delay: 0.1 }
+        { x: '100%' },
+        { x: 0, duration: 0.6, ease: "power2.out", delay: 0.3 }
       );
     });
   };
 
   const handleClose = () => {
-    if (!wrapperRef.current || !menuRef.current || !burger.current) return;
+    if (!wrapperRef.current || !menuRef.current || !burgerRef.current) return;
 
-    // wrapper уходит обратно вправо
+    // меню уходит обратно вправо
+    gsap.to(menuRef.current, {
+      x: '100%',
+      duration: 0.5,
+      ease: "power2.in",
+    });
+
+    // затемнение исчезает
     gsap.to(wrapperRef.current, {
-      x: '100vw',
       opacity: 0,
       duration: 0.5,
       ease: "power2.in",
@@ -53,16 +67,22 @@ const BurgerMenu = () => {
       },
     });
 
-    // .header__burger возвращается на место
-    gsap.to(burger.current, {
+    // бургер возвращается
+    gsap.to(burgerRef.current, {
       x: 0,
       duration: 0.6,
       ease: "power2.inOut",
+      delay: 0.25,
     });
   };
 
   return (
-    <div className="burger-menu-trigger" onClick={handleOpen}>
+    <>
+      <aside className="header__burger">
+        МЕНЮ
+        <img src="/icons/burger-icon.svg" alt="" className="header__burger icon" />
+      </aside>
+
       {isOpen && (
         <div className="burger-menu-wrapper" ref={wrapperRef}>
           <div className="burger-menu" ref={menuRef}>
@@ -80,7 +100,7 @@ const BurgerMenu = () => {
           </div>
         </div>
       )}
-    </div>
+    </>
   );
 };
 

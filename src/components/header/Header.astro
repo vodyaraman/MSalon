@@ -1,27 +1,16 @@
 ---
-import "./Header.scss"
-import "./burger/BurgerMenu.scss"
+import "./Header.scss";
+import "./burger/BurgerMenu.scss";
 import BurgerMenu from "./burger/BurgerMenu.tsx";
-
 ---
 
 <header class="header">
-    <a class="header__logo text">
-        Marina Salon
-    </a>
+    <a class="header__logo text"> Marina Salon </a>
 
     <nav class="header__nav-list">
-        <a class="header__nav-list link">
-            ЗАПИСАТЬСЯ
-        </a>
-        <a class="header__nav-list link">
-            УСЛУГИ (21)
-        </a>
+        <a class="header__nav-list link"> ЗАПИСАТЬСЯ </a>
+        <a class="header__nav-list link"> УСЛУГИ (21) </a>
     </nav>
 
-    <aside class="header__burger">
-        МЕНЮ
-        <img src="/icons/burger-icon.svg" alt="" class="header__burger icon"/>
-        <BurgerMenu client:load/>
-    </aside>
+    <BurgerMenu client:load />
 </header>
