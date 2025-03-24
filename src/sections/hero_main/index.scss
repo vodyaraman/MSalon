@@ -50,11 +50,10 @@
 
   &__showcase {
     position: absolute;
-    right: 0;
+    right: 5%;
     bottom: 0;
-    width: 50vw;
-    height: 100vh;
-    object-fit: contain;
+    height: 90vh;
+    object-fit: cover;
   }
 }
 
@@ -62,6 +61,7 @@
   .hero {
     @include flexbox(column);
     height: 100%;
+    padding: 10vh 10vw 0 10vw;
 
     &__article {
       width: 100%;

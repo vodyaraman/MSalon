@@ -1,3 +1,4 @@
+// LenisInit.tsx
 import { useEffect } from "react";
 import Lenis from "@studio-freight/lenis";
 
@@ -8,7 +9,12 @@ export default function LenisInit() {
 		const lenis = new Lenis();
 		window.lenis = lenis;
 
-        console.log("Lenis initialised");
+		if (Array.isArray(window.__onLenisReady)) {
+			window.__onLenisReady.forEach((cb) => cb(lenis));
+			window.__onLenisReady = []; // очищаем, если нужно
+		}
+
+		console.log("Lenis initialised");
 
 		const raf = (time: number) => {
 			lenis.raf(time);

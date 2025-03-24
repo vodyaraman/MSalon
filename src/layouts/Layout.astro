@@ -34,9 +34,9 @@ const {
 		<link rel="icon" type="image/png" href="/favicon.png" />
 	</head>
 	<body>
+		<LenisInit client:only/>
 		<main transition:animate="slide">
 			<slot />
-			<LenisInit client:only/>
 		</main>
 	</body>
 </html>

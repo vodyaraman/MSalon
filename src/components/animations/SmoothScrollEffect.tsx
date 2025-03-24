@@ -6,27 +6,29 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function SmoothScrollEffect() {
 	useEffect(() => {
-		if (typeof window === "undefined" || !window.lenis) return;
+		if (typeof window === "undefined") return;
 
-		const lenis = window.lenis;
+		const initWithLenis = (lenis: any) => {
+			lenis.on("scroll", ScrollTrigger.update);
 
-		lenis.on("scroll", ScrollTrigger.update);
+			ScrollTrigger.create({
+				trigger: ".hero",
+				start: "top top",
+				end: "bottom top",
+				pin: true,
+				pinSpacing: false,
+				scrub: true,
+			});
 
-		gsap.ticker.add((time) => {
-			lenis.raf(time * 1000);
-		});
-		gsap.ticker.lagSmoothing(0);
+			console.log("ScrollTrigger initialised");
+		};
 
-		ScrollTrigger.create({
-			trigger: ".hero",
-			start: "top top",
-			end: "bottom top",
-			pin: true,
-			pinSpacing: false,
-			scrub: true,
-		});
-
-		console.log("Scrolltrigger initialised")
+		if (window.lenis) {
+			initWithLenis(window.lenis);
+		} else {
+			window.__onLenisReady = window.__onLenisReady || [];
+			window.__onLenisReady.push(initWithLenis);
+		}
 	}, []);
 
 	return null;
