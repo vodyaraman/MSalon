@@ -6,7 +6,7 @@
   @include flexbox(row);
   width: 100vw;
   height: calc(100vh - 60px);
-  padding: calc(2rem + 4vw) 10vw 0 10vw;
+  padding: calc(2rem + 4vh + 4vw) 10vw 0 10vw;
   box-sizing: border-box;
   overflow: hidden;
 
