@@ -78,6 +78,7 @@ export default function AboutSlides() {
 			// Появление next — за кадром
 			gsap.set(next, {
 				autoAlpha: 0,
+				opacity: 0,
 				x: offset,
 				zIndex: 2,
 				pointerEvents: "none",
@@ -95,13 +96,15 @@ export default function AboutSlides() {
 
 			tl.to(prev, {
 				autoAlpha: 0,
+				scale: 0.5,
 				x: -offset,
-				duration: 0.5,
+				duration: 0.25,
 			})
 				.to(next, {
 					autoAlpha: 1,
+					scale: 1,
 					x: 0,
-					duration: 0.5,
+					duration: 0.25,
 					pointerEvents: "auto",
 				}, 0);
 		};

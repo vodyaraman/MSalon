@@ -11,7 +11,7 @@ export default function LenisInit() {
 
 		if (Array.isArray(window.__onLenisReady)) {
 			window.__onLenisReady.forEach((cb) => cb(lenis));
-			window.__onLenisReady = []; // очищаем, если нужно
+			window.__onLenisReady = [];
 		}
 
 		console.log("Lenis initialised");

@@ -2,26 +2,36 @@
 	{
 		"name": "Анна Соколова",
 		"position": "Мастер перманентного макияжа и трихопигментации",
-		"image": "/assets/masters/anna.jpg"
+		"image": "/assets/staff/anna.png"
 	},
 	{
 		"name": "Екатерина Лебедева",
 		"position": "Косметолог-эстетист",
-		"image": "/assets/masters/ekaterina.jpg"
+		"image": "/assets/staff/ekaterina.png"
 	},
 	{
 		"name": "Мария Алексеева",
 		"position": "Мастер ногтевого сервиса",
-		"image": "/assets/masters/maria.jpg"
+		"image": "/assets/staff/anna.png"
 	},
 	{
 		"name": "Светлана Орлова",
 		"position": "Парикмахер-стилист",
-		"image": "/assets/masters/svetlana.jpg"
+		"image": "/assets/staff/svetlana.png"
 	},
 	{
 		"name": "Ирина Коваль",
 		"position": "Массажист",
-		"image": "/assets/masters/irina.jpg"
+		"image": "/assets/staff/ekaterina.png"
+	},
+	{
+		"name": "Ольга Миронова",
+		"position": "Бровист и лашмейкер",
+		"image": "/assets/staff/svetlana.png"
+	},
+	{
+		"name": "Дарья Васильева",
+		"position": "Специалист по депиляции и уходу за телом",
+		"image": "/assets/staff/anna.png"
 	}
 ]
