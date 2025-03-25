@@ -3,24 +3,23 @@
  
  .staff {
     @include flexbox(column);
-    justify-content: flex-start;
+    justify-content: center;
     width: 100vw;
     height: 80vh;
-    padding: 20px 10vw;
+    padding: 0 10vw;
     background-color: white;
-
-    &__title {
-        @include no-padding();
-        font-family: "Roboto", sans-serif;
-        font-optical-sizing: auto;
-        font-weight: 500;
-        font-style: normal;
-        color: #3E211D;
-        font-size: calc(2.5 * (1vw + 1vh));
-        text-align: center;
-    }
 
     &__content {
         
+    }
+
+    &__title {
+        @include no-padding();
+        font-family: "Prata", serif;
+		font-size: calc(1.8rem + 1vw);
+		text-align: center;
+		color: #3d1d1a;
+		margin-bottom: 40px;
+		line-height: 1.4;
     }
  }
