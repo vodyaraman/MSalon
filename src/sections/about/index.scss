@@ -4,14 +4,15 @@
 
 .about {
     @include flexbox(column);
-    justify-content: flex-start;
+    justify-content: center;
     width: 100vw;
-    height: 50vh;
+    height: 100vh;
     padding: 20px 10vw;
     gap: 20px;
     background: linear-gradient(to bottom, #211311 0%, #3E211D 100%);
     z-index: 2;
     box-sizing: border-box;
+    overflow: hidden;
 
     &__title {
         @include no-padding();
@@ -24,13 +25,28 @@
         text-align: center;
     }
 
+    &__slide {
+        width: 100%;
+        height: 100%;
+        flex-shrink: 0;
+        scroll-snap-align: start;
+        z-index: 3;
+        gap: calc(1rem + 3vw);
+    
+        @include flexbox(row);
+        box-sizing: border-box;
+        will-change: transform, opacity;
+        transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
     &__content {
         @include flexbox(row);
         align-items: flex-start;
+        justify-content: flex-start;
         width: 100%;
         height: 55vh;
         gap: calc(1rem + 3vw);
-        overflow-x: auto;
+        overflow-x: visible;
         -webkit-overflow-scrolling: touch;
         scrollbar-width: none; // Firefox
         -ms-overflow-style: none; // IE 10+
@@ -102,6 +118,28 @@
         }
     }
 
+    &__dots {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+        margin-top: 30px;
+    
+        span {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #888888;
+            transition: background-color 0.3s ease;
+            flex-shrink: 0;
+    
+            &.active {
+                background-color: #ffffff;
+            }
+        }
+    }
+    
+
     &__fillblock {
         position: relative;
         display: flex;
@@ -110,35 +148,22 @@
         z-index: 1;
         background-color: #fff;
     }
-
-    .about__slide {
-        width: 100%;
-        flex-shrink: 0;
-        scroll-snap-align: start;
-        padding: 40px 20px; // можно подстроить под макет
-    
-        @include flexbox(row);
-        box-sizing: border-box;
-        opacity: 0;
-        transform: translateY(50px);
-        will-change: transform, opacity;
-        transition: opacity 0.6s ease, transform 0.6s ease;
-    
-        &.is-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
 }
 
 @media (max-width: 800px) {
     .about {
-        padding: 10px 5vw;
-        height: 90vh;
+        padding: 5vh 5vw;
+        height: calc(100vh - 60px);
         justify-content: center;
+
+        &__slide {
+            @include flexbox(column);
+            height: 100%;
+        }
 
         &__content {
             @include flexbox(column);
+            height: 100%;
 
             .image {
                 width: 90vw;

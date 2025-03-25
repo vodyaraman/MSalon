@@ -1,72 +1,155 @@
-import { useEffect, useRef } from "react";
-import gsap from "gsap";
+// AboutSlides.tsx
+import { useEffect, useRef, useState } from "react";
 import slidesData from "./about-slides.json";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-export default function AboutSlider() {
-	const containerRef = useRef<HTMLDivElement>(null);
+gsap.registerPlugin(ScrollTrigger);
+
+export default function AboutSlides() {
+	const wrapperRef = useRef<HTMLElement>(null);
+	const [currentIndex, setCurrentIndex] = useState(0);
+	const lastSlideIndex = slidesData.length - 1;
 
 	useEffect(() => {
-		if (typeof window === "undefined") return;
-		if (!containerRef.current) return;
+		const wrapperEl = wrapperRef.current;
+		const section = document.querySelector(".about") as HTMLElement;
+		const lenis = window.lenis;
+		if (!wrapperEl || !section || !lenis) return;
 
-		const items = containerRef.current.querySelectorAll(".about__slide");
-
-		items.forEach((el) => {
-			gsap.fromTo(
-				el,
-				{ autoAlpha: 0, y: 50 },
-				{
-					autoAlpha: 1,
-					y: 0,
-					duration: 1,
-					ease: "power2.out",
-					scrollTrigger: {
-						trigger: el,
-						start: "left center",
-						end: "right center",
-						toggleActions: "play none none reverse",
-						scrub: false
-					}
-				}
-			);
+		const slides = wrapperEl.querySelectorAll(".about__slide");
+		slides.forEach((slide, index) => {
+			gsap.set(slide, {
+				autoAlpha: index === 0 ? 1 : 0,
+				x: 0,
+				zIndex: index === 0 ? 2 : 1,
+			});
 		});
+
+
+		const scrollStep = 700;
+		const totalScroll = scrollStep * slidesData.length;
+		let scrollStart = 0;
+		let scrollEnd = 0;
+
+		// Pin секции
+		const trigger = ScrollTrigger.create({
+			trigger: section,
+			start: "top top+=60",
+			end: `+=${totalScroll}`,
+			pin: true,
+			pinSpacing: true,
+			pinType: "fixed",
+			onUpdate: self => {
+				scrollStart = self.start;
+				scrollEnd = self.end;
+			},
+		});
+
+		let lastSlide = 0;
+
+		const onScroll = () => {
+			const scrollY = lenis.scroll;
+			if (scrollY < scrollStart || scrollY > scrollEnd) return;
+
+			const relativeScroll = scrollY - scrollStart;
+			const newSlideIndex = Math.min(
+				lastSlideIndex,
+				Math.floor(relativeScroll / scrollStep)
+			);
+
+			if (newSlideIndex !== lastSlide) {
+				animateSlideChange(lastSlide, newSlideIndex);
+				lastSlide = newSlideIndex;
+				setCurrentIndex(newSlideIndex);
+			}
+		};
+
+		const animateSlideChange = (from: number, to: number) => {
+			const slides = wrapperRef.current?.querySelectorAll(".about__slide");
+			if (!slides) return;
+
+			const prev = slides[from] as HTMLElement;
+			const next = slides[to] as HTMLElement;
+
+			const direction = to > from ? 1 : -1;
+			const offset = 5000 * direction;
+
+			// Появление next — за кадром
+			gsap.set(next, {
+				autoAlpha: 0,
+				x: offset,
+				zIndex: 2,
+				pointerEvents: "none",
+			});
+
+			// prev — на переднем плане, чтобы успел уйти
+			gsap.set(prev, { zIndex: 3 });
+
+			// Анимация
+			const tl = gsap.timeline({
+				onComplete: () => {
+					setCurrentIndex(to);
+				},
+			});
+
+			tl.to(prev, {
+				autoAlpha: 0,
+				x: -offset,
+				duration: 0.5,
+			})
+				.to(next, {
+					autoAlpha: 1,
+					x: 0,
+					duration: 0.5,
+					pointerEvents: "auto",
+				}, 0);
+		};
+
+		lenis.on("scroll", onScroll);
+		return () => {
+			lenis.off("scroll", onScroll);
+			trigger.kill();
+		};
 	}, []);
 
 	return (
-		<article className="about__content" style={{ overflowX: "auto" }}>
-			<div
-				ref={containerRef}
-				style={{
-					display: "flex",
-					width: `${slidesData.length * 80}vw`,
-					scrollSnapType: "x mandatory",
-					scrollBehavior: "smooth"
-				}}
+		<>
+			<article
+				className="about__content"
+				ref={wrapperRef}
+				style={{ position: "relative", overflow: "hidden" }}
 			>
-				{slidesData.map((slide, i) => (
+				{slidesData.map((slide, index) => (
 					<div
-						key={i}
 						className="about__slide"
+						key={index}
 						style={{
-							width: "80vw",
-							flexShrink: 0,
-							scrollSnapAlign: "start"
+							position: "absolute",
+							inset: 0,
+							pointerEvents: index === currentIndex ? "auto" : "none",
 						}}
 					>
 						<div className="image">
-							<img src={slide.image} alt="Наша команда" />
+							<img src={slide.image} alt="" />
 						</div>
 						<div className="about__content description-wrapper">
 							<p className="about__content description">{slide.text}</p>
 							{slide.showButton && (
-								<a href="/staff" className="styled-button">
-									Записаться
-								</a>
+								<a href="/staff" className="styled-button">Записаться</a>
 							)}
 						</div>
 					</div>
 				))}
+			</article>
+			<div className="about__dots">
+				{slidesData.map((_, index) => (
+					<span
+						key={index}
+						className={index === currentIndex ? "active" : ""}
+					/>
+				))}
 			</div>
-		</article>
+		</>
 	);
 }

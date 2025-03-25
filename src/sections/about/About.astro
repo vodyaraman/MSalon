@@ -1,21 +1,11 @@
 ---
+import AboutSlider from "../../components/about_slider/AboutSlider"
 import "./index.scss"
 ---
 
 <section class="about">
     <h1 class="about__title">Почему именно мы?</h1>
-    <article class="about__content">
-        <div class="image">
-            <img src="/assets/about-team.png" alt="Наша команда" />
-          </div>
-        <div class="about__content description-wrapper">
-            <p class="about__content description">
-                Мы собрали команду высококлассных мастеров, которые работают с премиальной косметикой и современными технологиями. 
-                Каждый клиент для нас уникален, и мы подбираем индивидуальный подход, чтобы подчеркнуть вашу естественную привлекательность.
-            </p>
-            <a href="/staff" class="styled-button">Записаться</a>
-        </div>
-    </article>
+    <AboutSlider client:only/>
 </section>
 
-<div class="about__fillblock"></div>
+{/*<div class="about__fillblock"></div> */}
