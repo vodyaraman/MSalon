@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import masters from "../../data/Masters.json";
+import masters from "../../data/masters.json";
 import "./StaffSlider.scss";
 import gsap from "gsap";
 
