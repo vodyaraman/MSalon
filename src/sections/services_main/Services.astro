@@ -4,11 +4,13 @@ import "./index.scss";
 ---
 
 <section class="services">
-    <aside class="services__header">
+    <article class="services__header">
         <h2 class="services__header title">Услуги</h2>
-        <span class="services__header subtitle">посмотрите весь список наших услуг</span>
-        <a class="services__header button">Все услуги</a>
-    </aside>
+        <aside>
+            <span class="services__header subtitle">посмотрите весь список наших услуг</span>
+            <a class="services__header button">Все услуги</a>
+        </aside>
+    </article>
     <ul class="services__content">
         <li class="services__content list-item">
             <div class="services__content icon">
@@ -38,9 +40,11 @@ import "./index.scss";
             <div class="services__content icon">
                 <img src="/icons/services/icon5.svg" />
             </div>
-            <a href="/services/injection-cosmetology">Инъекционная косметология</a>
+            <a href="/services/injection-cosmetology"
+                >Инъекционная косметология</a
+            >
         </li>
     </ul>
 </section>
 
-<SmoothScrollEffect client:only/>
+<SmoothScrollEffect client:only />

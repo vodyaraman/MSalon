@@ -9,27 +9,30 @@
     box-sizing: border-box;
     background: linear-gradient(to bottom, #ffffff 0%, #fff7ec 100%);
     backdrop-filter: blur(5px);
+    gap: calc(1vh + 1vw);
 
     &__header {
         @include flexbox(row);
-        width: 100%;
         justify-content: flex-start;
-        gap: 20px;
+        width: 100%;
+        gap: 25px;
 
         .title {
+            @include flexbox(row);
+            justify-content: flex-start;
             @include no-padding();
             font-family: "Prata", serif;
-            font-size: calc(1.8rem + 1vw);
-            text-align: center;
+            font-size: calc(1.5 * (1.8rem + 1vw));
+            text-align: left;
             color: #3d1d1a;
             line-height: 1.4;
+            width: auto;
         }
 
         .subtitle {
-            width: 100%;
             @include no-padding();
             font-family: "Prata", serif;
-            font-size: calc(0.8rem + 1vw);
+            font-size: calc(0.5rem + 1vw);
             text-align: center;
             color: #3d1d1a;
             line-height: 1.4;
@@ -41,14 +44,16 @@
             @include flexbox(row);
             background-color: transparent;
             border: 1px solid #3d1d1a;
+            background-color: #3d1d1a;
             border-radius: 15px;
-            padding: calc(0.8 * (1vw + 1vh)) calc(2.9 * (1vw + 1vh));
+            padding: 10px 15px;
+            width: 250px;
 
             font-family: "Roboto", sans-serif;
             font-optical-sizing: auto;
             font-weight: 600;
             font-style: normal;
-            color: #3d1d1a;
+            color: #d1c7c6;
             font-size: calc(0.9 * (1vw + 1vh));
             text-align: center;
             text-transform: uppercase;
@@ -59,7 +64,7 @@
             transition: all 0.5s ease-in-out;
 
             &:hover {
-                color: #4e2e2b;
+                color: #fff;
             }
         }
     }
@@ -67,22 +72,31 @@
     &__content {
         @include no-padding();
         @include flexbox(row);
+        justify-content: space-around;
+        width: 100%;
         gap: 10px;
 
         &.list-item {
             @include flexbox(column-reverse);
             justify-content: flex-end;
             gap: 10px;
+            padding: 20px;
             width: calc(9vw + 9vh);
             height: calc(1.5 * (9vw + 9vh));
+            background: linear-gradient(to bottom left, #fff 0%, #fff2e6 100%);
 
             border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(60, 40, 30, 0.6);
             transition: all 0.75s ease;
 
             &:hover {
+                background: #3d1d1a;
+                
+                a {
+                    color: #ffffff;
+                }
+                
                 .icon {
-                    background-color: #3D2A24;
-
                     img {
                         filter: brightness(0) invert(1);
                         transform: scale(1.1);
@@ -111,8 +125,10 @@
                 height: calc(4.5vw + 4.5vh);
                 top: 20px;
                 pointer-events: none;
-                transition: all 0.75s ease;
                 border-radius: 50%;
+                img {
+                    transition: all 0.75s ease;
+                }
             }
         }
     }
@@ -123,14 +139,34 @@
         height: 100%;
         padding: 5vh 10vw;
 
+        &__header {
+            @include flexbox(column);
+            gap: 10px;
+        }
+
         &__content {
             @include flexbox(column);
-            gap: calc(2rem);
+            width: 100vw;
+            padding: 0 5vw;
 
             &.list-item {
-                width: calc(14vw + 14vh);
-                height: calc(14vw + 14vh);
-                font-size: calc(1.5 * (1vw + 1vh));
+                @include flexbox(row);
+                width: 100%;
+                height: auto;
+                
+                a {
+                    font-size: calc(1.5 * (1vw + 1vh));
+                    text-align: right;                    
+                    width: 100%;
+                    justify-content: flex-end;
+                }
+
+                .icon {
+                    position: relative;
+                    height: 100%;
+                    width: auto;
+                    top: unset;
+                }
             }
         }
     }
