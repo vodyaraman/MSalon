@@ -1,0 +1,93 @@
+@use '@/styles/_mixins.scss' as *;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
+
+.business {
+    @include flexbox(column);
+    width: 100vw;
+    padding: 10vh 10vw;
+    background-color: #fff3f0;
+
+    &__title {
+        @include no-padding();
+        font-family: "Prata", serif;
+        font-size: calc(1.8rem + 1vw);
+        text-align: center;
+        color: #3E211D;
+        margin-bottom: 40px;
+    }
+
+    &__content {
+        @include flexbox(row);
+        justify-content: space-between;
+        gap: 40px;
+        width: 100%;
+    }
+
+    &__card {
+        @include flexbox(column);
+        align-items: flex-start;
+        height: 100%;
+        width: 100%;
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        gap: 10px;
+
+        p {
+            margin: 0;
+            font-family: "Roboto", sans-serif;
+            color: #444;
+            font-size: 1rem;
+        }
+
+        & .business__name {
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+    }
+
+    &__form {
+        @include flexbox(column);
+        gap: 15px;
+        width: 100%;
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+        input,
+        textarea {
+            font-family: "Roboto", sans-serif;
+            padding: 12px 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1rem;
+            width: 100%;
+        }
+
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        button {
+            padding: 12px 20px;
+            font-family: "Roboto", sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            background-color: #3E211D;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+
+            &:hover {
+                background-color: #5c2f28;
+            }
+        }
+    }
+}

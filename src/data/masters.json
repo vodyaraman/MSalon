@@ -1,37 +1,45 @@
 [
 	{
-		"name": "Анна Соколова",
-		"position": "Мастер перманентного макияжа и трихопигментации",
-		"image": "/assets/staff/anna.png"
+	  "name": "Анна Соколова",
+	  "position": "Мастер перманентного макияжа и трихопигментации",
+	  "image": "/assets/staff/anna.png",
+	  "slug": "anna-sokolova"
 	},
 	{
-		"name": "Екатерина Лебедева",
-		"position": "Косметолог-эстетист",
-		"image": "/assets/staff/ekaterina.png"
+	  "name": "Екатерина Лебедева",
+	  "position": "Косметолог-эстетист",
+	  "image": "/assets/staff/ekaterina.png",
+	  "slug": "ekaterina-lebedeva"
 	},
 	{
-		"name": "Мария Алексеева",
-		"position": "Мастер ногтевого сервиса",
-		"image": "/assets/staff/anna.png"
+	  "name": "Мария Алексеева",
+	  "position": "Мастер ногтевого сервиса",
+	  "image": "/assets/staff/anna.png",
+	  "slug": "mariya-alekseeva"
 	},
 	{
-		"name": "Светлана Орлова",
-		"position": "Парикмахер-стилист",
-		"image": "/assets/staff/svetlana.png"
+	  "name": "Светлана Орлова",
+	  "position": "Парикмахер-стилист",
+	  "image": "/assets/staff/svetlana.png",
+	  "slug": "svetlana-orlova"
 	},
 	{
-		"name": "Ирина Коваль",
-		"position": "Массажист",
-		"image": "/assets/staff/ekaterina.png"
+	  "name": "Ирина Коваль",
+	  "position": "Массажист",
+	  "image": "/assets/staff/ekaterina.png",
+	  "slug": "irina-koval"
 	},
 	{
-		"name": "Ольга Миронова",
-		"position": "Бровист и лашмейкер",
-		"image": "/assets/staff/svetlana.png"
+	  "name": "Ольга Миронова",
+	  "position": "Бровист и лашмейкер",
+	  "image": "/assets/staff/svetlana.png",
+	  "slug": "olga-mironova"
 	},
 	{
-		"name": "Дарья Васильева",
-		"position": "Специалист по депиляции и уходу за телом",
-		"image": "/assets/staff/anna.png"
+	  "name": "Дарья Васильева",
+	  "position": "Специалист по депиляции и уходу за телом",
+	  "image": "/assets/staff/anna.png",
+	  "slug": "darya-vasileva"
 	}
-]
+  ]
+  

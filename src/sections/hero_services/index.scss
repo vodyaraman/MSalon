@@ -20,9 +20,7 @@
     &.herotext {
       @include flexbox(column);
       @include no-padding();
-      max-width: 75%;
       height: auto;
-      opacity: 0;
 
       font-family: "Sintony", sans-serif;
       font-weight: 700;
@@ -37,7 +35,6 @@
       @include no-padding();
       height: auto;
       max-width: 50%;
-      opacity: 0;
 
       font-family: "Roboto", sans-serif;
       font-optical-sizing: auto;
@@ -54,6 +51,8 @@
     bottom: 0;
     height: 90vh;
     object-fit: cover;
+    transform: translateY(15vh);
+    transition: all 0.25s ease;
   }
 }
 

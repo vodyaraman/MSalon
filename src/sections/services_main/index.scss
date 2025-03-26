@@ -2,49 +2,118 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 .services {
-    @include flexbox(row);
+    @include flexbox(column);
     width: 100vw;
-    height: 30vh;
-    padding: 0 10vw;
+    height: 100%;
+    padding: 5vh 10vw;
     box-sizing: border-box;
     background: linear-gradient(to bottom, #ffffff 0%, #fff7ec 100%);
     backdrop-filter: blur(5px);
 
-    &__content {
-        @include no-padding();
+    &__header {
         @include flexbox(row);
-        gap: calc(2rem + 5vw);
+        width: 100%;
+        justify-content: flex-start;
+        gap: 20px;
 
-        &.list-item {
-            @include flexbox(column-reverse);
-            gap: 10px;
-            width: calc(9vw + 9vh);
-            height: calc(9vw + 9vh);
+        .title {
+            @include no-padding();
+            font-family: "Prata", serif;
+            font-size: calc(1.8rem + 1vw);
+            text-align: center;
+            color: #3d1d1a;
+            line-height: 1.4;
+        }
+
+        .subtitle {
+            width: 100%;
+            @include no-padding();
+            font-family: "Prata", serif;
+            font-size: calc(0.8rem + 1vw);
+            text-align: center;
+            color: #3d1d1a;
+            line-height: 1.4;
+            text-wrap: nowrap
+        }
+
+        .button {
+            @include no-def-styles();
+            @include flexbox(row);
+            background-color: transparent;
+            border: 1px solid #3d1d1a;
+            border-radius: 15px;
+            padding: calc(0.8 * (1vw + 1vh)) calc(2.9 * (1vw + 1vh));
 
             font-family: "Roboto", sans-serif;
             font-optical-sizing: auto;
-            font-weight: 500;
+            font-weight: 600;
             font-style: normal;
-            color: #3D2A24;
+            color: #3d1d1a;
             font-size: calc(0.9 * (1vw + 1vh));
             text-align: center;
+            text-transform: uppercase;
+            text-wrap: nowrap;
 
-            border-radius: 50%;
+            cursor: pointer;
+
+            transition: all 0.5s ease-in-out;
+
+            &:hover {
+                color: #4e2e2b;
+            }
+        }
+    }
+
+    &__content {
+        @include no-padding();
+        @include flexbox(row);
+        gap: 10px;
+
+        &.list-item {
+            @include flexbox(column-reverse);
+            justify-content: flex-end;
+            gap: 10px;
+            width: calc(9vw + 9vh);
+            height: calc(1.5 * (9vw + 9vh));
+
+            border-radius: 15px;
             transition: all 0.75s ease;
 
             &:hover {
-                background-color: #3D2A24;
-                color: #D9D9D9;
-
                 .icon {
-                    filter: brightness(0) invert(1);
-                    transform: scale(1.1);
+                    background-color: #3D2A24;
+
+                    img {
+                        filter: brightness(0) invert(1);
+                        transform: scale(1.1);
+                    }
                 }
             }
-        }
 
-        &.icon {
-            transition: all 0.75s ease;
+            a {
+                @include flexbox(row);
+                @include no-def-styles();
+                font-family: "Roboto", sans-serif;
+                font-optical-sizing: auto;
+                font-weight: 500;
+                font-style: normal;
+                color: #3D2A24;
+                font-size: calc(0.9 * (1vw + 1vh));
+                text-align: center;
+                transition: all 0.75s ease;
+                width: 100%;
+                height: 100%;
+            }
+
+            .icon {
+                position: absolute;
+                width: calc(4.5vw + 4.5vh);
+                height: calc(4.5vw + 4.5vh);
+                top: 20px;
+                pointer-events: none;
+                transition: all 0.75s ease;
+                border-radius: 50%;
+            }
         }
     }
 }

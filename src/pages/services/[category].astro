@@ -1,0 +1,33 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/header/Header.astro';
+import services from '../../data/services.json';
+
+import HeroServices from '../../sections/hero_services/HeroServices.astro';
+
+const { params } = Astro;
+
+if (!params.category) {
+  throw new Error("Категория не указана");
+}
+
+const currentSlug = decodeURIComponent(params.category);
+const categoryData = services.find(cat => cat.slug === currentSlug);
+
+if (!categoryData) {
+  throw new Error(`Категория с slug "${currentSlug}" не найдена`);
+}
+
+export async function getStaticPaths() {
+  return services.map((cat) => ({
+    params: { category: cat.slug }
+  }));
+}
+
+---
+
+<Layout title={categoryData.category}>
+  <Header />
+  <img src="/backgrounds/main-background.svg" class="main-background" />
+  <HeroServices category={categoryData} />
+</Layout>
