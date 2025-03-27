@@ -12,10 +12,17 @@
     gap: calc(1vh + 1vw);
 
     &__header {
-        @include flexbox(row);
+        @include flexbox(column);
         justify-content: flex-start;
+        align-items: flex-start;
         width: 100%;
         gap: 25px;
+
+        aside {
+            @include flexbox(column);
+            align-items: flex-start;
+            gap: 20px;
+        }
 
         .title {
             @include flexbox(row);
@@ -44,7 +51,7 @@
             @include flexbox(row);
             background-color: transparent;
             border: 1px solid #3d1d1a;
-            background-color: #3d1d1a;
+            background-color: #ffffff;
             border-radius: 15px;
             padding: 10px 15px;
             width: 250px;
@@ -53,7 +60,7 @@
             font-optical-sizing: auto;
             font-weight: 600;
             font-style: normal;
-            color: #d1c7c6;
+            color: #3d1d1a;
             font-size: calc(0.9 * (1vw + 1vh));
             text-align: center;
             text-transform: uppercase;
@@ -62,73 +69,69 @@
             cursor: pointer;
 
             transition: all 0.5s ease-in-out;
-
-            &:hover {
-                color: #fff;
-            }
         }
     }
 
     &__content {
-        @include no-padding();
-        @include flexbox(row);
-        justify-content: space-around;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem;
+        padding: 2rem 0;
         width: 100%;
-        gap: 10px;
+        border-top: 1px solid #3D2A24;
+        border-bottom: 1px solid #3D2A24;
 
-        &.list-item {
-            @include flexbox(column-reverse);
-            justify-content: flex-end;
-            gap: 10px;
-            padding: 20px;
-            width: calc(9vw + 9vh);
-            height: calc(1.5 * (9vw + 9vh));
+        &__item {
+            @include no-def-styles();
+            @include flexbox(column);
+            align-items: center;
+            justify-content: flex-start;
+            gap: 1.5rem;
+            padding: 2rem 1rem;
             background: linear-gradient(to bottom left, #fff 0%, #fff2e6 100%);
-
             border-radius: 15px;
-            box-shadow: 0 4px 20px rgba(60, 40, 30, 0.6);
-            transition: all 0.75s ease;
+            box-shadow: 0 4px 20px rgba(60, 40, 30, 0.08);
+            transition: all 0.5s ease;
+            text-align: center;
+            text-decoration: none;
+            color: #3D2A24;
+            font-family: "Roboto", sans-serif;
+            font-size: calc(0.9 * (1vw + 1vh));
+            position: relative;
+            aspect-ratio: 1 / 1;
 
             &:hover {
                 background: #3d1d1a;
-                
-                a {
-                    color: #ffffff;
-                }
-                
-                .icon {
-                    img {
-                        filter: brightness(0) invert(1);
-                        transform: scale(1.1);
-                    }
+                color: #ffffff;
+
+                .services__content__icon img {
+                    filter: brightness(0) invert(1);
+                    transform: scale(1.05);
                 }
             }
 
-            a {
-                @include flexbox(row);
-                @include no-def-styles();
-                font-family: "Roboto", sans-serif;
-                font-optical-sizing: auto;
-                font-weight: 500;
-                font-style: normal;
-                color: #3D2A24;
-                font-size: calc(0.9 * (1vw + 1vh));
-                text-align: center;
-                transition: all 0.75s ease;
-                width: 100%;
-                height: 100%;
+            span {
+                display: block;
+                text-wrap: balance;
+                line-height: 1.3;
+                max-width: 100%;
+                font-size: 1rem;
             }
+        }
 
-            .icon {
-                position: absolute;
-                width: calc(4.5vw + 4.5vh);
-                height: calc(4.5vw + 4.5vh);
-                top: 20px;
-                pointer-events: none;
-                border-radius: 50%;
-                img {
-                    transition: all 0.75s ease;
-                }
+        &__icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 80px;
+            height: 80px;
+            flex-shrink: 0;
+
+            img {
+                max-width: 100%;
+                max-height: 100%;
+                object-fit: contain;
+                transition: all 0.5s ease;
             }
         }
     }
@@ -153,10 +156,10 @@
                 @include flexbox(row);
                 width: 100%;
                 height: auto;
-                
+
                 a {
                     font-size: calc(1.5 * (1vw + 1vh));
-                    text-align: right;                    
+                    text-align: right;
                     width: 100%;
                     justify-content: flex-end;
                 }

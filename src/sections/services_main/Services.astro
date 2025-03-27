@@ -1,50 +1,54 @@
 ---
 import SmoothScrollEffect from "../../components/animations/SmoothScrollEffect";
+import LinkButton from "../../components/buttons/LinkButton";
 import "./index.scss";
 ---
 
 <section class="services">
-    <article class="services__header">
-        <h2 class="services__header title">Услуги</h2>
-        <aside>
-            <span class="services__header subtitle">посмотрите весь список наших услуг</span>
-            <a class="services__header button">Все услуги</a>
-        </aside>
-    </article>
-    <ul class="services__content">
-        <li class="services__content list-item">
-            <div class="services__content icon">
-                <img src="/icons/services/icon1.svg" />
-            </div>
-            <a href="/services/permanent-makeup">Перманентный макияж</a>
-        </li>
-        <li class="services__content list-item">
-            <div class="services__content icon">
-                <img src="/icons/services/icon2.svg" />
-            </div>
-            <a href="/services/brows-and-lashes">Брови и ресницы</a>
-        </li>
-        <li class="services__content list-item">
-            <div class="services__content icon">
-                <img src="/icons/services/icon3.svg" />
-            </div>
-            <a href="/services/makeup-and-piercing">Макияж и пирсинг</a>
-        </li>
-        <li class="services__content list-item">
-            <div class="services__content icon">
-                <img src="/icons/services/icon4.svg" />
-            </div>
-            <a href="/services/hardware-cosmetology">Аппаратная косметология</a>
-        </li>
-        <li class="services__content list-item">
-            <div class="services__content icon">
-                <img src="/icons/services/icon5.svg" />
-            </div>
-            <a href="/services/injection-cosmetology"
-                >Инъекционная косметология</a
-            >
-        </li>
-    </ul>
+  <article class="services__header">
+    <h2 class="services__header title">Услуги</h2>
+    <aside>
+      <span class="services__header subtitle">посмотрите весь список наших услуг</span>
+      <LinkButton text="все услуги" href="/services" client:only/>
+    </aside>
+  </article>
+
+  <div class="services__content">
+    <a href="/services/permanent-makeup" class="services__content__item">
+      <div class="services__content__icon">
+        <img src="/icons/services/icon1.svg" alt="Перманентный макияж" />
+      </div>
+      <span>Перманентный макияж</span>
+    </a>
+
+    <a href="/services/brows-and-lashes" class="services__content__item">
+      <div class="services__content__icon">
+        <img src="/icons/services/icon2.svg" alt="Брови и ресницы" />
+      </div>
+      <span>Брови и ресницы</span>
+    </a>
+
+    <a href="/services/makeup-and-piercing" class="services__content__item">
+      <div class="services__content__icon">
+        <img src="/icons/services/icon3.svg" alt="Макияж и пирсинг" />
+      </div>
+      <span>Макияж и пирсинг</span>
+    </a>
+
+    <a href="/services/hardware-cosmetology" class="services__content__item">
+      <div class="services__content__icon">
+        <img src="/icons/services/icon4.svg" alt="Аппаратная косметология" />
+      </div>
+      <span>Аппаратная косметология</span>
+    </a>
+
+    <a href="/services/injection-cosmetology" class="services__content__item">
+      <div class="services__content__icon">
+        <img src="/icons/services/icon4.svg" alt="Инъекционная косметология" />
+      </div>
+      <span>Инъекционная косметология</span>
+    </a>
+  </div>
 </section>
 
 <SmoothScrollEffect client:only />
