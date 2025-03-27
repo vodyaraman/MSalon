@@ -15,11 +15,9 @@
     &__icon {
         width: 40px;
         height: 40px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
         margin-right: 10px;
         flex-shrink: 0;
+        transform: translateX(-50px);
 
         img {
             width: 100%;
@@ -30,16 +28,14 @@
     &__text {
         @include no-def-styles();
         @include flexbox(row);
-        position: relative;
-        overflow: hidden;
         flex: 1;
+        margin-left: -50px;
 
         font-family: "Roboto", sans-serif;
         font-optical-sizing: auto;
         font-weight: 600;
         font-style: normal;
         font-size: 1rem;
-        text-align: center;
         text-transform: uppercase;
         text-wrap: nowrap;
         cursor: pointer;
@@ -57,13 +53,5 @@
         transform-origin: left center;
         transition: transform 0.3s ease;
         margin-left: calc(60px + 10px);
-    }
-
-
-    &__text-wrap {
-        position: relative;
-        z-index: 1;
-        color: #3d1d1a;
-        transition: color 0.3s, margin-left 0.3s;
     }
 }
