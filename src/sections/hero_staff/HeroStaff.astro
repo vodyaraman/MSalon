@@ -1,0 +1,9 @@
+---
+import "./index.scss";
+import MastersHeroSlider from "../../components/staff_slider/MastersHeroSlider";
+import masters from "../../data/masters.json"
+---
+
+<section class="hero">
+  <MastersHeroSlider staffList={masters} client:load />
+</section>

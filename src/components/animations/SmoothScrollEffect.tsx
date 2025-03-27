@@ -4,7 +4,7 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function SmoothScrollEffect() {
+export default function SmoothScrollEffect({trigger = ".hero"} :{trigger?: string}) {
 	useEffect(() => {
 		if (typeof window === "undefined") return;
 
@@ -12,7 +12,7 @@ export default function SmoothScrollEffect() {
 			lenis.on("scroll", ScrollTrigger.update);
 
 			ScrollTrigger.create({
-				trigger: ".hero",
+				trigger: trigger,
 				start: "top top",
 				end: "bottom top",
 				pin: true,

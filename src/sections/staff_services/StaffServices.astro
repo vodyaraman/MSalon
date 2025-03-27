@@ -1,0 +1,21 @@
+---
+import "./index.scss"
+const { masters, allStaff } = Astro.props;
+
+const staffToShow = allStaff.filter((staff: any) => masters.includes(staff.id));
+---
+
+<section class="staffservices">
+  <h2 class="staffservices__title">Мастера, которые занимаются этой категорией услуг</h2>
+  <div class="staffservices__list">
+    {staffToShow.map((staff: any) => (
+      <div class="staffservices__card">
+        <img src={staff.image} alt={staff.name} class="staffservices__image" />
+        <div class="staffservices__info">
+          <h3 class="staffservices__name">{staff.name}</h3>
+          <p class="staffservices__position">{staff.position}</p>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

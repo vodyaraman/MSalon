@@ -1,7 +1,10 @@
 ---
+import Footer from '../../components/footer/Footer.astro';
 import Header from '../../components/header/Header.astro';
 import services from '../../data/services.json';
 import Layout from '../../layouts/Layout.astro';
+import AllServices from '../../sections/all_services/AllServices.astro';
+import Business from '../../sections/business/Business.astro';
 import HeroServices from '../../sections/hero_services/HeroServices.astro';
 
 ---
@@ -9,4 +12,8 @@ import HeroServices from '../../sections/hero_services/HeroServices.astro';
 <Layout>
     <Header/>
     <img src="/backgrounds/main-background.svg" class="main-background"/>
+    <HeroServices/>
+    <AllServices servicesList = {services}/>
+    <Business/>
+    <Footer/>
 </Layout>

@@ -1,3 +1,5 @@
+@use '@/styles/_mixins.scss' as *;
+
 .burger-menu-wrapper {
   position: fixed;
   top: 60px;
@@ -17,8 +19,8 @@
   min-width: 400px;
   height: 100%;
   background-color: #fff;
-  position: relative;
   border-radius: 15px 0 0 15px;
+  padding: 10vh 0;
 
   &__close {
     position: absolute;
@@ -33,26 +35,41 @@
   }
 
   &__nav {
+    @include flexbox(column);
+    justify-content: flex-start;
     height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  }
+
+  &__title {
+    @include no-def-styles();
+    color: #3d2a24;
+    font-family: "Tenor Sans", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: calc(1.5 * (1vw + 1vh));
+    margin-bottom: 40px;
   }
 
   &__list {
-    display: flex;
-    flex-direction: column;
+    @include no-def-styles();
+    @include flexbox(column);
     gap: 2rem;
-    list-style: none;
-    padding: 0;
-    margin: 0;
+    border: 1px solid #3d2a2460;
+    border-radius: 25px;
+    width: 80%;
+    padding: 5vh 5vw
   }
 
   &__item {
-    font-family: "Roboto", sans-serif;
-    font-size: 1.5rem;
-    color: #3d2a24;
-    cursor: pointer;
+    @include no-def-styles;
+    a {
+      @include no-def-styles;
+      font-family: "Roboto", sans-serif;
+      font-size: 1.5rem;
+      color: #3d2a24;
+      cursor: pointer;
+
+    }
 
     &:hover {
       color: #9a7b6f;

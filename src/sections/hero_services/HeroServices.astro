@@ -1,6 +1,15 @@
 ---
 import "./index.scss";
-const { category } = Astro.props;
+
+let { category } = Astro.props;
+
+if (!category) {
+  category = {
+    category: "Все услуги салона красоты",
+    description:
+      "Добро пожаловать в мир красоты и заботы. Мы предлагаем полный спектр процедур — от макияжа до ухода за волосами и телом. Наши мастера помогут подчеркнуть вашу индивидуальность.",
+  };
+}
 ---
 
 <section class="hero">

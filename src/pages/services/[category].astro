@@ -1,9 +1,15 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/header/Header.astro';
+
 import services from '../../data/services.json';
+import masters from '../../data/masters.json';
 
 import HeroServices from '../../sections/hero_services/HeroServices.astro';
+import CertainServices from '../../sections/certain_services/CertainServices.astro';
+import Business from '../../sections/business/Business.astro';
+import Footer from '../../components/footer/Footer.astro';
+import StaffServices from '../../sections/staff_services/StaffServices.astro';
 
 const { params } = Astro;
 
@@ -30,4 +36,8 @@ export async function getStaticPaths() {
   <Header />
   <img src="/backgrounds/main-background.svg" class="main-background" />
   <HeroServices category={categoryData} />
+  <CertainServices category={categoryData} />
+  <StaffServices masters={categoryData.masters} allStaff={masters}/>
+  <Business/>
+  <Footer/>
 </Layout>

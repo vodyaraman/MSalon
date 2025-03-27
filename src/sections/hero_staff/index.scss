@@ -1,0 +1,20 @@
+@use '@/styles/_mixins.scss' as *;
+@import url('https://fonts.googleapis.com/css2?family=Sintony:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+.hero {
+  @include flexbox(row);
+  width: 100vw;
+  height: calc(100vh - 60px);
+  padding: calc(2rem + 4vh + 4vw) 10vw 0 10vw;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+@media (max-width: 700px) {
+  .hero {
+    @include flexbox(column);
+    height: auto;
+    padding: 10vh 10vw 0 10vw;
+  }
+}

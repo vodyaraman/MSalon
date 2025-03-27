@@ -48,6 +48,7 @@ $font-header-burger: calc(0.8 * (1vw + 1vh));
         box-sizing: border-box;
 
         .link {
+            @include no-def-styles();
             @include no-padding();
             width: auto;
 

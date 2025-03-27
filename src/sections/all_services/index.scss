@@ -1,0 +1,86 @@
+@use '@/styles/_mixins.scss' as *;
+
+.allservices {
+    @include flexbox(column);
+    gap: calc(4vh + 2vw);
+    padding: calc(4vh + 4vw) 10vw;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #fff;
+
+    &__content {
+        @include flexbox(column);
+        gap: calc(2vh + 1vw);
+        width: 100%;
+    }
+
+    &__title {
+        width: 100%;
+        @include no-padding();
+        font-family: "Sintony", sans-serif;
+        font-weight: 700;
+        font-size: calc(2.5 * (1vw + 1vh));
+        line-height: 1.2;
+        text-align: left;
+        color: #3E3836;
+    }
+
+    &__description {
+        @include no-padding();
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-size: calc(1.2 + (0.5vw + 0.5vh));
+        color: #3D2A24;
+        width: 100%;
+    }
+
+    &__services {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(calc(3 * (1vh + 1vw) + 250px), 1fr));
+        gap: 2rem;
+        margin-top: 1rem;
+        width: 100%;
+      }
+      
+      &__service {
+        display: grid;
+        gap: 0.75rem;
+        padding: 1.5rem;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 12px;
+        background-color: #FAF7F6;
+        min-height: 240px;
+        max-width: 300px;
+        box-sizing: border-box;
+        overflow-wrap: anywhere;
+      }      
+
+    &__service-header {
+        @include flexbox(row);
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__service-name {
+        @include no-padding();
+        font-family: "Sintony", sans-serif;
+        font-weight: 600;
+        font-size: calc(1.2 * (1vw + 1vh));
+        color: #3E3836;
+    }
+
+    &__service-price {
+        font-family: "Roboto", sans-serif;
+        font-weight: 500;
+        font-size: calc(1vw + 0.5vh);
+        color: #3D2A24;
+        white-space: nowrap;
+    }
+
+    &__service-description {
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-size: calc(0.9vh + 0.5vw);
+        color: #5E4A46;
+    }
+}

@@ -1,0 +1,25 @@
+---
+import SmoothScrollEffect from "../../components/animations/SmoothScrollEffect";
+import "./index.scss";
+const { category } = Astro.props;
+---
+
+<section class="certainservices">
+  <article class="certainservices__content">
+    <h2 class="certainservices__title">Услуги данной категории</h2>
+
+    <div class="certainservices__services">
+      {category.services.map((service: any) => (
+        <div class="certainservices__service">
+          <div class="certainservices__service-header">
+            <h3 class="certainservices__service-name">{service.name}</h3>
+          </div>
+          <p class="certainservices__service-description">{service.description}</p>
+          <span class="certainservices__service-price">{service.price} ₽</span>
+        </div>
+      ))}
+    </div>
+  </article>
+</section>
+
+<SmoothScrollEffect client:only/>

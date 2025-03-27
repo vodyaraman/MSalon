@@ -90,12 +90,25 @@ const BurgerMenu = () => {
               ×
             </button>
             <nav className="burger-menu__nav">
+              <h2 className="burger-menu__title">Меню</h2>
               <ul className="burger-menu__list">
-                <li className="burger-menu__item">Главная</li>
-                <li className="burger-menu__item">О нас</li>
-                <li className="burger-menu__item">Услуги</li>
-                <li className="burger-menu__item">Контакты</li>
+                <li className="burger-menu__item">
+                  <a href="/" className="burger-menu__link">Главная</a>
+                </li>
+                <li className="burger-menu__item">
+                  <a href="/about" className="burger-menu__link">О нас</a>
+                </li>
+                <li className="burger-menu__item">
+                  <a href="/services" className="burger-menu__link">Услуги</a>
+                </li>
+                <li className="burger-menu__item">
+                  <a href="/staff" className="burger-menu__link">Мастеры</a>
+                </li>
+                <li className="burger-menu__item">
+                  <a href="/contacts" className="burger-menu__link">Контакты</a>
+                </li>
               </ul>
+
             </nav>
           </div>
         </div>
