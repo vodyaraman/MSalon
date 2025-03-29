@@ -7,14 +7,11 @@
     width: 100vw;
     padding: 10vh 14vw;
     background-color: #fff3f0;
+    gap: 2rem;
 
     &__title {
         @include no-padding();
-        font-family: "Prata", serif;
-        font-size: calc(1.8rem + 1vw);
-        text-align: center;
-        color: #3E211D;
-        margin-bottom: 40px;
+        @include ubuntu-title-font(false, center)
     }
 
     &__content {

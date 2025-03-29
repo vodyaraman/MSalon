@@ -45,7 +45,7 @@
   font-family: 'Ubuntu', sans-serif;
   font-weight: 700;
   font-size: calc(2 * (1vh + 1vw));
-  color: if($light, #fff, #000);
+  color: if($light, #fff, #3E3836);
   text-transform: uppercase;
   letter-spacing: 0.02em;
   text-align: $align;
