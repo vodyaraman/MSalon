@@ -3,7 +3,7 @@
 .allservices {
     @include flexbox(column);
     gap: calc(4vh + 2vw);
-    padding: 4vh 10vw;
+    padding: 4vh 14vw;
     width: 100%;
     box-sizing: border-box;
     background-color: #fff;

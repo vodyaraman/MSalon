@@ -1,5 +1,6 @@
 import { useRef, useState, useEffect } from "react";
 import gsap from "gsap";
+import BurgerIcon from "../../../assets/icons/burger-icon.svg"
 
 const BurgerMenu = () => {
   const wrapperRef = useRef<HTMLDivElement>(null);
@@ -80,7 +81,7 @@ const BurgerMenu = () => {
     <>
       <aside className="header__burger">
         МЕНЮ
-        <img src="/icons/burger-icon.svg" alt="" className="header__burger icon" />
+        <img src={BurgerIcon.src} alt="" className="header__burger icon" />
       </aside>
 
       {isOpen && (

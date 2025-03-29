@@ -7,8 +7,8 @@
     justify-content: center;
     width: 100vw;
     height: 100vh;
-    padding: 20px 10vw;
-    gap: 20px;
+    padding: 20px 14vw;
+    gap: 2rem;
     background: linear-gradient(to bottom, #211311 0%, #3E211D 100%);
     z-index: 2;
     box-sizing: border-box;
@@ -16,13 +16,7 @@
 
     &__title {
         @include no-padding();
-        font-family: "Roboto", sans-serif;
-        font-optical-sizing: auto;
-        font-weight: 500;
-        font-style: normal;
-        color: #ffffff;
-        font-size: calc(2.5 * (1vw + 1vh));
-        text-align: center;
+        @include ubuntu-title-font(true, center)
     }
 
     &__slide {
@@ -31,7 +25,7 @@
         flex-shrink: 0;
         scroll-snap-align: start;
         z-index: 3;
-        gap: calc(1rem + 3vw);
+        gap: 1rem;
     
         @include flexbox(row);
         box-sizing: border-box;
@@ -48,11 +42,11 @@
         gap: calc(1rem + 3vw);
         overflow-x: visible;
         -webkit-overflow-scrolling: touch;
-        scrollbar-width: none; // Firefox
-        -ms-overflow-style: none; // IE 10+
+        scrollbar-width: none; 
+        -ms-overflow-style: none;
 
         &::-webkit-scrollbar {
-            display: none; // Chrome, Safari
+            display: none;
         }
 
         .image {
@@ -76,7 +70,6 @@
             justify-content: flex-start;
             align-items: flex-start;
             gap: 20px;
-            padding-top: 20px;
         }
 
         &.description {
@@ -119,11 +112,8 @@
     }
 
     &__dots {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flexbox(row);
         gap: 12px;
-        margin-top: 30px;
     
         span {
             width: 10px;
@@ -152,21 +142,22 @@
 
 @media (max-width: 800px) {
     .about {
-        padding: 5vh 5vw;
-        height: calc(100vh - 60px);
+        padding: calc(5vh + 60px) 5vw;
+        height: auto;
         justify-content: center;
 
         &__slide {
             @include flexbox(column);
+            justify-content: flex-start;
             height: 100%;
         }
 
         &__content {
             @include flexbox(column);
-            height: 100%;
 
             .image {
                 width: 90vw;
+                min-height: 300px;
             }
 
             &.description-wrapper {
@@ -182,6 +173,54 @@
 
                 &:hover {}
             }
+        }
+
+        &__fillblock {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .about {
+        padding: 70px 5vw;
+        height: 100vh;
+        justify-content: flex-start;
+        gap: 10px;
+
+        &__slide {
+            @include flexbox(column);
+            justify-content: flex-start;
+            height: 100%;
+        }
+
+        &__content {
+            @include flexbox(column);
+
+            .image {
+                width: 90vw;
+                min-height: 250px;
+            }
+
+            &.description-wrapper {
+                align-items: center;
+            }
+
+            &.description {
+                text-align: center;
+            }
+
+            .styled-button {
+                width: 80%;
+
+                &:hover {}
+            }
+        }
+
+        &__dots {
+            position: absolute;
+            bottom: 20px;
+            left: 42%;
         }
 
         &__fillblock {

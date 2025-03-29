@@ -5,7 +5,7 @@
 .business {
     @include flexbox(column);
     width: 100vw;
-    padding: 10vh 10vw;
+    padding: 10vh 14vw;
     background-color: #fff3f0;
 
     &__title {
@@ -95,6 +95,8 @@
 
 @media (max-width: 1000px) {
     .business {
+        height: auto;
+        padding: 5vh 10vw;
         &__title {}
     
         &__content {

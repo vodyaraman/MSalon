@@ -39,7 +39,7 @@ export default function StaffSlider() {
 			const distance = Math.abs(offset);
 
 			const isVisible = distance <= 2;
-			const scale = offset === 0 ? 1 : 1 - 0.15 * distance;
+			const scale = offset === 0 ? 1 : 0.8;
 			const opacity = offset === 0 ? 1 : 0.9 - distance * 0.1;
 			const blur = distance >= 3 ? 2 : 0;
 			const shift = offset * 220;

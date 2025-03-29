@@ -1,6 +1,7 @@
 import { useRef } from 'react'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
+import LinkIcon from "../../assets/icons/link-icon.svg"
 import './LinkButton.scss'
 
 type LinkButtonProps = {
@@ -67,7 +68,7 @@ const LinkButton = ({ text, href }: LinkButtonProps) => {
             onMouseLeave={handleLeave}
         >
             <div className="link-button__icon" ref={iconRef}>
-                <img src="/icons/link-icon.svg" alt="link" />
+                <img src={LinkIcon.src} alt="link" />
             </div>
             <div className="link-button__text-bg" ref={bgRef}></div>
             <div className="link-button__text" ref={textWrapRef}>

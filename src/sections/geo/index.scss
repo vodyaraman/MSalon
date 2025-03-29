@@ -6,7 +6,7 @@
     @include flexbox(column);
     width: 100vw;
     height: 80vh;
-    padding: 20px 10vw;
+    padding: 20px 14vw;
     background-color: #3E211D;
 
     &__title {
@@ -51,3 +51,10 @@
         }
     }
  }
+
+ @media (max-width: 600px) {
+    .geo {
+        padding: 5vh 10vw;
+        height: auto;
+    }
+}
