@@ -1,6 +1,6 @@
-@use 'variables';
-@use 'mixins';
-@use 'responsive';
+@use 'variables' as *;
+@use 'mixins' as *;
+@use 'responsive' as *;
 
 *,
 *::before,

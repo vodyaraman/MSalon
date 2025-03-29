@@ -1,4 +1,4 @@
-@use '@/styles/_mixins.scss' as *;
+@use '@/styles/global.scss' as *;
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
 
@@ -7,52 +7,42 @@
     justify-content: center;
     width: 100vw;
     height: 100vh;
-    padding: 20px 14vw;
+    padding: 0 14vw;
     gap: 2rem;
-    background: linear-gradient(to bottom, #211311 0%, #3E211D 100%);
+    background: $secondary-color;
     z-index: 2;
     box-sizing: border-box;
     overflow: hidden;
 
     &__title {
         @include no-padding();
-        @include ubuntu-title-font(true, center)
+        @include ubuntu-title-font(false, center)
+    }
+    
+    &__content {
+        @include flexbox(column);
+        width: 100%;
+        height: 55vh;
+        overflow-x: visible;
     }
 
     &__slide {
-        width: 100%;
-        height: 100%;
-        flex-shrink: 0;
+        @include flexbox(row);
+        @include full-parent();
         scroll-snap-align: start;
         z-index: 3;
         gap: 1rem;
-    
-        @include flexbox(row);
+        padding: 1rem;
+        border-radius: 15px;
+        background-color: $primary-color;
+      
         box-sizing: border-box;
         will-change: transform, opacity;
         transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-
-    &__content {
-        @include flexbox(row);
-        align-items: flex-start;
-        justify-content: flex-start;
-        width: 100%;
-        height: 55vh;
-        gap: calc(1rem + 3vw);
-        overflow-x: visible;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none; 
-        -ms-overflow-style: none;
-
-        &::-webkit-scrollbar {
-            display: none;
-        }
 
         .image {
             position: relative;
-            width: 100%;
-            height: 100%;
+            @include full-parent;
 
             img {
                 position: absolute;
@@ -65,23 +55,19 @@
             }
         }
 
-        &.description-wrapper {
+        .description-wrapper {
             @include flexbox(column);
-            justify-content: flex-start;
             align-items: flex-start;
-            gap: 20px;
+            justify-content: flex-start;
+            @include full-parent();
+            padding: 1rem;
+            gap: 1rem
         }
 
-        &.description {
+        .description {
             @include no-padding();
+            @include prata-text(false, left);
             height: auto;
-
-            font-family: "Prata", serif;
-            font-weight: 400;
-            font-style: normal;
-            color: #dfdfdf;
-            font-size: calc(1rem * (1vw + 1vh));
-            font-size: calc(1rem * (1vw + 1vh));
         }
 
         .styled-button {
@@ -96,7 +82,7 @@
             font-weight: 600;
             font-style: normal;
             color: #cecbcb;
-            font-size: calc(0.9 * (1vw + 1vh));
+            font-size: 1rem;
             text-align: center;
             text-transform: uppercase;
 
@@ -124,19 +110,9 @@
             flex-shrink: 0;
     
             &.active {
-                background-color: #ffffff;
+                background-color: $primary-color;
             }
         }
-    }
-    
-
-    &__fillblock {
-        position: relative;
-        display: flex;
-        width: 100%;
-        height: 300px;
-        z-index: 1;
-        background-color: #fff;
     }
 }
 
@@ -144,29 +120,33 @@
     .about {
         padding: calc(5vh + 60px) 5vw;
         height: 100vh;
+        padding: 10vh 0;
         justify-content: space-between;
 
         &__slide {
             @include flexbox(column);
             justify-content: flex-start;
+            width: 100vw;
             height: 100%;
-        }
-
-        &__content {
-            @include flexbox(column);
-            height: 80vh;
+            padding: 10px;
 
             .image {
                 width: 90vw;
                 min-height: 300px;
+
+                img {
+                    top: 0;
+                    left: 0;
+                }
             }
 
-            &.description-wrapper {
+            .description-wrapper {
                 align-items: center;
             }
 
-            &.description {
+            .description {
                 text-align: center;
+                font-size: 0.85rem;
             }
 
             .styled-button {
@@ -176,56 +156,33 @@
             }
         }
 
-        &__fillblock {
-            display: none;
+        &__content {
+            @include flexbox(column);
+            height: 80vh; 
         }
     }
 }
 
 @media (max-width: 400px) {
     .about {
-        padding: 70px 5vw;
-        height: 100vh;
-        justify-content: flex-start;
-        gap: 10px;
-
+        padding: calc(5vh + 60px) 0 10px 0;
+        gap: 5px;
         &__slide {
-            @include flexbox(column);
-            justify-content: flex-start;
-            height: 100%;
-        }
-
-        &__content {
-            @include flexbox(column);
+            gap: 5px;
 
             .image {
                 width: 90vw;
                 min-height: 250px;
-            }
 
-            &.description-wrapper {
-                align-items: center;
-            }
-
-            &.description {
-                text-align: center;
-            }
-
-            .styled-button {
-                width: 80%;
-
-                &:hover {}
+                img {
+                    top: 0;
+                    left: 0;
+                }
             }
         }
 
         &__dots {
-            position: absolute;
-            bottom: 20px;
-            left: 42%;
-        }
-
-        &__fillblock {
-            display: none;
+            margin-top: 30px;
         }
     }
 }

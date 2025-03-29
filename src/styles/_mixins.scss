@@ -1,3 +1,5 @@
+@use './variables.scss' as *;
+
 @mixin flexbox($direction) {
   position: relative;
   display: flex;
@@ -53,4 +55,15 @@
   text-shadow:
     1px 1px 0 if($light, rgba(0, 0, 0, 0.1), #eae0db),
     2px 2px 3px rgba(0, 0, 0, 0.05);
+}
+
+@mixin prata-text($dark: true, $align: left) {
+  @import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
+
+  font-family: "Prata", serif;
+  font-weight: 400;
+  font-style: normal;
+  color: if($dark, $font-color-text, $secondary-font-color);
+  font-size: 1rem;
+  text-align: $align;
 }

@@ -27,7 +27,7 @@ export default function AboutSlides() {
 		});
 
 
-		const scrollStep = 700;
+		const scrollStep = 500;
 		const totalScroll = scrollStep * slidesData.length;
 		let scrollStart = 0;
 		let scrollEnd = 0;

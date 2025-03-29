@@ -103,6 +103,7 @@
             width: 100%;
             padding: 10px;
             gap: 10px;
+            box-shadow: none;
 
             &__item {
                 @include flexbox(row-reverse);
@@ -123,7 +124,7 @@
 
 
                 span {
-                    font-size: 1rem;
+                    font-size: 0.85rem;
                     text-align: right;
                 }
             }

@@ -2,20 +2,21 @@
 import Header from '../components/header/Header.astro';
 import Layout from '../layouts/Layout.astro';
 import Footer from '../components/footer/Footer.astro';
+import HeroMain from '../sections/landing/hero/HeroMain.astro';
+import About from '../sections/landing/about/About.astro';
+import Business from '../sections/landing/business/Business.astro';
+import Geo from '../sections/landing/geo/Geo.astro';
+import Services from '../sections/landing/services/Services.astro';
+import Staff from '../sections/landing/staff/Staff.astro';
 
-import Hero from '../sections/hero_main/HeroMain.astro';
-import Services from '../sections/services_main/Services.astro';
-import About from '../sections/about/About.astro';
-import Staff from '../sections/staff_main/Staff.astro';
-import Geo from '../sections/geo/Geo.astro';
-import Business from '../sections/business/Business.astro';
+
 
 ---
 
 <Layout>
 	<Header/>
 	<img src="/backgrounds/main-background.svg" class="main-background"/>
-	<Hero/>
+	<HeroMain/>
 	<Services/>
 	<About/>
 	<Staff/>
