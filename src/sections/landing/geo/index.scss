@@ -7,28 +7,18 @@
     width: 100vw;
     height: 80vh;
     padding: 20px 14vw;
-    background-color: #3E211D;
+    background-color: $secondary-color;
 
     &__title {
         @include no-padding();
-        font-family: "Roboto", sans-serif;
-        font-optical-sizing: auto;
-        font-weight: 500;
-        font-style: normal;
-        color: #fff;
-        font-size: calc(2.5 * (1vw + 1vh));
-        text-align: center;
+        width: 100%;
+        @include ubuntu-title-font(false, right);
     }
 
     &__discription {
         @include no-padding();
-        font-family: "Prata", serif;
-        font-optical-sizing: auto;
-        font-weight: 500;
-        font-style: normal;
-        color: #fff;
-        font-size: calc(0.75 * (1vw + 1vh));
-        text-align: center;
+        width: 100%;
+        @include prata-text(true, right)
     }
 
     &__content {

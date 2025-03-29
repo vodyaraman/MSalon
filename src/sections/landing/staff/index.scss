@@ -5,8 +5,8 @@
   @include flexbox(column);
   width: 100vw;
   height: auto;
-  padding: 10vh 14vw;
-  background-color: white;
+  padding: 5vh 14vw 0 14vw;
+  background-color: $secondary-color;
 
   &__content {
     @include flexbox(column);
@@ -18,7 +18,8 @@
 
   &__title {
     @include no-padding();
-    @include ubuntu-title-font(false, center)
+    @include ubuntu-title-font(false, center);
+    z-index: 5;
   }
 }
 

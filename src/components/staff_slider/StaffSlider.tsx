@@ -1,86 +1,71 @@
 import { useEffect, useRef, useState } from "react";
 import masters from "../../data/masters.json";
+import TemplatePhoto from "@/assets/photos/masters/template.png";
+import ArrorIcon from "@/assets/icons/arror-icon.svg";
 import "./StaffSlider.scss";
 import gsap from "gsap";
-
-export interface Master {
-	name: string;
-	position: string;
-	image: string;
-}
+import LinkButton from "../buttons/LinkButton";
 
 export default function StaffSlider() {
 	const [activeIndex, setActiveIndex] = useState(0);
-	const containerRef = useRef<HTMLDivElement>(null);
-
+	const titleRef = useRef<HTMLHeadingElement>(null);
+	const descRef = useRef<HTMLParagraphElement>(null);
+	const imageRef = useRef<HTMLImageElement>(null);
 	const total = masters.length;
 
-	const getOffset = (from: number, to: number) => {
-		const raw = to - from;
-		if (raw > total / 2) return raw - total;
-		if (raw < -total / 2) return raw + total;
-		return raw;
-	};
-
-	const next = () => {
-		setActiveIndex((prev) => (prev + 1) % total);
-	};
-
-	const prev = () => {
-		setActiveIndex((prev) => (prev - 1 + total) % total);
-	};
+	const next = () => setActiveIndex((prev) => (prev + 1) % total);
+	const prev = () => setActiveIndex((prev) => (prev - 1 + total) % total);
 
 	useEffect(() => {
-		const cards = containerRef.current?.querySelectorAll(".staff__item");
-		if (!cards) return;
-
-		cards.forEach((card, index) => {
-			const offset = getOffset(activeIndex, index);
-			const distance = Math.abs(offset);
-
-			const isVisible = distance <= 2;
-			const scale = offset === 0 ? 1 : 0.8;
-			const opacity = offset === 0 ? 1 : 0.9 - distance * 0.1;
-			const blur = distance >= 3 ? 2 : 0;
-			const shift = offset * 220;
-
-			gsap.to(card, {
-				x: shift,
-				xPercent: -50,
-				scale,
-				opacity: isVisible ? opacity : 0,
-				filter: `blur(${blur}px)`,
-				duration: 0.6,
-				ease: "power2.out",
-				overwrite: true,
-			});
-		});
+		if (titleRef.current) {
+			gsap.fromTo(
+				titleRef.current,
+				{ x: -30, opacity: 0 },
+				{ x: 0, opacity: 1, duration: 0.6, ease: "power1.out" }
+			);
+		}
+		if (descRef.current) {
+			gsap.fromTo(
+				descRef.current,
+				{ x: -30, opacity: 0 },
+				{ x: 0, opacity: 1, duration: 0.6, delay: 0.1, ease: "power1.out" }
+			);
+		}
+		if (imageRef.current) {
+			gsap.fromTo(
+				imageRef.current,
+				{ x: 30, opacity: 0 },
+				{ x: "-5vw", opacity: 1, duration: 0.6, ease: "power1.out" }
+			);
+		}
 	}, [activeIndex]);
 
 	return (
-		<div className="staff__slider">
-			<div className="staff__list" ref={containerRef}>
-				{masters.map((master, index) => (
-					<div
-						className="staff__item"
-						key={master.name}
-						style={{
-							position: "absolute",
-							left: "50%",
-							top: 0,
-							transform: "translateX(-50%)",
-						}}
-					>
-						<img src={master.image} alt={master.name} />
-					</div>
-				))}
+		<figure className="staff__item">
+			<figcaption className="info">
+				<h3 className="title" ref={titleRef}>
+					{masters[activeIndex].name}
+				</h3>
+				<p className="desc" ref={descRef}>
+					{masters[activeIndex].position}
+				</p>
+			</figcaption>
+			<div className="image-overlay">
+				<img
+					ref={imageRef}
+					src={TemplatePhoto.src}
+					alt={masters[activeIndex].name}
+				/>
 			</div>
-			<div className="staff__info">
-				<h3>{masters[activeIndex].name}</h3>
-				<p>{masters[activeIndex].position}</p>
+
+			<div className="staff__arrow-container">
+				<button className="arrow left" onClick={prev} aria-label="Предыдущий слайд">
+					<img src={ArrorIcon.src} />
+				</button>
+				<button className="arrow right" onClick={next} aria-label="Следующий слайд" >
+					<img src={ArrorIcon.src} />
+				</button>
 			</div>
-			<button className="staff__arrow left" onClick={prev}>&#10094;</button>
-			<button className="staff__arrow right" onClick={next}>&#10095;</button>
-		</div>
+		</figure>
 	);
 }

@@ -27,8 +27,8 @@ const BurgerMenu = () => {
 
       // бургер уезжает вправо
       gsap.to(burgerRef.current, {
-        x: 400,
-        duration: 0.6,
+        x: 1000,
+        duration: 1.25,
         ease: "power2.out",
       });
 

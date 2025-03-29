@@ -32,7 +32,7 @@
         scroll-snap-align: start;
         z-index: 3;
         gap: 1rem;
-        padding: 1rem;
+        padding: 2rem;
         border-radius: 15px;
         background-color: $primary-color;
       
@@ -118,15 +118,14 @@
 
 @media (max-width: 800px) {
     .about {
-        padding: calc(5vh + 60px) 5vw;
+        padding: calc(5vh + 60px) 10px 10px 10px;
         height: 100vh;
-        padding: 10vh 0;
         justify-content: space-between;
 
         &__slide {
             @include flexbox(column);
             justify-content: flex-start;
-            width: 100vw;
+            width: 100%;
             height: 100%;
             padding: 10px;
 
@@ -165,9 +164,11 @@
 
 @media (max-width: 400px) {
     .about {
-        padding: calc(5vh + 60px) 0 10px 0;
+        padding: calc(5vh + 60px) 10px 10px 10px;
         gap: 5px;
+        
         &__slide {
+            width: 100%;
             gap: 5px;
 
             .image {
