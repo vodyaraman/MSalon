@@ -143,8 +143,8 @@
 @media (max-width: 800px) {
     .about {
         padding: calc(5vh + 60px) 5vw;
-        height: auto;
-        justify-content: center;
+        height: 100vh;
+        justify-content: space-between;
 
         &__slide {
             @include flexbox(column);
