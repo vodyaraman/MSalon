@@ -3,11 +3,13 @@
 .link-button {
     @include no-def-styles();
     @include flexbox(row);
-    border: 2px solid #3A1E1B;
+    border: 2px solid #3a1e1b25;
+    box-shadow: 0 4px 20px rgba(75, 74, 74, 0.205);
     background-color: #fff;
     border-radius: 15px;
     padding: 5px 15px;
-    width: 250px;
+    min-width: 250px;
+    width: calc(13 * (1vw + 1vh));
     cursor: pointer;
     overflow: hidden;
     text-decoration: none;

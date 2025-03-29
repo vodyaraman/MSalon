@@ -1,179 +1,126 @@
 @use '@/styles/_mixins.scss' as *;
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap');
 
 .services {
     @include flexbox(column);
+    align-items: flex-start;
     width: 100vw;
     height: 100%;
-    padding: 5vh 10vw;
+    padding: 5vh 10vw 10vh 10vw;
     box-sizing: border-box;
-    background: linear-gradient(to bottom, #ffffff 0%, #fff7ec 100%);
-    backdrop-filter: blur(5px);
-    gap: calc(1vh + 1vw);
+    border-radius: 50px 50px 0 0;
+    background-color: #fffefe;
+    box-shadow: inset 0 4px 20px rgba(61, 29, 26, 0.08), 0 10px 25px rgba(0, 0, 0, 0.05);
+    gap: calc(1.5 * (1vh + 1vw));
 
-    &__header {
-        @include flexbox(column);
-        justify-content: flex-start;
-        align-items: flex-start;
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0%;
+        left: -50%;
+        width: 140%;
+        height: 140%;
+        background: radial-gradient(circle at center, rgba(255, 240, 230, 0.4) 0%, transparent 70%);
+        filter: blur(60px);
+        z-index: 0;
+    }
+
+    &__title {
+        @include no-padding();
+        @include ubuntu-title-font(false, left);
+    }
+
+    &__content {
+        @include flexbox(row);
+        flex-wrap: wrap;
+        gap: 2rem;
+        padding: 1rem;
         width: 100%;
-        gap: 25px;
+        justify-content: flex-start;
+        box-shadow:
+            inset 2px 2px 5px rgba(0, 0, 0, 0.15),
+            inset -2px -2px 5px rgba(255, 229, 218, 0.7),
+            0 4px 20px rgba(60, 40, 30, 0.027);
+        border-radius: 15px;
 
-        aside {
-            @include flexbox(column);
-            align-items: flex-start;
-            gap: 20px;
-        }
-
-        .title {
-            @include flexbox(row);
-            justify-content: flex-start;
-            @include no-padding();
-            font-family: "Prata", serif;
-            font-size: calc(1.5 * (1.8rem + 1vw));
-            text-align: left;
-            color: #3E3836;
-            line-height: 1.4;
-            width: auto;
-        }
-
-        .subtitle {
-            @include no-padding();
-            font-family: "Prata", serif;
-            font-size: calc(0.25rem + 1vw);
-            text-align: center;
-            color: #3d1d1a;
-            line-height: 1.4;
-            text-wrap: nowrap
-        }
-
-        .button {
+        &__item {
             @include no-def-styles();
-            @include flexbox(row);
-            background-color: transparent;
-            border: 1px solid #3d1d1a;
-            background-color: #ffffff;
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            padding: 1.2rem 1.8rem;
             border-radius: 15px;
-            padding: 10px 15px;
-            width: 250px;
-
+            background: #fff;
+            transition: all 0.4s ease;
+            box-shadow: 0 4px 20px rgba(75, 74, 74, 0.205);
+            color: #3D2A24;
             font-family: "Roboto", sans-serif;
             font-optical-sizing: auto;
             font-weight: 600;
             font-style: normal;
-            color: #3d1d1a;
-            font-size: calc(0.9 * (1vw + 1vh));
-            text-align: center;
-            text-transform: uppercase;
-            text-wrap: nowrap;
-
+            font-size: calc(0.95 * (1vw + 1vh));
+            height: auto;
+            width: fit-content;
+            max-width: 100%;
             cursor: pointer;
 
-            transition: all 0.5s ease-in-out;
-        }
-    }
+            span {
+                white-space: nowrap;
+            }
 
-    &__content {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 2rem;
-        padding: 1rem;
-        width: 100%;
-        border: 1px solid #ccc;
-        border-radius: 15px;
-        box-shadow:
-            inset 2px 2px 5px rgba(0, 0, 0, 0.15),
-            inset -2px -2px 5px rgba(255, 229, 218, 0.7);
+            .services__content__icon {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 48px;
+                height: 48px;
+                flex-shrink: 0;
 
-        &__item {
-            @include no-def-styles();
-            @include flexbox(column);
-            align-items: center;
-            justify-content: flex-start;
-            gap: 1.5rem;
-            padding: 2rem 1rem;
-            background: linear-gradient(to bottom left, #fff 0%, #fff2e6 100%);
-            border-radius: 15px;
-            box-shadow: 0 4px 20px rgba(60, 40, 30, 0.08);
-            transition: all 0.5s ease;
-            text-align: center;
-            text-decoration: none;
-            color: #3D2A24;
-            font-family: "Roboto", sans-serif;
-            font-size: calc(0.9 * (1vw + 1vh));
-            position: relative;
-            aspect-ratio: 1 / 1;
+                img {
+                    max-width: 100%;
+                    max-height: 100%;
+                    object-fit: contain;
+                    transition: all 0.3s ease;
+                }
+            }
 
             &:hover {
                 background: #3d1d1a;
                 color: #ffffff;
+                box-shadow:
+                    inset 2px 2px 5px rgba(255, 255, 255, 0.15),
+                    inset -2px -2px 5px rgba(0, 0, 0, 0.1),
+                    0 6px 24px rgba(0, 0, 0, 0.08);
 
                 .services__content__icon img {
                     filter: brightness(0) invert(1);
                     transform: scale(1.05);
                 }
             }
-
-            span {
-                display: block;
-                text-wrap: balance;
-                font-family: "Prata", serif;
-                font-size: calc(0.25rem + 1vw);
-                font-weight: bold;
-                line-height: 1.3;
-                max-width: 100%;
-            }
-        }
-
-        &__icon {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 80px;
-            height: 80px;
-            flex-shrink: 0;
-
-            img {
-                max-width: 100%;
-                max-height: 100%;
-                object-fit: contain;
-                transition: all 0.5s ease;
-            }
         }
     }
+
 }
 
 @media (max-width: 1000px) {
     .services {
         height: 100%;
-        padding: 5vh 10vw;
-
-        &__header {
-            @include flexbox(column);
-            gap: 10px;
-
-            .subtitle {
-                font-size: 1rem;
-            }
-
-            aside {
-                align-items: center;
-            }
-        }
+        padding: 5vh 10px;
+        align-items: center;
 
         &__content {
             @include flexbox(column);
-            width: 100vw;
-            padding: 0 5vw;
+            width: 100%;
+            padding: 10px;
             gap: 10px;
 
             &__item {
                 @include flexbox(row);
                 justify-content: space-between;
                 width: 100%;
-                background: none;
-                box-shadow: none;
                 max-height: 100px;
-                padding: 1rem 0.1rem;
+                padding: 1.5rem 1rem;
 
                 &:hover {
                     background-color: transparent;
@@ -184,15 +131,19 @@
                         transform: scale(1);
                     }
                 }
-                
+
 
                 span {
-                    font-size: 1rem;
+                    font-size: 1.1rem;
                     text-align: right;
                 }
             }
 
             &__icon {
+                position: absolute;
+                right: 2%;
+                top: 10%;
+
                 img {}
             }
         }

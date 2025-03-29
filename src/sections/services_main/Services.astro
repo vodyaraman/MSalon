@@ -5,13 +5,7 @@ import "./index.scss";
 ---
 
 <section class="services">
-  <article class="services__header">
-    <h2 class="services__header title">Услуги</h2>
-    <aside>
-      <span class="services__header subtitle">посмотрите весь список наших услуг</span>
-      <LinkButton text="все услуги" href="/services" client:only/>
-    </aside>
-  </article>
+  <h2 class="services__title">Услуги</h2>
 
   <div class="services__content">
     <a href="/services/permanent-makeup" class="services__content__item">
@@ -49,6 +43,8 @@ import "./index.scss";
       <span>Инъекционная косметология</span>
     </a>
   </div>
+
+  <LinkButton text="все услуги" href="/services" client:only />
 </section>
 
 <SmoothScrollEffect client:only />

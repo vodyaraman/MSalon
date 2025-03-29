@@ -20,16 +20,18 @@
     &__content {
         @include flexbox(row);
         justify-content: space-between;
+        align-items: stretch;
         gap: 40px;
         width: 100%;
+        height: auto;
     }
 
     &__card {
         @include flexbox(column);
-        align-items: flex-start;
-        height: 100%;
+        min-height: 100%;
         width: 100%;
-        background-color: #fff;
+        background-color: #3E211D;
+        color: #fff;
         padding: 30px;
         border-radius: 10px;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
@@ -38,7 +40,6 @@
         p {
             margin: 0;
             font-family: "Roboto", sans-serif;
-            color: #444;
             font-size: 1rem;
         }
 
@@ -90,4 +91,27 @@
             }
         }
     }
+}
+
+@media (max-width: 1000px) {
+    .business {
+        &__title {}
+    
+        &__content {
+            @include flexbox(column);
+        }
+    
+        &__card {}
+    
+        &__form {
+            input {}
+    
+            textarea {}
+    
+            button {
+                width: 100%;
+            }
+        }
+    }
+    
 }

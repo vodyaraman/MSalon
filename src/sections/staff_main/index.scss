@@ -4,7 +4,7 @@
 .staff {
   @include flexbox(column);
   width: 100vw;
-  height: 80vh;
+  height: auto;
   padding: 10vh 10vw;
   background-color: white;
 
