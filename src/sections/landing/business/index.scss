@@ -25,6 +25,7 @@
 
     &__card {
         @include flexbox(column);
+        @include prata-text(false, center);
         min-height: 100%;
         width: 100%;
         background-color: $primary-color;
@@ -35,12 +36,12 @@
         gap: 10px;
 
         p {
-            margin: 0;
-            font-family: "Roboto", sans-serif;
+            @include no-padding;           
             font-size: 1rem;
         }
 
         & .business__name {
+            @include ubuntu-title-font(true, center);
             font-weight: 600;
             font-size: 1.2rem;
             margin-bottom: 10px;
