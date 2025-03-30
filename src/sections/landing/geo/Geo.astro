@@ -1,18 +1,8 @@
 ---
-import "./index.scss"
+import GeoMap from "@/components/geo_slider/GeoMap";
+import "./index.scss";
 ---
 
 <section class="geo">
-    <article class="geo__content">
-        <h2 class="geo__title">Мы на карте Москвы</h2>
-        <p class="geo__discription">
-            Ostrovityanova str. 7, metro Yugo-Zapadnaya, Konkovo, Moscow, Russia 117198
-        </p>
-        <div class="geo__map">
-            <iframe
-                src="https://yandex.ru/map-widget/v1/?um=constructor%3Aec84c8b49b7a2e47e6033aaf4a6f9183b7fc9e2958588459f38f7f7d1cf9a470&amp;source=constructor"
-                width="100%" height="400" frameborder="0"
-            ></iframe>
-        </div>
-    </article>
+    <GeoMap client:visible/>
 </section>

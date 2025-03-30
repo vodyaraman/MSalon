@@ -54,12 +54,6 @@
     @include no-def-styles();
     @include flexbox(column);
     gap: 2rem;
-    border: 1px solid #ccc;
-    border-radius: 15px;
-    box-shadow:
-      inset 2px 2px 5px rgba(0, 0, 0, 0.15),
-      inset -2px -2px 5px rgba(255, 227, 215, 0.7);
-
     width: 80%;
     padding: 5vh 5vw;
   }

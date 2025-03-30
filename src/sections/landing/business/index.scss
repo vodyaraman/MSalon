@@ -6,7 +6,7 @@
     @include flexbox(column);
     width: 100vw;
     padding: 10vh 14vw;
-    background-color: #fff3f0;
+    background-color: $secondary-color;
     gap: 2rem;
 
     &__title {
@@ -27,8 +27,8 @@
         @include flexbox(column);
         min-height: 100%;
         width: 100%;
-        background-color: #3E211D;
-        color: #fff;
+        background-color: $primary-color;
+        color: $secondary-font-color;
         padding: 30px;
         border-radius: 10px;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);

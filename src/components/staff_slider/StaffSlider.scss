@@ -94,12 +94,13 @@
 
 @media (max-width: 600px) {
 	.staff {
-		&__slider {
 			&__item {
 				img {}
 
-				&__info {
-					h3 {}
+				.info {
+					.title {
+						width: 150px;
+					}
 
 					p {}
 				}
@@ -112,5 +113,3 @@
 			}
 		}
 	}
-
-}
