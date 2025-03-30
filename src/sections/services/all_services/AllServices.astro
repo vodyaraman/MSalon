@@ -7,22 +7,26 @@ const { servicesList } = Astro.props;
 
 <section class="allservices">
   {servicesList.map((category: any) => (
-    <article class="allservices__content">
-      <h2 class="allservices__title">{category.category}</h2>
-      <p class="allservices__description">{category.description}</p>
+    <section class="allservices__content">
+      <header>
+        <h2 class="allservices__title">{category.category}</h2>
+        <p class="allservices__description">{category.description}</p>
+      </header>
 
-      <div class="allservices__services">
+      <ul class="allservices__services">
         {category.services.map((service: any) => (
-          <div class="allservices__service">
-            <div class="allservices__service-header">
-              <h3 class="allservices__service-name">{service.name}</h3>   
-            </div>
-            <p class="allservices__service-description">{service.description}</p>
-            <span class="allservices__service-price">{service.price} ₽</span>
-          </div>
+          <li class="allservices__service">
+            <article>
+              <header>
+                <h3 class="allservices__service-name">{service.name}</h3>   
+              </header>
+              <p class="allservices__service-description">{service.description}</p>
+              <p class="allservices__service-price">{service.price} ₽</p>
+            </article>
+          </li>
         ))}
-      </div>
-    </article>
+      </ul>
+    </section>
   ))}
 </section>
 

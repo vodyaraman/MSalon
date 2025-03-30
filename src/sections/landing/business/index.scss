@@ -11,7 +11,7 @@
 
     &__title {
         @include no-padding();
-        @include ubuntu-title-font(false, center)
+        @include ubuntu-title-font(true, center)
     }
 
     &__content {
@@ -41,8 +41,8 @@
         }
 
         & .business__name {
-            @include ubuntu-title-font(true, center);
-            font-weight: 600;
+            @include ubuntu-title-font(false, center);
+            font-weight: 400;
             font-size: 1.2rem;
             margin-bottom: 10px;
         }

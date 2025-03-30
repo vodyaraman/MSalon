@@ -19,7 +19,7 @@
 
 			.title {
 				@include no-padding;
-				@include ubuntu-title-font(false, left);
+				@include ubuntu-title-font(true, left);
 				font-weight: 400;
 				width: 100%;
 			}

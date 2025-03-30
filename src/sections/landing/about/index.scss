@@ -16,7 +16,7 @@
 
     &__title {
         @include no-padding();
-        @include ubuntu-title-font(false, center)
+        @include ubuntu-title-font(true, center)
     }
     
     &__content {
