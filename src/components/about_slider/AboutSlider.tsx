@@ -75,15 +75,6 @@ export default function AboutSlides() {
 			const direction = to > from ? 1 : -1;
 			const offset = 5000 * direction;
 
-			// Появление next — за кадром
-			gsap.set(next, {
-				autoAlpha: 0,
-				opacity: 0,
-				x: offset,
-				zIndex: 2,
-				pointerEvents: "none",
-			});
-
 			// prev — на переднем плане, чтобы успел уйти
 			gsap.set(prev, { zIndex: 3 });
 
@@ -95,18 +86,20 @@ export default function AboutSlides() {
 			});
 
 			tl.to(prev, {
-				autoAlpha: 0,
-				scale: 0.5,
-				x: -offset,
+				scale: 0.95,
+				duration: 0.1,
+				zIndex: 1,
+			}, 0)
+			.to(next, {
+				autoAlpha: 1,
+				opacity: 1,
+				scale: 1,
+				x: 0,
 				duration: 0.25,
-			})
-				.to(next, {
-					autoAlpha: 1,
-					scale: 1,
-					x: 0,
-					duration: 0.25,
-					pointerEvents: "auto",
-				}, 0);
+				zIndex: 2,
+				pointerEvents: "auto",
+			}, 0);
+			
 		};
 
 		lenis.on("scroll", onScroll);

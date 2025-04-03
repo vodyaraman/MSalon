@@ -11,12 +11,7 @@
       background: #fffefe;
       transition: all 0.4s ease;
       box-shadow: 0 4px 20px rgba(75, 74, 74, 0.205);
-      color: #3D2A24;
-      font-family: "Roboto", sans-serif;
-      font-optical-sizing: auto;
-      font-weight: 500;
-      font-style: normal;
-      font-size: calc(0.75 * (1vw + 1vh));
+      @include roboto-text(true, center);
       height: auto;
       text-transform: uppercase;
       width: fit-content;
@@ -65,11 +60,6 @@
           inset 2px 2px 5px rgba(255, 255, 255, 0.15),
           inset -2px -2px 5px rgba(0, 0, 0, 0.1),
           0 6px 24px rgba(0, 0, 0, 0.08);
-
-        .services__content__icon img {
-          filter: brightness(0) invert(1);
-          transform: scale(1.05);
-        }
       }
     }
   }
@@ -100,6 +90,7 @@
       @include full-parent;
       align-items: flex-start;
       gap: 1rem;
+      padding: 1rem;
 
       .title {
         @include no-padding;
@@ -123,9 +114,8 @@
       &__item {
         @include flexbox(row-reverse);
         justify-content: space-between;
-        width: 100%;
         max-height: 100px;
-        padding: 1rem 1rem;
+        padding: 0.3rem 1rem;
         box-shadow: none;
 
         &:hover {
@@ -145,7 +135,7 @@
         }
       }
 
-      &__icon {
+      .icon {
         display: none;
       }
     }

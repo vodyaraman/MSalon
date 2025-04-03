@@ -36,9 +36,6 @@ export default function ServicesSlider() {
             className={`services__content__item ${index === activeIndex ? "active" : ""}`}
             onClick={() => setActiveIndex(index)}
           >
-            <div className="services__content__icon">
-              <img src={icons[index]} alt={service.category} />
-            </div>
             <span>{service.category}</span>
           </div>
         ))}
