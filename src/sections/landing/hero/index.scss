@@ -54,7 +54,7 @@ $light: false;
       @include flexbox(column);
       @include no-padding();
       height: auto;
-      max-width: 50%;
+      max-width: 75%;
       opacity: 0;
 
       @include prata-text($light, left);
@@ -87,12 +87,18 @@ $light: false;
         width: 100%;
         max-width: unset;
         text-align: center;
+        font-size: calc(1.9 * (1vw + 1vh));
+
+        .extra {
+          font-size: calc(3 * (1vw + 1vh));
+        }
       }
 
       &.subtext {
         width: 100%;
         max-width: unset;
         text-align: center;
+        font-size: 1rem
       }
     }
 
@@ -100,6 +106,9 @@ $light: false;
       @include flexbox(column);
       width: 100vw;
       height: 70vh;
+      right: 0;
+      bottom: 0;
+      transform: translateY(0);
     }
   }
 }

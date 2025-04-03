@@ -148,16 +148,22 @@
       &__icon {
         display: none;
       }
+    }
 
-      &__details {
-        &__image {}
+    &__details {
+      flex-direction: column;
+      &__image {}
 
-        &__info {
-          &__title {}
+      &__info {
+        width: 100%;
+        align-items: center;
+        padding: 1rem;
+        .title {
+          text-align: center;
+        }
 
-          &__description {}
-
-          &__button {}
+        .description {
+          text-align: center;
         }
       }
     }

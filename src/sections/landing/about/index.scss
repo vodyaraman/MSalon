@@ -20,6 +20,7 @@
     }
     
     &__content {
+        @include no-padding();
         @include flexbox(column);
         width: 100%;
         height: 55vh;
@@ -118,9 +119,10 @@
 
 @media (max-width: 800px) {
     .about {
-        padding: calc(5vh + 60px) 10px 10px 10px;
+        padding: 2rem 10px 10px 10px;
+        gap: 5px;
         height: 100vh;
-        justify-content: space-between;
+        justify-content: flex-start;
 
         &__slide {
             @include flexbox(column);
