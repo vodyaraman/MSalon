@@ -1,6 +1,7 @@
 ---
 import "./Header.scss";
 import "./burger/BurgerMenu.scss";
+import Animation from "./Animation";
 import BurgerMenu from "./burger/BurgerMenu.tsx";
 ---
 
@@ -13,4 +14,5 @@ import BurgerMenu from "./burger/BurgerMenu.tsx";
     </nav>
 
     <BurgerMenu client:load />
+    <Animation client:only/>
 </header>

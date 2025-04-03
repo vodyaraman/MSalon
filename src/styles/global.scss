@@ -34,6 +34,21 @@ main {
   z-index: -1;
 }
 
+.marked {
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -0.15em;
+    width: 105%;
+    height: 0.5em;
+    background-color: $primary-color;
+    opacity: 0.5;
+    transform: skewX(-15deg);
+    z-index: -2;
+  }
+}
+
 * {
   scrollbar-width: thin; /* для Firefox */
   scrollbar-color: #211311 transparent;

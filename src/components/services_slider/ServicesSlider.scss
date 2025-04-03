@@ -1,0 +1,165 @@
+.services {
+
+  &__content {
+    &__item {
+      @include no-def-styles();
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      padding: 0.5rem 2rem;
+      border-radius: 25px;
+      background: #fffefe;
+      transition: all 0.4s ease;
+      box-shadow: 0 4px 20px rgba(75, 74, 74, 0.205);
+      color: #3D2A24;
+      font-family: "Roboto", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 500;
+      font-style: normal;
+      font-size: calc(0.75 * (1vw + 1vh));
+      height: auto;
+      text-transform: uppercase;
+      width: fit-content;
+      max-width: 100%;
+      cursor: pointer;
+
+      &.active {
+        background: #3d1d1a;
+        color: #ffffff;
+        box-shadow:
+          inset 2px 2px 5px rgba(255, 255, 255, 0.15),
+          inset -2px -2px 5px rgba(0, 0, 0, 0.1),
+          0 6px 24px rgba(0, 0, 0, 0.08);
+
+        .services__content__icon img {
+          filter: brightness(0) invert(1);
+          transform: scale(1.05);
+        }
+
+      }
+
+      span {
+        white-space: nowrap;
+      }
+
+      .services__content__icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 45px;
+        height: 45px;
+        flex-shrink: 0;
+
+        img {
+          max-width: 100%;
+          max-height: 100%;
+          object-fit: contain;
+          transition: all 0.3s ease;
+        }
+      }
+
+      &:hover {
+        background: #3d1d1a;
+        color: #ffffff;
+        box-shadow:
+          inset 2px 2px 5px rgba(255, 255, 255, 0.15),
+          inset -2px -2px 5px rgba(0, 0, 0, 0.1),
+          0 6px 24px rgba(0, 0, 0, 0.08);
+
+        .services__content__icon img {
+          filter: brightness(0) invert(1);
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+
+  &__details {
+    @include flexbox(row);
+    @include full-parent;
+    justify-content: flex-start;
+    background-color: $secondary-font-color;
+    border-radius: 25px;
+    gap: 2rem;
+    margin-top: 2rem;
+
+    &__image {
+      @include flexbox(row);
+      padding: 1rem;
+      background-color: #3d1d1a;
+      @include full-parent;
+      border-radius: 25px 0 0 25px;
+
+      img {
+        @include full-parent;
+      }
+    }
+
+    &__info {
+      @include flexbox(column);
+      @include full-parent;
+      align-items: flex-start;
+      gap: 1rem;
+
+      .title {
+        @include no-padding;
+        @include ubuntu-title-font(true, left);
+        font-size: 2rem;
+      }
+
+      .description {
+        @include no-padding;
+        @include prata-text(true, left);
+      }
+
+      &__button {}
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .services {
+    &__content {
+      &__item {
+        @include flexbox(row-reverse);
+        justify-content: space-between;
+        width: 100%;
+        max-height: 100px;
+        padding: 1rem 1rem;
+        box-shadow: none;
+
+        &:hover {
+          background-color: transparent;
+          color: #3d1d1a;
+
+          .services__content__icon img {
+            filter: brightness(1) invert(0);
+            transform: scale(1);
+          }
+        }
+
+
+        span {
+          font-size: 0.85rem;
+          text-align: right;
+        }
+      }
+
+      &__icon {
+        display: none;
+      }
+
+      &__details {
+        &__image {}
+
+        &__info {
+          &__title {}
+
+          &__description {}
+
+          &__button {}
+        }
+      }
+    }
+  }
+}

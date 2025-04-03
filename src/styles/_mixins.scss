@@ -51,10 +51,6 @@
   text-transform: uppercase;
   letter-spacing: 0.02em;
   text-align: $align;
-
-  text-shadow:
-    1px 1px 0 if($light, rgba(0, 0, 0, 0.1), #eae0db),
-    2px 2px 3px rgba(0, 0, 0, 0.05);
 }
 
 @mixin prata-text($light: false, $align: left) {
@@ -63,7 +59,7 @@
   font-family: "Prata", serif;
   font-weight: 400;
   font-style: normal;
-  color: if($light, $font-color-text, $secondary-font-color);
+  color: if($light, $font-color-text, $secondary-font-color); 
   font-size: 1rem;
   text-align: $align;
 }

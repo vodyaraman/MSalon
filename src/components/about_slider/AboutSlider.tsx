@@ -35,7 +35,7 @@ export default function AboutSlides() {
 		// Pin секции
 		const trigger = ScrollTrigger.create({
 			trigger: section,
-			start: "top top",
+			start: "top 60px",
 			end: `+=${totalScroll}`,
 			pin: true,
 			pinSpacing: true,
