@@ -15,17 +15,11 @@ export default function Animation() {
         if (!header || !logo || !nav) return
 
         const applyDark = () => {
-            gsap.to(header, { backgroundColor: "transparent", backdropFilter: "blur(3px)", duration: 0.3 })
-            gsap.to(logo, { color: "#211311", duration: 0.3 })
-            gsap.to(nav, { filter: "invert(1)", duration: 0.3 })
+            gsap.to(header, { backgroundColor: "#00000000" })
         }
 
-        applyDark();
-
         const applyLight = () => {
-            gsap.to(header, { backgroundColor: "#211311", backdropFilter: "blur(0px)", duration: 0.3 })
-            gsap.to(logo, { color: "#fff", duration: 0.3 })
-            gsap.to(nav, { filter: "invert(0)", duration: 0.3 })
+            gsap.to(header, { backgroundColor: "#211311"})
         }
 
         ScrollTrigger.create({

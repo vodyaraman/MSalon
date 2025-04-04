@@ -1,11 +1,48 @@
 ---
-import AboutSlider from "@/components/about_slider/AboutSlider"
-import "./index.scss"
+import slidesData from '@/data/about-slides.json';
+import "./index.scss";
+
+const [slide1, slide2] = [slidesData[1], slidesData[2]];
 ---
 
-<section class="about">
-    <h1 class="about__title">Почему именно мы?</h1>
-    <AboutSlider client:only="react"/>
+<section class="about" aria-labelledby="about-title">
+  <h1 id="about-title" class="about__title">Почему именно мы?</h1>
+
+  <article class="about__content">
+    <section class="about__slide about__slide--fitst">
+      <div class="image">
+        <img
+          src={slide1.image}
+          alt="Уютная атмосфера и профессиональный сервис Maria Salon"
+          loading="lazy"
+        />
+      </div>
+      <div class="about__content description-wrapper">
+        <p class="about__content description">
+          {slide1.text}
+        </p>
+      </div>
+    </section>
+
+    <section class="about__slide about__slide--second">
+      <div class="image">
+        <img
+          src={slide2.image}
+          alt="Интерьер и философия пространства Maria Salon"
+          loading="lazy"
+        />
+      </div>
+      <div class="about__content description-wrapper">
+        <p class="about__content description">
+          {slide2.text}
+        </p>
+        {slide2.showButton && (
+          <a href="/staff" class="styled-button">Записаться</a>
+        )}
+      </div>
+    </section>
+  </article>
 </section>
+
 
 {/*<div class="about__fillblock"></div> */} 

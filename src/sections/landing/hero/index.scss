@@ -30,7 +30,7 @@ $light: false;
 
       @include ubuntu-title-font($light, left);
       font-size: calc(1.5 * (1vw + 1vh));
-      color: $font-color;
+      color: $secondary-font-color;
 
       &.extra {
         font-size: calc(3.3 * (1vw + 1vh));
@@ -54,12 +54,12 @@ $light: false;
       @include flexbox(column);
       @include no-padding();
       height: auto;
-      max-width: 75%;
+      max-width: 50%;
       opacity: 0;
 
       @include prata-text($light, left);
-      font-size: 1.45rem;
-      color: $font-color;
+      font-size: 1.2rem;
+      color: $secondary-font-color;
     }
   }
 
