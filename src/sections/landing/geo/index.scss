@@ -33,5 +33,9 @@
     .geo {
         padding: 10px;
         height: auto;
+
+        &__title,  &__discription {
+            text-align: center;
+        }
     }
 }

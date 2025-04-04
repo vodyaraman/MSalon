@@ -4,7 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger"
 
 gsap.registerPlugin(ScrollTrigger)
 
-export default function Animation() {
+export default function HeaderAnimation() {
     useEffect(() => {
         if (typeof window === "undefined" || !window.lenis) return
 

@@ -118,17 +118,6 @@
         padding: 0.3rem 1rem;
         box-shadow: none;
 
-        &:hover {
-          background-color: transparent;
-          color: #3d1d1a;
-
-          .services__content__icon img {
-            filter: brightness(1) invert(0);
-            transform: scale(1);
-          }
-        }
-
-
         span {
           font-size: 0.85rem;
           text-align: right;

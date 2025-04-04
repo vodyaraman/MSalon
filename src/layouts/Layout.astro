@@ -2,6 +2,7 @@
 import LenisInit from "../components/lenis/LenisInit";
 import "../styles/global.scss";
 import { ClientRouter } from "astro:transitions";
+import AnimationManager from "./AnimationManager";
 
 const {
 	title = "Салон красоты Марины Севостьяновой",
@@ -34,9 +35,10 @@ const {
 		<link rel="icon" type="image/png" href="/favicon.png" />
 	</head>
 	<body>
-		<LenisInit client:only/>
 		<main transition:animate="slide">
+			<LenisInit client:only/>
 			<slot />
+			<AnimationManager client:only="react"/>
 		</main>
 	</body>
 </html>

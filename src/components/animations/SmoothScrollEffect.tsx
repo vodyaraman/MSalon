@@ -17,7 +17,6 @@ export default function SmoothScrollEffect({trigger = ".hero"} :{trigger?: strin
 				end: "bottom top",
 				pin: true,
 				pinSpacing: false,
-				scrub: true,
 			});
 
 			console.log("ScrollTrigger initialised");

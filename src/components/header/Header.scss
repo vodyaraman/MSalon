@@ -61,6 +61,7 @@ $font-header-burger: calc(0.8 * (1vw + 1vh));
             cursor: pointer;
 
             transition: color 1s ease;
+            text-wrap: nowrap;
 
             &:hover {
                 color: #ffffff;

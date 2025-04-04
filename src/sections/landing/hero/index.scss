@@ -18,6 +18,7 @@ $light: false;
     align-items: flex-start;
     gap: 1rem;
     height: 100%;
+    width: 100%;
 
     &.herotext {
       @include flexbox(column);
@@ -66,8 +67,8 @@ $light: false;
   &__showcase {
     position: absolute;
     right: 5%;
-    bottom: -50%;
-    width: 50%;
+    bottom: 0;
+    width: 40%;
     height: auto;
     object-fit: cover;
   }
@@ -76,8 +77,9 @@ $light: false;
 @media (max-width: 700px) {
   .hero {
     @include flexbox(column);
-    height: 100%;
+    height: auto;
     padding: 10vh 10vw 0 10vw;
+    overflow: hidden;
 
     &__article {
       width: 100%;
