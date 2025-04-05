@@ -15,6 +15,7 @@ export default function BusinessAnimation() {
           y: 0,
           opacity: 1,
           duration: 1,
+          delay: 0.5,
           ease: "power2.out",
           scrollTrigger: {
             trigger: ".business__title",
@@ -32,6 +33,7 @@ export default function BusinessAnimation() {
           x: 0,
           opacity: 1,
           duration: 1,
+          delay: 0.5,
           ease: "power2.out",
           scrollTrigger: {
             trigger: ".business__card",
@@ -49,6 +51,7 @@ export default function BusinessAnimation() {
           x: 0,
           opacity: 1,
           duration: 1,
+          delay: 0.5,
           ease: "power2.out",
           scrollTrigger: {
             trigger: ".business__form",

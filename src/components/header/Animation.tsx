@@ -23,7 +23,7 @@ export default function HeaderAnimation() {
         }
 
         ScrollTrigger.create({
-            start: 800,
+            start: 400,
             end: 801,
             onEnter: applyLight,
             onEnterBack: applyDark,

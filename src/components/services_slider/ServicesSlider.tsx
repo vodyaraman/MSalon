@@ -55,7 +55,7 @@ export default function ServicesSlider() {
           <p className="services__details description">
             {services[activeIndex].description}
           </p>
-          <LinkButton text="подробнее" href="/services"/>
+          <LinkButton text="подробнее" href={`/services/${services[activeIndex].slug}`}/>
         </div>
       </div>
     </>

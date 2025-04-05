@@ -29,6 +29,12 @@ $font-header-burger: calc(0.8 * (1vw + 1vh));
         text-wrap: nowrap;
         cursor: pointer;
 
+        img {
+            width: 2.25rem;
+            height: 2.25rem;
+            object-fit: cover;
+        }
+
         &.text {
             @include no-def-styles();
             color: white;

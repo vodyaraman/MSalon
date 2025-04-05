@@ -1,6 +1,5 @@
 @use '@/styles/_mixins.scss' as *;
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rouge+Script&display=swap');
 
 .footer {
     @include flexbox(column);
@@ -8,7 +7,7 @@
     height: 100%;
     padding: 2rem 14vw;
     box-sizing: border-box;
-    background-color: $primary-color;
+    background-color: #211311;
 
     &__content {
         @include flexbox(column);
@@ -22,24 +21,41 @@
 
         .title {
             @include no-padding();
-            font-family: "Roboto", sans-serif;
+            font-family: "Rouge Script", cursive;
             font-optical-sizing: auto;
             font-weight: 500;
             font-style: normal;
             color: $secondary-font-color;
-            font-size: calc(1 * (1vw + 1vh));
+            font-size: calc(1.5 * (1vw + 1vh));
             text-align: left;
         }
 
         .navlist {
             @include flexbox(column);
             align-items: flex-start;
-            gap: 20px;
-            &__item {}
+            width: 100%;
+            gap: 2rem;
+            padding: 1rem;
+            border-top: 1px solid $secondary-color;
+            border-bottom: 1px solid $secondary-color;
+
+            &__item {
+                @include roboto-text(false, left);
+                text-transform: uppercase;
+                cursor: pointer;
+            }
         }
 
-        .disclaimer {}
+        .disclaimer {
+            width: 100%;
+            @include prata-text(false, left);
+        }
 
-        .self-mark {}
+        .self-mark {
+            width: 100%;
+            @include roboto-text(false, right);
+            opacity: 0.7;
+            cursor: pointer;
+        }
     }
 }

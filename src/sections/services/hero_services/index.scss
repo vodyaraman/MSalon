@@ -5,29 +5,26 @@
 .hero {
   @include flexbox(row);
   width: 100vw;
-  height: calc(100vh - 60px);
-  padding: calc(2rem + 4vh + 4vw) 14vw 0 14vw;
+  height: auto;
+  padding: calc(2rem + 4vh + 4vw) 14vw calc(2rem + 4vh + 4vw) 14vw;
   box-sizing: border-box;
   overflow: hidden;
 
   &__article {
     @include flexbox(column);
+    @include full-parent;
     justify-content: flex-start;
     align-items: flex-start;
     gap: calc(2rem + 2vh);
-    height: 100%;
 
     &.herotext {
       @include flexbox(column);
       @include no-padding();
       height: auto;
+      max-width: 70%;
 
-      font-family: "Sintony", sans-serif;
-      font-weight: 700;
-      font-style: normal;
-      font-size: calc(6 * (1vw + 1vh));
-      line-height: calc(4.5 * (1vw + 1vh));
-      color: #3E3836;
+      @include ubuntu-title-font(false, left);
+      font-size: calc(3 * (1vh + 1vw));
     }
 
     &.subtext {
@@ -36,12 +33,7 @@
       height: auto;
       max-width: 50%;
 
-      font-family: "Roboto", sans-serif;
-      font-optical-sizing: auto;
-      font-weight: 500;
-      font-style: normal;
-      color: #3D2A24;
-      font-size: calc(1.2 + (1vw + 1vh));
+      @include prata-text(false, left);
     }
   }
 

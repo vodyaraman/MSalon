@@ -97,16 +97,13 @@ const BurgerMenu = () => {
                   <a href="/" className="burger-menu__link">Главная</a>
                 </li>
                 <li className="burger-menu__item">
-                  <a href="/about" className="burger-menu__link">О нас</a>
-                </li>
-                <li className="burger-menu__item">
                   <a href="/services" className="burger-menu__link">Услуги</a>
                 </li>
                 <li className="burger-menu__item">
-                  <a href="/staff" className="burger-menu__link">Мастеры</a>
+                  <a href="/staff" className="burger-menu__link">Мастера</a>
                 </li>
                 <li className="burger-menu__item">
-                  <a href="/contacts" className="burger-menu__link">Контакты</a>
+                  <a href="/booking" className="burger-menu__link">Запись</a>
                 </li>
               </ul>
 
