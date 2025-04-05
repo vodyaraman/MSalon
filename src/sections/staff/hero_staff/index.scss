@@ -5,8 +5,8 @@
 .hero {
   @include flexbox(row);
   width: 100vw;
-  height: calc(100vh - 60px);
-  padding: calc(2rem + 4vh + 4vw) 10vw 0 10vw;
+  height: 60vh;
+  padding: calc(2rem + 4vh + 4vw) 14vw calc(2rem + 4vh + 4vw) 14vw;
   box-sizing: border-box;
   overflow: hidden;
 }
@@ -14,7 +14,7 @@
 @media (max-width: 700px) {
   .hero {
     @include flexbox(column);
-    height: auto;
+    height: 80vh;
     padding: 10vh 10vw 0 10vw;
   }
 }

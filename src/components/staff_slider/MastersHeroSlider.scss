@@ -3,81 +3,119 @@
 .hero {
   &__content {
     @include flexbox(row);
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    gap: 2rem;
+    @include full-parent;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: calc(2rem + 2vh);
+    opacity: 0;
   }
 
   &__text {
     @include flexbox(column);
-    gap: 2rem;
-    max-width: 45%;
+    @include no-padding();
+    @include full-parent;
+
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: calc(2rem + 2vh);
   }
 
   &__text-title {
-    font-family: "Sintony", sans-serif;
-    font-weight: 700;
-    font-size: calc(5 * (1vw + 1vh));
-    color: #3E3836;
+    @include no-padding;
+    height: auto;
+
+    @include ubuntu-title-font(false, left);
+    font-size: calc(3 * (1vh + 1vw));
   }
 
   &__text-subtitle {
-    font-family: "Roboto", sans-serif;
-    font-weight: 500;
-    font-size: calc(1.2 + (1vw + 1vh));
-    color: #3D2A24;
+    @include no-padding;
+    height: auto;
+    width: 100%;
+
+    @include prata-text(false, left);
   }
 
   &__showcase {
-    max-width: 40vw;
-    max-height: 80vh;
+    position: relative;
+    right: 0;
+    bottom: 0;
+    width: 25rem;
     object-fit: cover;
     border-radius: 12px;
   }
 
-  &__controls {
-    position: absolute;
-    bottom: 3rem;
-    left: 10vw;
-    display: flex;
-    gap: 1rem;
-    z-index: 2;
-  }
+  &__arrow-container {
+		@include flexbox(row);
+		position: absolute;
+		left: 0;
+		bottom: 0%;
+		width: 15rem;
+		height: 3.5rem;
+		gap: 1rem;
 
-  &__button {
-    font-size: 1.5rem;
-    background-color: #fff;
-    border: 1px solid #aaa;
-    border-radius: 50%;
-    width: 3rem;
-    height: 3rem;
-    cursor: pointer;
-    transition: background 0.2s ease;
+		.arrow {
+			@include full-parent;
+			@include no-def-styles;
+			border-radius: 10px;
+			background-color: $primary-color;
+			box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.568);
 
-    &:hover {
-      background-color: #eee;
-    }
-  }
+			img {
+				width: 30px;
+				height: 30px;
+				filter: invert(1);
+				object-fit: fill;
+			}
+
+			&.left {
+				transform: rotateY(180deg);
+			}
+
+			&:hover {
+				scale: 1.01;
+			}
+
+			&:active {
+				scale: 0.95 !important;
+			}
+		}
+	}
 }
 
 @media (max-width: 600px) {
   .hero {
-    &__content {}
+    padding: 10vh 0 0 0;
+    &__content {
+      flex-direction: column;
+      gap: 5px;
+      padding: 0;
+    }
 
-    &__text {}
+    &__text {
+      gap: 5px;
+      padding: 1rem;
+    }
 
-    &__text-title {}
+    &__text-title {
+      max-width: unset;
+      width: 100%;
+      text-align: center;
+    }
 
-    &__text-subtitle {}
+    &__text-subtitle {
+      max-width: unset;
+      width: 100%;
+      text-align: center;
+      height: 2rem;
+    }
 
-    &__showcase {}
+    &__showcase {
+      transform: translateY(-1rem), translateX(-1rem);
+    }
 
-    &__controls {}
-
-    &__button {
-      &:hover {}
+    &__arrow-container {
+      transform: translateX(30%) translateY(-1rem);
     }
   }
 }

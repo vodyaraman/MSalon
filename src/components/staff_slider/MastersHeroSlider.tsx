@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./MastersHeroSlider.scss";
+import ArrorIcon from "@/assets/icons/arror-icon.svg"
 
 interface Staff {
   id: number;
@@ -16,7 +17,6 @@ interface Props {
 export default function MastersHeroSlider({ staffList }: Props) {
   const [index, setIndex] = useState(0);
 
-  // При загрузке: если есть якорь — ищем мастера по id
   useEffect(() => {
     const hash = window.location.hash.replace("#", "");
     const targetId = parseInt(hash);
@@ -56,21 +56,35 @@ export default function MastersHeroSlider({ staffList }: Props) {
     <>
       <article className="hero__content">
         <div className="hero__text">
-          <h1 className="hero__text-title">{current.name}</h1>
+          {(() => {
+            const [firstName, lastName] = current.name.split(' ');
+            return (
+              <h1 className="hero__text-title">
+                {firstName}<br />
+                {lastName}
+              </h1>
+            );
+          })()}
+
           <span className="hero__text-subtitle">{current.position}</span>
         </div>
+
         <img
           src={current.image}
           alt={current.name}
           className="hero__showcase"
         />
+
+        <div className="hero__arrow-container">
+          <button className="arrow left" onClick={handlePrev} aria-label="Предыдущий слайд">
+            <img src={ArrorIcon.src} />
+          </button>
+          <button className="arrow right" onClick={handleNext} aria-label="Следующий слайд" >
+            <img src={ArrorIcon.src} />
+          </button>
+        </div>
       </article>
-  
-      <div className="hero__controls">
-        <button className="hero__button" onClick={handlePrev}>←</button>
-        <button className="hero__button" onClick={handleNext}>→</button>
-      </div>
     </>
   );
-  
+
 }

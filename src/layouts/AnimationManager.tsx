@@ -7,6 +7,7 @@ import AboutAnimation from "@/sections/landing/about/Animation";
 import StaffAnimation from "@/sections/landing/staff/Animation";
 import GeoAnimation from "@/sections/landing/geo/Animation";
 import BusinessAnimation from "@/sections/landing/business/Animation";
+import MastersHeroAnimation from "@/components/staff_slider/Animation";
 
 // Анимации, которые проигрываются на всех страницах
 const globalAnimations: JSX.Element[] = [
@@ -23,7 +24,9 @@ const animationsByPath: Record<string, JSX.Element[]> = {
     <GeoAnimation key="geo" />,
     <BusinessAnimation key="business" />,
   ],
-  "/about": [],
+  "/staff": [
+    <MastersHeroAnimation key="masters"/>
+  ],
   "/services": [],
 };
 

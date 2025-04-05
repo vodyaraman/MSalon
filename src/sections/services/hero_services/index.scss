@@ -10,7 +10,7 @@
   box-sizing: border-box;
   overflow: hidden;
 
-  &__article {
+  &__content {
     @include flexbox(column);
     @include full-parent;
     justify-content: flex-start;
