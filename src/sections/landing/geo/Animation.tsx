@@ -9,16 +9,15 @@ export default function GeoAnimation() {
     const ctx = gsap.context(() => {
       gsap.fromTo(
         ".geo",
-        { opacity: 0, scale: 0.95 },
+        { opacity: 0.5, scale: 0.8 },
         {
           opacity: 1,
           scale: 1,
-          duration: 1,
+          duration: 0.5,
           ease: "power2.out",
           scrollTrigger: {
             trigger: ".geo",
-            start: "top 85%",
-            once: true,
+            start: "top 20%",
           },
         }
       );

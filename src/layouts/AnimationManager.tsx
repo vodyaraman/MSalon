@@ -1,4 +1,4 @@
-import type { JSX } from "react";
+import { useEffect, useState, type JSX } from "react";
 
 import HeroTextAnimation from "@/sections/landing/hero/Animation";
 import HeaderAnimation from "@/components/header/Animation";
@@ -31,8 +31,33 @@ const animationsByPath: Record<string, JSX.Element[]> = {
 };
 
 export default function AnimationManager() {
-  const pathname = window.location.pathname;
+  const [loaded, setLoaded] = useState(false);
 
+  useEffect(() => {
+    const images = Array.from(document.images);
+    const unloaded = images.filter(img => !img.complete);
+
+    if (unloaded.length === 0) {
+      setLoaded(true);
+    } else {
+      let loadedCount = 0;
+      unloaded.forEach(img => {
+        img.addEventListener("load", check);
+        img.addEventListener("error", check);
+      });
+
+      function check() {
+        loadedCount++;
+        if (loadedCount === unloaded.length) {
+          setLoaded(true);
+        }
+      }
+    }
+  }, []);
+
+  if (!loaded) return null;
+
+  const pathname = window.location.pathname;
   const localAnimations = animationsByPath[pathname] || [];
   const allAnimations = [...globalAnimations, ...localAnimations];
 
