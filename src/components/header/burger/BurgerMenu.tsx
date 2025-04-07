@@ -71,9 +71,9 @@ const BurgerMenu = () => {
     // бургер возвращается
     gsap.to(burgerRef.current, {
       x: 0,
-      duration: 0.6,
+      duration: 0.5,
       ease: "power2.inOut",
-      delay: 0.25,
+      delay: 0.2,
     });
   };
 

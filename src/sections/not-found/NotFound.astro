@@ -1,0 +1,15 @@
+---
+import LinkButton from "@/components/buttons/LinkButton";
+import "./index.scss";
+---
+
+<section class="hero">
+    <article class="hero__article">  
+        <h1 class="hero__article herotext">
+            <span class="hero__article herotext">Такой страницы не существует</span>
+            <span class="hero__article herotext extra">ошибка 404</span>
+        </h1>
+            <LinkButton text="На главную" href="/" client:idle/>
+    </article>
+    <img src="/backgrounds/main-background.svg" class="main-background"/>
+</section>

@@ -72,6 +72,7 @@
     border-radius: 25px;
     gap: 2rem;
     margin-top: 2rem;
+    box-shadow: -40px -10px 50px #0000005b;
 
     &__image {
       @include flexbox(row);
@@ -96,14 +97,16 @@
         @include no-padding;
         @include ubuntu-title-font(true, left);
         font-size: 2rem;
+        box-shadow: none;
+        background-color: transparent;
       }
 
       .description {
         @include no-padding;
         @include prata-text(true, left);
+        box-shadow: none;
+        background-color: transparent;
       }
-
-      &__button {}
     }
   }
 }
@@ -131,12 +134,14 @@
 
     &__details {
       flex-direction: column;
+
       &__image {}
 
       &__info {
         width: 100%;
         align-items: center;
         padding: 1rem;
+
         .title {
           text-align: center;
         }

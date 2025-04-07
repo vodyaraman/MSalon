@@ -1,4 +1,6 @@
 @use '@/styles/_mixins.scss' as *;
+@import url('https://fonts.googleapis.com/css2?family=Sintony:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 $light: false;
 
@@ -12,21 +14,13 @@ $light: false;
 
   &__article {
     @include flexbox(column);
-    justify-content: flex-start;
-    align-items: flex-start;
+    @include full-parent;
     gap: 1rem;
-    height: 100%;
-    width: 100%;
 
     &.herotext {
       @include flexbox(column);
-      justify-content: flex-start;
-      align-items: flex-start;
       @include no-padding();
-      max-width: 75%;
       height: auto;
-      opacity: 0;
-
       @include ubuntu-title-font($light, left);
       font-size: calc(1.5 * (1vw + 1vh));
       color: $secondary-font-color;
@@ -39,36 +33,17 @@ $light: false;
         z-index: 10;
       }
     }
-
-    .flower {
-      position: absolute;
-      width: 10rem;
-      height: 10rem;
-      z-index: 0;
-      left: 100%;
-      top: -100%;
-    }
-
+    
     &.subtext {
       @include flexbox(column);
       @include no-padding();
       height: auto;
       max-width: 50%;
-      opacity: 0;
 
       @include prata-text($light, left);
       font-size: 1.2rem;
       color: $secondary-font-color;
     }
-  }
-
-  &__showcase {
-    position: absolute;
-    right: 5%;
-    bottom: 0;
-    width: 40%;
-    height: auto;
-    object-fit: cover;
   }
 }
 
@@ -100,15 +75,6 @@ $light: false;
         text-align: center;
         font-size: 1rem
       }
-    }
-
-    &__showcase {
-      @include flexbox(column);
-      width: 100vw;
-      height: 70vh;
-      right: 0;
-      bottom: 0;
-      transform: translateY(0);
     }
   }
 }
