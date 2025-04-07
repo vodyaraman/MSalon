@@ -7,12 +7,13 @@ gsap.registerPlugin(ScrollTrigger);
 export default function AboutAnimation() {
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Анимация заголовка
+      // Заголовок
       gsap.fromTo(
         ".about__title",
-        { opacity: 0 },
+        { opacity: 0, y: 20 },
         {
           opacity: 1,
+          y: 0,
           duration: 1,
           ease: "power2.out",
           scrollTrigger: {
@@ -23,9 +24,27 @@ export default function AboutAnimation() {
         }
       );
 
-      // Первый слайд — выезд слева
+      // Сабтайтл
       gsap.fromTo(
-        ".about__slide--fitst",
+        ".about__subtitle",
+        { opacity: 0, y: 20 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          delay: 0.2,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: ".about__subtitle",
+            start: "top 90%",
+            once: true,
+          },
+        }
+      );
+
+      // Слайд 1 — слева
+      gsap.fromTo(
+        ".about__slide--first",
         { x: -100, opacity: 0 },
         {
           x: 0,
@@ -33,14 +52,14 @@ export default function AboutAnimation() {
           duration: 1,
           ease: "power2.out",
           scrollTrigger: {
-            trigger: ".about__slide--fitst",
+            trigger: ".about__slide--first",
             start: "top 85%",
             once: true,
           },
         }
       );
 
-      // Второй слайд — выезд справа
+      // Слайд 2 — справа
       gsap.fromTo(
         ".about__slide--second",
         { x: 100, opacity: 0 },
@@ -51,6 +70,23 @@ export default function AboutAnimation() {
           ease: "power2.out",
           scrollTrigger: {
             trigger: ".about__slide--second",
+            start: "top 85%",
+            once: true,
+          },
+        }
+      );
+
+      // Слайд 3 — снизу
+      gsap.fromTo(
+        ".about__slide--third",
+        { x: -100, opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
+          duration: 1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: ".about__slide--first",
             start: "top 85%",
             once: true,
           },

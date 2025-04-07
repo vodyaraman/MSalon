@@ -2,47 +2,61 @@
 import slidesData from '@/data/about-slides.json';
 import "./index.scss";
 
-const [slide1, slide2] = [slidesData[1], slidesData[2]];
+import LipsSeparator from "@/assets/icons/lips-separator.svg";
+import SeasorsSeparator from "@/assets/icons/seasors-separator.svg";
+
+const [slide1, slide2, slide3] = [slidesData[0], slidesData[1], slidesData[2]];
 ---
 
 <section class="about" aria-labelledby="about-title">
-  <h1 id="about-title" class="about__title">Почему именно мы?</h1>
+  <h1 id="about-title" class="about__title"><span class="highlighted">О нашем салоне</span></h1>
+  <h2 class="about__subtitle">Мы верим в то, что красота – это не только внешнее преображение, но и внутреннее ощущение счастья и комфорта.</h2>
 
   <article class="about__content">
-    <section class="about__slide about__slide--fitst">
+    <section class="about__slide about__slide--first">
       <div class="image">
         <img
           src={slide1.image}
-          alt="Уютная атмосфера и профессиональный сервис Maria Salon"
+          alt="Опытные мастера Maria Salon"
           loading="lazy"
         />
       </div>
       <div class="about__content description-wrapper">
-        <p class="about__content description">
-          {slide1.text}
-        </p>
+        <p class="title">{slide1.title}</p>
+        <p class="text">{slide1.text}</p>
       </div>
     </section>
+
+    <img class="about__content separator" src={SeasorsSeparator.src} alt="Декоративная иконка ножниц" loading="lazy" />
 
     <section class="about__slide about__slide--second">
       <div class="image">
         <img
           src={slide2.image}
-          alt="Интерьер и философия пространства Maria Salon"
+          alt="Индивидуальный подход в Maria Salon"
           loading="lazy"
         />
       </div>
       <div class="about__content description-wrapper">
-        <p class="about__content description">
-          {slide2.text}
-        </p>
-        {slide2.showButton && (
-          <a href="/staff" class="styled-button">Записаться</a>
-        )}
+        <p class="title">{slide2.title}</p>
+        <p class="text">{slide2.text}</p>
+      </div>
+    </section>
+
+    <img class="about__content separator" src={LipsSeparator.src} alt="Декоративная иконка губ" loading="lazy" />
+
+    <section class="about__slide about__slide--third">
+      <div class="image">
+        <img
+          src={slide3.image}
+          alt="Качественная продукция в Maria Salon"
+          loading="lazy"
+        />
+      </div>
+      <div class="about__content description-wrapper">
+        <p class="title">{slide3.title}</p>
+        <p class="text">{slide3.text}</p>
       </div>
     </section>
   </article>
 </section>
-
-
-{/*<div class="about__fillblock"></div> */} 

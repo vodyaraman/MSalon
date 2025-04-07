@@ -1,30 +1,51 @@
-@use '@/styles/global.scss' as *;
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
-
 .about {
     @include flexbox(column);
     justify-content: center;
     width: 100vw;
     height: auto;
-    padding: 0 14vw;
-    gap: 2rem;
+    padding: $section-padding;
+    gap: 4rem;
     background: $secondary-color;
     z-index: 2;
     box-sizing: border-box;
     overflow: hidden;
 
     &__title {
-        @include no-padding();
-        @include ubuntu-title-font(true, center)
+        @include ubuntu-title-font(true, left);
+        text-transform: none;
+        color: $font-color;
+        font-size: calc(3 * (1vh + 1vw));
+
+        .highlighted {
+            position: relative;
+            display: inline-block;
+            color: #5a2a00;
+
+            &::after {
+                content: "";
+                position: absolute;
+                left: 5%;
+                bottom: -0.15em;
+                width: 100%;
+                height: 0.6em;
+                background-color: #FFE4C5;
+                z-index: -1;
+            }
+        }
     }
-    
+
+    &__subtitle {
+        @include roboto-text(true, center);
+        font-size: calc(1.25 * (1vh + 1vw));
+        padding: 0 5%
+    }
+
     &__content {
         @include no-padding();
         @include flexbox(column);
         width: 100%;
         height: 100%;
-        gap: 2rem;
+        gap: 3rem;
         overflow-x: visible;
     }
 
@@ -33,17 +54,20 @@
         @include full-parent();
         scroll-snap-align: start;
         z-index: 3;
-        gap: 1rem;
-        padding: 2rem;
+        gap: 3rem;
         border-radius: 15px;
-        background-color: $primary-color;
-      
         box-sizing: border-box;
         will-change: transform, opacity;
         transition: opacity 0.6s ease, transform 0.6s ease;
 
         &--second {
             flex-direction: row-reverse;
+
+            .image {
+                img {
+                    transform: perspective(1000px) rotateY(4deg) rotateX(-2deg) !important;
+                }
+            }
         }
 
         .image {
@@ -51,12 +75,11 @@
             @include full-parent;
 
             img {
-                top: -3px;
-                left: -3px;
-                width: 100%;
-                height: 100%;
-                border-radius: 25px;
+                width: 90%;
+                height: 90%;
                 object-fit: cover;
+                transform: perspective(1000px) rotateY(-4deg) rotateX(2deg);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
             }
         }
 
@@ -66,38 +89,21 @@
             justify-content: flex-start;
             @include full-parent();
             padding: 1rem;
-            gap: 1rem
-        }
+            gap: 1rem;
 
-        .description {
-            @include no-padding();
-            @include prata-text(false, left);
-            height: auto;
-        }
+            .title {
+                @include ubuntu-title-font(false, left);
+                font-size: 2rem;
+            }
 
-        .styled-button {
-            @include no-def-styles();
-            background-color: transparent;
-            border: 1px solid #dbd4d4;
-            border-radius: 15px;
-            padding: calc(0.8 * (1vw + 1vh)) calc(2.9 * (1vw + 1vh));
+            .text {
+                @include prata-text(false, left);
+                font-size: 1.5rem;
+            }
 
-            font-family: "Roboto", sans-serif;
-            font-optical-sizing: auto;
-            font-weight: 600;
-            font-style: normal;
-            color: #cecbcb;
-            font-size: 1rem;
-            text-align: center;
-            text-transform: uppercase;
-
-            cursor: pointer;
-
-            transition: all 0.5s ease-in-out;
-
-            &:hover {
-                border: 1px solid #ffffff;
-                color: #ffffff;
+            .title,
+            .text {
+                color: $font-color-text;
             }
         }
     }
@@ -129,17 +135,16 @@
 
             .description-wrapper {
                 align-items: center;
-            }
 
-            .description {
-                text-align: center;
-                font-size: 0.85rem;
-            }
+                .title {
+                    text-align: center;
+                    font-size: 1.1rem;
+                }
 
-            .styled-button {
-                width: 80%;
-
-                &:hover {}
+                .text {
+                    text-align: center;
+                    font-size: 0.85rem;
+                }
             }
         }
 

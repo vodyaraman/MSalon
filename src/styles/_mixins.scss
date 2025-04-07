@@ -51,6 +51,9 @@
   text-transform: uppercase;
   letter-spacing: 0.02em;
   text-align: $align;
+
+  width: 100%;
+  @include no-padding();
 }
 
 @mixin prata-text($light: false, $align: left) {
@@ -62,6 +65,9 @@
   color: if($light, $font-color-text, $secondary-font-color); 
   font-size: 1rem;
   text-align: $align;
+
+  width: 100%;
+  @include no-padding();
 }
 
 @mixin roboto-text($light: false, $align: left) {
@@ -73,4 +79,7 @@
   color: if($light, $font-color-text, $secondary-font-color);
   text-align: $align;
   letter-spacing: 0.01em;
+
+  width: 100%;
+  @include no-padding();
 }

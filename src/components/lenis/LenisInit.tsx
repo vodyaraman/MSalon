@@ -6,9 +6,9 @@ export default function LenisInit() {
 		if (typeof window === "undefined") return;
 	
 		// ⛔️ Принудительно сбрасываем scroll до инициализации Lenis
-		window.scrollTo(0, 0);
-		document.documentElement.scrollTop = 0;
-		document.body.scrollTop = 0;
+		// window.scrollTo(0, 0);
+		// document.documentElement.scrollTop = 0;
+		// document.body.scrollTop = 0;
 	
 		// Уничтожаем предыдущий экземпляр, если он существует
 		if (window.lenis && typeof window.lenis.destroy === "function") {
