@@ -17,7 +17,9 @@ $font-header-burger: calc(0.8 * (1vw + 1vh));
     width: 100vw;
     height: 60px;
     background-color: #00000000;
-    padding: 0 14vw;
+    padding: $section-padding;
+    padding-top: 0;
+    padding-bottom: 0;
     box-sizing: border-box;
     z-index: 100;
 

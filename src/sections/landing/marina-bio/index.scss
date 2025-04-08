@@ -1,11 +1,12 @@
 .marina {
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     overflow-x: auto;
     background-color: $primary-color;
   
     &__scroller {
       display: flex;
+      height: 100%;
       width: max-content;
     }
   

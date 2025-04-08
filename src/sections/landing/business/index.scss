@@ -95,22 +95,9 @@
     .business {
         height: auto;
         padding: 5vh 1px;
-        &__title {}
     
         &__content {
             @include flexbox(column);
-        }
-    
-        &__card {}
-    
-        &__form {
-            input {}
-    
-            textarea {}
-    
-            button {
-                width: 100%;
-            }
         }
     }
     
