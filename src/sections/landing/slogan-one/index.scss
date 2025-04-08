@@ -1,0 +1,46 @@
+.slogan {
+  @include flexbox(column);
+  background-color: $primary-color;
+  padding: $section-padding;
+  text-align: center;
+
+  .slogan__quote {
+    width: 2.5rem;
+    height: auto;
+    fill: #000;
+
+    position: absolute;
+
+    &--left {
+      top: 1rem;
+      left: 1rem;
+    }
+
+    &--right {
+      bottom: 1rem;
+      right: 1rem;
+      transform: scaleX(-1);
+    }
+  }
+
+  .slogan__text {
+    @include flexbox(column);
+    @include ubuntu-title-font(true, center);
+    font-size: calc(2 * (1vh + 1vw));
+    color: $secondary-font-color;
+    padding: 10vh 0;
+    box-sizing: border-box;
+
+    .slogan__accent {
+      display: block;
+      font-weight: 500;
+      color: $secondary-font-color;
+      margin-bottom: 0.5rem;
+    }
+
+    .slogan__continuation {
+      display: block;
+      opacity: 0.6;
+    }
+  }
+}

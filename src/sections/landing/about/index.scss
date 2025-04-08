@@ -12,7 +12,7 @@
     border-radius: 100px 100px 0 0;
 
     &__title {
-        @include tenor-title(true, left);
+        @include tenor-title(true, center);
         text-transform: none;
         color: $font-color;
         font-size: calc(2.75 * (1vh + 1vw));
