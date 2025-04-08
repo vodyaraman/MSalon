@@ -6,7 +6,7 @@
     @include flexbox(column);
     width: 100vw;
     height: 80vh;
-    padding: 20px 14vw;
+    padding: $section-padding;
     background-color: $secondary-color;
 
     &__title {

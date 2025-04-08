@@ -1,16 +1,19 @@
 ---
-import slidesData from '@/data/about-slides.json';
+import slidesData from "@/data/about-slides.json";
 import "./index.scss";
 
 import LipsSeparator from "@/assets/icons/lips-separator.svg";
 import SeasorsSeparator from "@/assets/icons/seasors-separator.svg";
 
 const [slide1, slide2, slide3] = [slidesData[0], slidesData[1], slidesData[2]];
+
+//  <h2 class="about__subtitle">Мы верим в то, что красота – это не только внешнее преображение, но и внутреннее ощущение счастья и комфорта.</h2>
 ---
 
 <section class="about" aria-labelledby="about-title">
-  <h1 id="about-title" class="about__title"><span class="highlighted">О нашем салоне</span></h1>
-  <h2 class="about__subtitle">Мы верим в то, что красота – это не только внешнее преображение, но и внутреннее ощущение счастья и комфорта.</h2>
+  <h1 id="about-title" class="about__title">
+    <span class="highlighted">О нашем салоне</span>
+  </h1>
 
   <article class="about__content">
     <section class="about__slide about__slide--first">
@@ -22,12 +25,17 @@ const [slide1, slide2, slide3] = [slidesData[0], slidesData[1], slidesData[2]];
         />
       </div>
       <div class="about__content description-wrapper">
-        <p class="title">{slide1.title}</p>
+        <p class="title"><span class="highlighted">{slide1.title}</span></p>
         <p class="text">{slide1.text}</p>
       </div>
     </section>
 
-    <img class="about__content separator" src={SeasorsSeparator.src} alt="Декоративная иконка ножниц" loading="lazy" />
+    <img
+      class="about__content separator"
+      src={SeasorsSeparator.src}
+      alt="Декоративная иконка ножниц"
+      loading="lazy"
+    />
 
     <section class="about__slide about__slide--second">
       <div class="image">
@@ -38,12 +46,17 @@ const [slide1, slide2, slide3] = [slidesData[0], slidesData[1], slidesData[2]];
         />
       </div>
       <div class="about__content description-wrapper">
-        <p class="title">{slide2.title}</p>
+        <p class="title"><span class="highlighted">{slide2.title}</span></p>
         <p class="text">{slide2.text}</p>
       </div>
     </section>
 
-    <img class="about__content separator" src={LipsSeparator.src} alt="Декоративная иконка губ" loading="lazy" />
+    <img
+      class="about__content separator"
+      src={LipsSeparator.src}
+      alt="Декоративная иконка губ"
+      loading="lazy"
+    />
 
     <section class="about__slide about__slide--third">
       <div class="image">
@@ -54,9 +67,10 @@ const [slide1, slide2, slide3] = [slidesData[0], slidesData[1], slidesData[2]];
         />
       </div>
       <div class="about__content description-wrapper">
-        <p class="title">{slide3.title}</p>
+        <p class="title"><span class="highlighted">{slide3.title}</span></p>
         <p class="text">{slide3.text}</p>
       </div>
     </section>
   </article>
 </section>
+

@@ -5,7 +5,7 @@
 .business {
     @include flexbox(column);
     width: 100vw;
-    padding: 5vh 14vw 10vh 14vw;
+    padding: $section-padding;
     background-color: $secondary-color;
     gap: 2rem;
 
@@ -114,4 +114,10 @@
         }
     }
     
+}
+
+@media (min-width: 1400px) {
+    .business {
+        padding: 5vh 16vw;
+    }
 }

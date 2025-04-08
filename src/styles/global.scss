@@ -49,6 +49,23 @@ main {
   }
 }
 
+.highlighted {
+  position: relative;
+  display: inline-block;
+  color: #5a2a00;
+
+  &::after {
+      content: "";
+      position: absolute;
+      left: 5%;
+      bottom: -0.15em;
+      width: 100%;
+      height: 0.6em;
+      background-color: #FFE4C5;
+      z-index: -1;
+  }
+}
+
 * {
   scrollbar-width: thin; /* для Firefox */
   scrollbar-color: #211311 transparent;

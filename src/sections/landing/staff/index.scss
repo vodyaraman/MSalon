@@ -1,11 +1,10 @@
 @use '@/styles/_mixins.scss' as *;
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 .staff {
   @include flexbox(column);
   width: 100vw;
   height: auto;
-  padding: 5vh 14vw 0 14vw;
+  padding: $section-padding;
   background-color: $secondary-color;
 
   &__content {
