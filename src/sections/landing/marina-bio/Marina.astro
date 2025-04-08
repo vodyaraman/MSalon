@@ -1,0 +1,54 @@
+---
+import './index.scss';
+import avatarLeft from '@/assets/photos/marina/avatar.png';
+---
+
+<section class="marina" aria-labelledby="marina-name">
+  <div class="marina__scroller">
+    <div class="marina__slide">
+      <div class="marina__left">
+        <div class="marina__content">
+          <h2 id="marina-name" class="marina__name">
+            Севостьянова<br />
+            Марина<br />
+            Агвановна
+          </h2>
+          <p class="marina__role">
+            владелец салона красоты и мастер<br />
+            перманентного макияжа
+          </p>
+        </div>
+        <div class="marina__photo-oval">
+          <img src={avatarLeft.src} alt="Севостьянова Марина" />
+        </div>
+      </div>
+
+      <div class="marina__center">
+        <div class="marina__feature">
+          <h3>Мастерство, признанное Европой</h3>
+          <p>Победитель Название конкурса в номинации Номинация или специализация</p>
+        </div>
+        <div class="marina__feature">
+          <h3>Безупречный вкус и чувство стиля</h3>
+          <p>Она всегда в курсе последних тенденций в индустрии красоты и помогает своим клиентам найти свой неповторимый образ</p>
+        </div>
+        <div class="marina__feature">
+          <h3>Более Число лет опыта</h3>
+          <p>Она прошла путь от начинающего мастера до признанного эксперта</p>
+        </div>
+        <div class="marina__feature">
+          <h3>Вдохновение для команды</h3>
+          <p>Ее команда – это команда единомышленников, разделяющих ее страсть к красоте</p>
+        </div>
+      </div>
+
+      <div class="marina__right">
+        <div class="marina__photo-box">
+          <img src={avatarLeft.src} alt="Севостьянова Марина (видео)" />
+          <div class="marina__play">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
