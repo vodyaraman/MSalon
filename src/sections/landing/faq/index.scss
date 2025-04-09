@@ -1,0 +1,54 @@
+.faq {
+    @include flexbox(column);
+    background-color: $secondary-color;
+    padding: $section-padding;
+    align-items: flex-start;
+    gap: 3rem;
+  
+    &__title {
+      @include tenor-title(false, left);
+      color: $font-color;
+  
+      position: relative;
+  
+      &::after {
+        content: '';
+        display: block;
+        width: 12rem;
+        height: 0.6rem;
+        background-color: #fddbb6;
+        position: absolute;
+        bottom: 0.2rem;
+        left: 0;
+        z-index: -1;
+      }
+    }
+  
+    &__item {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      max-width: 1000px;
+    }
+  
+    &__question {
+      @include roboto-text(true, left);
+      font-size: 1.75rem;
+      color: $font-color-text;
+      font-weight: 700;
+    }
+  
+    &__number {
+      color: $primary-color;
+      font-weight: 700;
+      margin-right: 0.3rem;
+    }
+  
+    &__answer {
+      @include prata-text(false, left);
+      color: $font-color-text;
+      font-size: 1.5rem;
+      line-height: 1.6;
+    }
+  }
+  

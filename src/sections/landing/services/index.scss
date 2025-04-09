@@ -35,7 +35,7 @@
             width: 100%;
             height: auto;
             transform: scale(1.2);
-            transition: transform 1s ease;
+            transition: transform 1.5s ease;
             box-shadow: 9px 9px 9px #00000046;
     
             &:hover {
@@ -54,6 +54,7 @@
 
     &__footer {
         position: relative;
+        overflow: hidden;
 
         img {
             width: 100%;
@@ -68,11 +69,11 @@
         background-color: $secondary-color;
         color: $primary-color;
         font-weight: 600;
-        padding: 1.5rem;
+        padding: 1rem 3rem;
         border-radius: 50px;
         border: none;
         text-transform: uppercase;
-        font-size: 0.85rem;
+        font-size: 1.7rem;
         cursor: pointer;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }

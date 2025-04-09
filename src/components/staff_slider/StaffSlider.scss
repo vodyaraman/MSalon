@@ -39,8 +39,7 @@
 			box-shadow: -30px 0px 60px rgba(0, 0, 0, 0.63);
 
 			img {
-				width: 25rem;
-				height: 30rem;
+				@include full-parent;
 				object-fit: cover;
 				transform: translateX(-15vw)
 			}
