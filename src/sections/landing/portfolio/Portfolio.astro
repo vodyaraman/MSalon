@@ -1,41 +1,18 @@
 ---
-import "./index.scss"
+import './index.scss';
+import PortfolioSlider from '@/components/portfolio_slider/PortfolioSlider';
 ---
 
-<section class="portfolio">
-    <article class="portfolio__content">
-        <h2 class="portfolio__title">Наши работы</h2>
-        <div class="portfolio__grid">
-            <div class="portfolio__item portfolio__item--large">
-                <figure>
-                    <img src="/assets/about-action.png" alt="Полное преображение образа" />
-                    <figcaption>Полное преображение образа</figcaption>
-                </figure>
-            </div>
-            <div class="portfolio__item">
-                <figure>
-                    <img src="/assets/about-action.png" alt="Свадебная укладка и макияж" />
-                    <figcaption>Свадебная укладка и макияж</figcaption>
-                </figure>
-            </div>
-            <div class="portfolio__item">
-                <figure>
-                    <img src="/assets/about-action.png" alt="SPA-уход для волос" />
-                    <figcaption>SPA-уход для волос</figcaption>
-                </figure>
-            </div>
-            <div class="portfolio__item">
-                <figure>
-                    <img src="/assets/about-action.png" alt="Модный маникюр с дизайном" />
-                    <figcaption>Модный маникюр с дизайном</figcaption>
-                </figure>
-            </div>
-            <div class="portfolio__item">
-                <figure>
-                    <img src="/assets/about-action.png" alt="Брови и ламинирование ресниц" />
-                    <figcaption>Брови и ламинирование ресниц</figcaption>
-                </figure>
-            </div>
-        </div>
-    </article>
+<section class="portfolio" aria-labelledby="portfolio-title">
+  <h2 id="portfolio-title" class="portfolio__title">Наши работы</h2>
+
+  <div class="portfolio__slider-wrapper">
+    <PortfolioSlider client:only/>
+  </div>
+
+  <p class="portfolio__description">
+    Наша команда мастеров – настоящие художники, которые помогут вам подчеркнуть вашу естественную красоту и создать неповторимый образ.
+  </p>
+
+  <p class="portfolio__cta">Готовы к преображению?</p>
 </section>

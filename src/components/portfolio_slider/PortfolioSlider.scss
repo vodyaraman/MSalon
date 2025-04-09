@@ -1,0 +1,46 @@
+.portfolio-slider {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    overflow: hidden;
+    width: 100%;
+    padding: 2rem 0;
+  }
+  
+  .portfolio-slider__wrapper {
+    overflow: hidden;
+    width: 100%;
+  }
+  
+  .portfolio-slider__row {
+    display: flex;
+    gap: 2vw;
+    width: max-content;
+    will-change: transform;
+  
+    &--top {
+      justify-content: flex-start;
+    }
+  
+    &--bottom {
+      justify-content: flex-end;
+    }
+  }
+  
+  .portfolio-slider__item {
+    flex-shrink: 0;
+    width: 33vw;
+    max-width: 350px;
+    aspect-ratio: 1 / 1;
+    border-radius: 16px;
+    overflow: hidden;
+  
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 16px;
+    }
+  }
+  
