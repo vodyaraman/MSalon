@@ -1,15 +1,43 @@
 ---
-import SmoothScrollEffect from "@/components/animations/SmoothScrollEffect.tsx";
-import "./index.scss";
-import ServicesSlider from "@/components/services_slider/ServicesSlider";
+import './index.scss';
+
+import service1 from '@/assets/photos/services/permanent.png';
+import service2 from '@/assets/photos/services/brows.png';
+import service3 from '@/assets/photos/services/device.png';
+import service4 from '@/assets/photos/services/injection.png';
+import serviceFooter from '@/assets/photos/services/service-footer.webp';
 ---
 
-<section class="services">
-  <h2 class="services__title">Услуги</h2>
+<section class="services" aria-labelledby="services-title">
+  <h2 id="services-title" class="services__title">Наши услуги</h2>
 
   <div class="services__content">
-    <ServicesSlider client:only/>
+    <div class="services__column services__column--left">
+      <div class="services__card services__card--top">
+        <img src={service1.src} alt="Перманент и татуаж" />
+        <span class="services__label">Перманент и татуаж</span>
+      </div>
+      <div class="services__card services__card--bottom">
+        <img src={service3.src} alt="Аппаратная косметология" />
+        <span class="services__label">Аппаратная косметология</span>
+      </div>
+    </div>
+
+    <div class="services__column services__column--right">
+      <div class="services__card services__card--bottom">
+        <img src={service2.src} alt="Брови и ресницы" />
+        <span class="services__label">Брови и ресницы</span>
+      </div>
+      <div class="services__card services__card--top">
+        <img src={service4.src} alt="Инъекционная косметология" />
+        <span class="services__label">Инъекционная косметология</span>
+      </div>
+    </div>
   </div>
 </section>
 
-<SmoothScrollEffect client:only />
+<div class="services__footer">
+  <img src={serviceFooter.src} alt="Оборудование и работа мастера" />
+  <button class="services__button">все услуги</button>
+</div>
+
