@@ -5,6 +5,7 @@ import HeaderAnimation from "@/components/header/Animation";
 import ServicesAnimation from "@/sections/landing/services/Animation";
 import AboutAnimation from "@/sections/landing/about/Animation";
 import StaffAnimation from "@/sections/landing/staff/Animation";
+import CtaAnimation from "@/sections/landing/cta/Animation";
 import GeoAnimation from "@/sections/landing/geo/Animation";
 import BusinessAnimation from "@/sections/landing/business/Animation";
 import MastersHeroAnimation from "@/components/staff_slider/Animation";
@@ -21,6 +22,7 @@ const animationsByPath: Record<string, JSX.Element[]> = {
     <ServicesAnimation key="services" />,
     <AboutAnimation key="about" />,
     <StaffAnimation key="staff" />,
+    <CtaAnimation key="cta" />,
     <GeoAnimation key="geo" />,
     <BusinessAnimation key="business" />,
   ],
