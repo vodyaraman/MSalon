@@ -1,51 +1,53 @@
 ---
 import './index.scss';
-import avatarLeft from '@/assets/photos/team-lead/avatar.png'
+import avatarLeft from '@/assets/photos/team-lead/avatar.png';
+import Animation from './Animation';
 ---
 
 <section class="team-lead" aria-labelledby="team-lead-name">
   <div class="team-lead__scroller">
-      <div class="team-lead__left">
-        <div class="team-lead__content">
-          <h2 id="team-lead-name" class="team-lead__name">
-            Севостьянова<br />
-            Марина<br />
-            Агвановна
-          </h2>
-          <p class="team-lead__role">
-            владелец салона красоты и мастер перманентного макияжа
-          </p>
-        </div>
-        <div class="team-lead__photo-oval">
-          <img src={avatarLeft.src} alt="Севостьянова Марина" />
-        </div>
+    <div class="team-lead__left">
+      <div class="team-lead__content">
+        <h2 id="team-lead-name" class="team-lead__name">
+          Севостьянова<br />
+          Марина<br />
+          Агвановна
+        </h2>
+        <p class="team-lead__role">владелец салона красоты и мастер перманентного макияжа</p>
       </div>
+      <div class="team-lead__photo-oval">
+        <img src={avatarLeft.src} alt="Севостьянова Марина" />
+      </div>
+    </div>
 
-      <div class="team-lead__center">
-        <div class="team-lead__feature">
-          <h3>Мастерство, признанное Европой</h3>
-          <p>Победитель Название конкурса в номинации Номинация или специализация</p>
-        </div>
-        <div class="team-lead__feature">
-          <h3>Безупречный вкус и чувство стиля</h3>
-          <p>Она всегда в курсе последних тенденций в индустрии красоты и помогает своим клиентам найти свой неповторимый образ</p>
-        </div>
-        <div class="team-lead__feature team-lead__feature--bottom">
-          <h3>Более Число лет опыта</h3>
-          <p>Она прошла путь от начинающего мастера до признанного эксперта</p>
-        </div>
-        <div class="team-lead__feature team-lead__feature--bottom">
-          <h3>Вдохновение для команды</h3>
-          <p>Ее команда – это команда единомышленников, разделяющих ее страсть к красоте</p>
-        </div>
+    <div class="team-lead__center">
+      <div class="team-lead__feature">
+        <h3>Мастерство, признанное Европой</h3>
+        <p>Победитель Название конкурса в номинации Номинация или специализация</p>
       </div>
+      <div class="team-lead__feature">
+        <h3>Безупречный вкус и чувство стиля</h3>
+        <p>
+          Она всегда в курсе последних тенденций в индустрии красоты и помогает своим клиентам найти
+          свой неповторимый образ
+        </p>
+      </div>
+      <div class="team-lead__feature team-lead__feature--bottom">
+        <h3>Более Число лет опыта</h3>
+        <p>Она прошла путь от начинающего мастера до признанного эксперта</p>
+      </div>
+      <div class="team-lead__feature team-lead__feature--bottom">
+        <h3>Вдохновение для команды</h3>
+        <p>Ее команда – это команда единомышленников, разделяющих ее страсть к красоте</p>
+      </div>
+    </div>
 
-      <div class="team-lead__right">
-        <div class="team-lead__photo-box">
-          <img src={avatarLeft.src} alt="Севостьянова Марина (видео)" />
-          <div class="team-lead__play">
-          </div>
-        </div>
+    <div class="team-lead__right">
+      <div class="team-lead__photo-box">
+        <img src={avatarLeft.src} alt="Севостьянова Марина (видео)" />
+        <div class="team-lead__play"></div>
       </div>
+    </div>
   </div>
+  <Animation client:only />
 </section>
