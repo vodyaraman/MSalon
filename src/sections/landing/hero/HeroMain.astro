@@ -7,19 +7,44 @@ import LinkButton from "@/components/buttons/LinkButton";
 ---
 
 <section class="hero">
-  <article class="hero__article">  
+  <article class="hero__article">
     <h1 id="hero-title" class="hero__article herotext">
       <span class="hero__article herotext">Darina's beauty salon</span>
-      <span class="hero__article herotext extra">Красота не требует жертв — только визита.</span>
-      <LinkButton text="Записаться" href="/booking" client:only />
+      <span class="hero__article herotext extra"
+        >Красота не требует жертв — только визита.</span
+      >
     </h1>
-    <span id="hero-subtext" class="hero__article subtext">
-      12 лет на рынке || более 1000+ отзывов || сильнейшая команда
-    </span>    
+
+    <a class="hero-button"><span class="hero-button-text">Записаться</span></a>
+
+    <span class="hero__article subtext">
+      <span id="stat-experience" class="subtext__item">
+        <span class="number-wrapper"
+          ><span class="subtext__number">10</span>+</span
+        > Лет опыта
+      </span>
+      <span id="stat-clients" class="subtext__item">
+        <span class="number-wrapper"
+          ><span class="subtext__number">5000</span>+</span
+        > Довольных клиентов
+      </span>
+      <span id="stat-masters" class="subtext__item">
+        <span class="number-wrapper"
+          ><span class="subtext__number">15</span></span
+        > Мастеров
+      </span>
+    </span>
   </article>
 
-  <img src={HeroBlur.src} alt="Декоративное размытие" class="main-background-blur" />
-  <img src={HeroImage.src} alt="Фирменный макияж Marina" class="hero__showcase" />
+  <img
+    src={HeroBlur.src}
+    alt="Декоративное размытие"
+    class="main-background-blur"
+  />
+  <img
+    src={HeroImage.src}
+    alt="Фирменный макияж Marina"
+    class="hero__showcase"
+  />
   <img src="/backgrounds/main-background.svg" class="main-background" />
 </section>
-

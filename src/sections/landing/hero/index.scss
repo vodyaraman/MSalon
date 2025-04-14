@@ -6,8 +6,7 @@ $light: false;
   @include flexbox(row);
   width: 100vw;
   height: 100vh;
-  padding: $section-padding;
-  padding-top: calc(2rem + 4vh + 4vw);
+  padding: calc(2rem + 4vh + 4vw) 11vw 0 11vw;
   box-sizing: border-box;
   overflow: hidden;
   perspective: 1200px;
@@ -26,44 +25,79 @@ $light: false;
       justify-content: flex-start;
       align-items: flex-start;
       @include no-padding();
-      max-width: 75%;
+      max-width: 85%;
       height: auto;
       opacity: 0;
 
       @include ubuntu-title-font($light, left);
-      font-size: calc(1.75 * (1vw + 1vh));
+      font-size: calc(2 * (1vw + 1vh));
       color: $secondary-font-color;
 
       &.extra {
-        font-size: calc(3.5 * (1vw + 1vh));
-        line-height: calc(3.5 * (1vw + 1vh));
+        font-size: calc(4 * (1vw + 1vh));
+        line-height: calc(4 * (1vw + 1vh));
         letter-spacing: -0.35vw;
-        text-shadow: unset !important;
         z-index: 10;
+        text-shadow: $text-shadow;
       }
     }
 
-    .flower {
-      position: absolute;
-      width: 10rem;
-      height: 10rem;
-      z-index: 0;
-      left: 100%;
-      top: -100%;
+    .hero-button {
+      @include no-def-styles;
+      @include flexbox(row);
+      @include roboto-text($light, center);
+      width: 60%;
+      border-radius: 25px;
+      border: 1px solid $secondary-color;
+      padding: 1rem 2rem;
+      cursor: pointer;
+
+      .hero-button-text {
+        transition: all 0.5s ease;
+      }
+
+      &:hover {
+        filter: brightness(1.5);
+
+        .hero-button-text {
+          scale: 1.05;
+        }
+      }
     }
 
     &.subtext {
-      @include flexbox(column);
+      @include flexbox(row);
+      width: 100%;
+      justify-content: flex-start;
+      position: absolute;
+      gap: 2rem;
+      bottom: 15%;
       @include no-padding();
       height: auto;
-      max-width: 50%;
       opacity: 0;
-
-      @include prata-text($light, left);
-      font-size: 1.2rem;
       color: $secondary-font-color;
+
+      .subtext {
+        &__item {
+          @include flexbox(column);
+          font-size: 2rem;
+
+          .number-wrapper {
+            @include flexbox(row);
+            font-size: 4rem;
+            gap: 5px;
+          }
+
+          &__number {
+            font-weight: bold;
+            line-height: 1;
+            position: relative;
+          }
+        }
+      }
     }
   }
+
 
   &__showcase {
     position: absolute;
@@ -82,7 +116,7 @@ $light: false;
   }
 
   .herotext,
-  .subtext {
+  .subtext__item {
     transform: rotateX(var(--rotX, 0deg)) rotateY(var(--rotY, 0deg));
     transform-style: preserve-3d;
     will-change: transform;

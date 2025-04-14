@@ -11,6 +11,7 @@ import GeoAnimation from "@/sections/landing/geo/Animation";
 import BusinessAnimation from "@/sections/landing/business/Animation";
 import MastersHeroAnimation from "@/components/staff_slider/Animation";
 import HeroTiltScript from "@/sections/landing/hero/ImpovedAnimation";
+import HeroNumberSpin from "@/sections/landing/hero/HeroNumberSpin";
 
 const globalAnimations: JSX.Element[] = [
   <HeaderAnimation key="global-header" />,
@@ -20,6 +21,7 @@ const animationsByPath: Record<string, JSX.Element[]> = {
   "/": [
     <HeroTextAnimation key="hero" />,
     <HeroTiltScript key="hero-improved" />,
+    <HeroNumberSpin key="hero-spin" />,
     <ServicesAnimation key="services" />,
     // <TeamLeadAnimation key="team" />,
     <AboutAnimation key="about" />,
