@@ -6,9 +6,11 @@ $light: false;
   @include flexbox(row);
   width: 100vw;
   height: 100vh;
-  padding: calc(2rem + 4vh + 4vw) 14vw 0 14vw;
+  padding: $section-padding;
+  padding-top: calc(2rem + 4vh + 4vw);
   box-sizing: border-box;
   overflow: hidden;
+  perspective: 1200px;
 
   &__article {
     @include flexbox(column);
@@ -17,6 +19,7 @@ $light: false;
     gap: 1rem;
     height: 100%;
     width: 100%;
+    transform-style: preserve-3d;
 
     &.herotext {
       @include flexbox(column);
@@ -28,12 +31,12 @@ $light: false;
       opacity: 0;
 
       @include ubuntu-title-font($light, left);
-      font-size: calc(1.5 * (1vw + 1vh));
+      font-size: calc(1.75 * (1vw + 1vh));
       color: $secondary-font-color;
 
       &.extra {
-        font-size: calc(3.3 * (1vw + 1vh));
-        line-height: calc(3.3 * (1vw + 1vh));
+        font-size: calc(3.5 * (1vw + 1vh));
+        line-height: calc(3.5 * (1vw + 1vh));
         letter-spacing: -0.35vw;
         text-shadow: unset !important;
         z-index: 10;
@@ -68,6 +71,22 @@ $light: false;
     bottom: 0;
     height: 80vh;
     object-fit: cover;
+  }
+
+  .main-background-blur {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 100vh;
+    object-fit: cover;
+  }
+
+  .herotext,
+  .subtext {
+    transform: rotateX(var(--rotX, 0deg)) rotateY(var(--rotY, 0deg));
+    transform-style: preserve-3d;
+    will-change: transform;
+    transition: transform 0.2s ease;
   }
 }
 

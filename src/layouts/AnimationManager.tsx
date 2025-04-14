@@ -10,6 +10,7 @@ import CtaAnimation from "@/sections/landing/cta/Animation";
 import GeoAnimation from "@/sections/landing/geo/Animation";
 import BusinessAnimation from "@/sections/landing/business/Animation";
 import MastersHeroAnimation from "@/components/staff_slider/Animation";
+import HeroTiltScript from "@/sections/landing/hero/ImpovedAnimation";
 
 const globalAnimations: JSX.Element[] = [
   <HeaderAnimation key="global-header" />,
@@ -18,6 +19,7 @@ const globalAnimations: JSX.Element[] = [
 const animationsByPath: Record<string, JSX.Element[]> = {
   "/": [
     <HeroTextAnimation key="hero" />,
+    <HeroTiltScript key="hero-improved" />,
     <ServicesAnimation key="services" />,
     // <TeamLeadAnimation key="team" />,
     <AboutAnimation key="about" />,

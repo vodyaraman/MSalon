@@ -1,22 +1,25 @@
 ---
+import HeroImage from "@/assets/photos/team-lead/hero.png";
+import HeroBlur from "@/assets/photos/hero/hero-blur.svg";
 import "./index.scss";
+import HeroTiltScript from "./ImpovedAnimation";
+import LinkButton from "@/components/buttons/LinkButton";
 ---
 
 <section class="hero">
-    <article class="hero__article">  
-        <h1 class="hero__article herotext">
-            <span class="hero__article herotext">Я переделаю</span>
-            <span class="hero__article herotext">Я переделаю</span>
-            <span class="hero__article herotext">Я переделаю</span>
-            <span class="hero__article herotext">Я переделаю</span>
-            <span class="hero__article herotext extra">Я переделаю скоро</span>
-        </h1>
-        <span class="hero__article subtext">
-            Эту секцию переделаю скоро
-            <span class="hero__article herotext">Я переделаю</span>
-            <span class="hero__article herotext">и это переделаю</span>
-        </span>
-    </article>
-    <img src="/assets/hero-woman.svg" alt="Фирменный макияж Marina" class="hero__showcase"/>
-    <img src="/backgrounds/main-background.svg" class="main-background"/>
+  <article class="hero__article">  
+    <h1 id="hero-title" class="hero__article herotext">
+      <span class="hero__article herotext">Darina's beauty salon</span>
+      <span class="hero__article herotext extra">Красота не требует жертв — только визита.</span>
+      <LinkButton text="Записаться" href="/booking" client:only />
+    </h1>
+    <span id="hero-subtext" class="hero__article subtext">
+      12 лет на рынке || более 1000+ отзывов || сильнейшая команда
+    </span>    
+  </article>
+
+  <img src={HeroBlur.src} alt="Декоративное размытие" class="main-background-blur" />
+  <img src={HeroImage.src} alt="Фирменный макияж Marina" class="hero__showcase" />
+  <img src="/backgrounds/main-background.svg" class="main-background" />
 </section>
+

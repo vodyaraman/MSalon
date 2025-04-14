@@ -32,7 +32,6 @@ export default function TeamLeadAnimation() {
               return `+=${endPosition}`;
             },
             scrub: 1,
-            markers: true,
             pin: true,
           },
         })
