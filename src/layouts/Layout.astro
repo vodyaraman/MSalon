@@ -1,14 +1,14 @@
 ---
-import LenisInit from "../components/lenis/LenisInit";
-import "../styles/global.scss";
-import { ClientRouter } from "astro:transitions";
-import AnimationManager from "./AnimationManager";
+import LenisInit from '../components/lenis/LenisInit';
+import '../styles/global.scss';
+import { ClientRouter } from 'astro:transitions';
+import AnimationManager from './AnimationManager';
 
 const {
-	title = "Салон красоты Марины Севостьяновой",
-	description = "Добро пожаловать в Maria Salon — сеть современных салонов красоты в Москве! Мы работаем только с премиальной косметикой и индивидуальным подходом к каждому клиенту. Посетите наши салоны и откройте для себя мир стиля, роскоши и гармонии. Ваше преображение начинается здесь!",
-	keywords = "Салон красоты, перманентный макияж и тату, уход за бровями и ресницами, аппаратная косметология, омоложение, лифтинг в Москве, Россия",
-	locale = "ru",
+	title = 'Салон красоты Марины Севостьяновой',
+	description = 'Добро пожаловать в Maria Salon — сеть современных салонов красоты в Москве! Мы работаем только с премиальной косметикой и индивидуальным подходом к каждому клиенту. Посетите наши салоны и откройте для себя мир стиля, роскоши и гармонии. Ваше преображение начинается здесь!',
+	keywords = 'Салон красоты, перманентный макияж и тату, уход за бровями и ресницами, аппаратная косметология, омоложение, лифтинг в Москве, Россия',
+	locale = 'ru',
 } = Astro.props;
 ---
 
@@ -24,10 +24,7 @@ const {
 		<!-- Open Graph мета-теги для соцсетей -->
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
-		<meta
-			property="og:locale"
-			content={locale === "ru" ? "ru_RU" : "en_US"}
-		/>
+		<meta property="og:locale" content={locale === 'ru' ? 'ru_RU' : 'en_US'} />
 		<meta property="og:image" content="/seo/og-image.png" />
 		<meta property="og:image:width" content="1200" />
 		<meta property="og:image:height" content="630" />
@@ -36,9 +33,9 @@ const {
 	</head>
 	<body>
 		<main transition:animate="slide">
-			<LenisInit client:only/>
+			<LenisInit client:only />
 			<slot />
-			<AnimationManager client:only="react"/>
+			<AnimationManager client:only="react" />
 		</main>
 	</body>
 </html>

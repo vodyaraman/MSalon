@@ -2,6 +2,7 @@ import { useEffect, useState, type JSX } from "react";
 
 import HeroTextAnimation from "@/sections/landing/hero/Animation";
 import HeaderAnimation from "@/components/header/Animation";
+import TeamLeadAnimation from "@/sections/landing/team-lead/Animation";
 import ServicesAnimation from "@/sections/landing/services/Animation";
 import AboutAnimation from "@/sections/landing/about/Animation";
 import StaffAnimation from "@/sections/landing/staff/Animation";
@@ -16,18 +17,19 @@ const globalAnimations: JSX.Element[] = [
 ];
 
 const animationsByPath: Record<string, JSX.Element[]> = {
-  "/": 
-  [
-    <HeroTextAnimation key="hero" />,
-    <ServicesAnimation key="services" />,
-    <AboutAnimation key="about" />,
-    <StaffAnimation key="staff" />,
-    <CtaAnimation key="cta" />,
-    <GeoAnimation key="geo" />,
-    <BusinessAnimation key="business" />,
-  ],
+  "/":
+    [
+      <HeroTextAnimation key="hero" />,
+      <ServicesAnimation key="services" />,
+      // <TeamLeadAnimation key="team" />,
+      <AboutAnimation key="about" />,
+      <StaffAnimation key="staff" />,
+      <CtaAnimation key="cta" />,
+      <GeoAnimation key="geo" />,
+      <BusinessAnimation key="business" />,
+    ],
   "/staff": [
-    <MastersHeroAnimation key="masters"/>
+    <MastersHeroAnimation key="masters" />
   ],
   "/services": [],
 };
