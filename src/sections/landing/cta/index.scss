@@ -19,9 +19,11 @@
     &__bottom {
         position: relative;
         overflow: hidden;
+        max-height: 600px;
 
         img {
             width: 100%;
+            scale: 1.2;
         }
     }
 

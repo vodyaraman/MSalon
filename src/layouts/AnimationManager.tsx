@@ -11,26 +11,22 @@ import GeoAnimation from "@/sections/landing/geo/Animation";
 import BusinessAnimation from "@/sections/landing/business/Animation";
 import MastersHeroAnimation from "@/components/staff_slider/Animation";
 
-// Анимации, которые проигрываются на всех страницах
 const globalAnimations: JSX.Element[] = [
   <HeaderAnimation key="global-header" />,
 ];
 
 const animationsByPath: Record<string, JSX.Element[]> = {
-  "/":
-    [
-      <HeroTextAnimation key="hero" />,
-      <ServicesAnimation key="services" />,
-      // <TeamLeadAnimation key="team" />,
-      <AboutAnimation key="about" />,
-      <StaffAnimation key="staff" />,
-      <CtaAnimation key="cta" />,
-      <GeoAnimation key="geo" />,
-      <BusinessAnimation key="business" />,
-    ],
-  "/staff": [
-    <MastersHeroAnimation key="masters" />
+  "/": [
+    <HeroTextAnimation key="hero" />,
+    <ServicesAnimation key="services" />,
+    // <TeamLeadAnimation key="team" />,
+    <AboutAnimation key="about" />,
+    <StaffAnimation key="staff" />,
+    <CtaAnimation key="cta" />,
+    <GeoAnimation key="geo" />,
+    <BusinessAnimation key="business" />,
   ],
+  "/staff": [<MastersHeroAnimation key="masters" />],
   "/services": [],
 };
 
@@ -42,20 +38,43 @@ export default function AnimationManager() {
     const unloaded = images.filter(img => !img.complete);
 
     if (unloaded.length === 0) {
-      setLoaded(true);
+      reveal();
     } else {
       let loadedCount = 0;
-      unloaded.forEach(img => {
+
+      const check = () => {
+        loadedCount++;
+        if (loadedCount === unloaded.length) {
+          reveal();
+        }
+      };
+
+      unloaded.forEach((img) => {
         img.addEventListener("load", check);
         img.addEventListener("error", check);
       });
+    }
 
-      function check() {
-        loadedCount++;
-        if (loadedCount === unloaded.length) {
-          setLoaded(true);
-        }
-      }
+    function reveal() {
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          setTimeout(() => {
+            const pageContent = document.getElementById("page-content");
+            const loader = document.getElementById("loading-screen");
+
+            if (pageContent) {
+              pageContent.style.display = "block";
+            }
+
+            if (loader) {
+              loader.style.opacity = "0";
+              setTimeout(() => loader.remove(), 400);
+            }
+
+            setLoaded(true);
+          }, 100); // задержка на стабилизацию layout после загрузки
+        });
+      });
     }
   }, []);
 
