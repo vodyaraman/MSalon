@@ -1,6 +1,7 @@
 ---
 import './index.scss';
 import avatarLeft from '@/assets/photos/team-lead/avatar.png';
+import avatarRight from "@/assets/videos/team-lead/team-lead.mp4";
 import Animation from './Animation';
 ---
 
@@ -44,8 +45,7 @@ import Animation from './Animation';
 
     <div class="team-lead__right">
       <div class="team-lead__photo-box">
-        <img src={avatarLeft.src} alt="Севостьянова Марина (видео)" />
-        <div class="team-lead__play"></div>
+        <video src={avatarRight} controls />
       </div>
     </div>
   </div>

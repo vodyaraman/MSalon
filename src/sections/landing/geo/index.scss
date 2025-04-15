@@ -12,7 +12,7 @@
     &__title {
         @include no-padding();
         width: 100%;
-        @include ubuntu-title-font(true, right);
+        @include tenor-title(true, right);
     }
 
     &__discription {

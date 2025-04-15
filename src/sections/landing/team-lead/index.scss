@@ -28,6 +28,7 @@
     justify-content: flex-start;
     align-items: flex-start;
     gap: 2rem;
+    padding-top: 60px;
   }
 
   &__name {
@@ -116,17 +117,15 @@
   }
 
   &__photo-box {
-    position: relative;
+    @include flexbox(column);
     @include full-parent;
     border-radius: 1rem;
     overflow: hidden;
-    width: 50vw;
+    width: 35vw;
     height: 80vh;
 
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+    video {
+      max-height: 100%;
     }
   }
 

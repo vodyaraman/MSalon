@@ -11,7 +11,7 @@
 
     &__title {
         @include no-padding();
-        @include ubuntu-title-font(true, center)
+        @include tenor-title(true, center)
     }
 
     &__content {
