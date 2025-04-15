@@ -44,7 +44,7 @@ function animateServicesFooterParallax() {
     ".services__footer img",
     { y: -240 },
     {
-      y: 0,
+      y: 20,
       ease: "none",
       scrollTrigger: {
         trigger: ".services__footer",
