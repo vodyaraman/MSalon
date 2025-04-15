@@ -1,4 +1,5 @@
 ---
+import StyledButton from "@/components/buttons/StyledButton";
 import "./index.scss";
 import ctaBg from "@/assets/photos/cta/cta-background.png";
 ---
@@ -10,5 +11,5 @@ import ctaBg from "@/assets/photos/cta/cta-background.png";
 </section>
 <div class="cta__bottom">
     <img class="cta__image" src={ctaBg.src} alt="Салон красоты" />
-    <button class="cta__button">записаться</button>
+    <div class="cta__button"><StyledButton text="Записаться" href="/booking" client:only/></div>
 </div>

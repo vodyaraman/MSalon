@@ -32,15 +32,19 @@
         top: 20%;
         left: 50%;
         transform: translateX(-50%);
-        background-color: $secondary-color;
-        color: $primary-color;
-        font-weight: 600;
-        padding: 1rem 3rem;
-        border-radius: 50px;
-        border: none;
-        text-transform: uppercase;
-        font-size: 1.7rem;
-        cursor: pointer;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        overflow: visible;
+        min-width: 300px;
+    }
+}
+
+@media (max-width: 700px) {
+    .cta {
+        &__bottom {
+            img {
+                min-width: 600px;
+                min-height: 600px;
+                scale: 1.6;
+            }
+        }
     }
 }

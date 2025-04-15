@@ -17,13 +17,13 @@
   
     &__description {
       @include prata-text(false, center);
-      font-size: 1.25rem;
+      font-size: 1.5rem;
+      transform: rotateY(-25deg);
       max-width: 700px;
     }
   
     &__cta {
-      @include roboto-text(false, center);
-      font-size: 1.5rem;
+      @include ubuntu-title-font(false, center);
       font-weight: 700;
       text-transform: none;
       position: relative;

@@ -12,6 +12,8 @@ import BusinessAnimation from "@/sections/landing/business/Animation";
 import MastersHeroAnimation from "@/components/staff_slider/Animation";
 import HeroTiltScript from "@/sections/landing/hero/ImpovedAnimation";
 import HeroNumberSpin from "@/sections/landing/hero/HeroNumberSpin";
+import HeroParallaxAnimation from "@/components/animations/SmoothScrollEffect";
+import SloganAnimation from "@/sections/landing/slogans/Animation";
 
 const globalAnimations: JSX.Element[] = [
   <HeaderAnimation key="global-header" />,
@@ -19,9 +21,10 @@ const globalAnimations: JSX.Element[] = [
 
 const animationsByPath: Record<string, JSX.Element[]> = {
   "/": [
+    <HeroParallaxAnimation key="hero-parallax"/>,
     <HeroTextAnimation key="hero" />,
     <HeroTiltScript key="hero-improved" />,
-    <HeroNumberSpin key="hero-spin" />,
+    <HeroNumberSpin key="hero-spin" />, 
     <ServicesAnimation key="services" />,
     <TeamLeadAnimation key="team" />,
     <AboutAnimation key="about" />,
@@ -29,6 +32,7 @@ const animationsByPath: Record<string, JSX.Element[]> = {
     <CtaAnimation key="cta" />,
     <GeoAnimation key="geo" />,
     <BusinessAnimation key="business" />,
+    <SloganAnimation key="slogan" />,
   ],
   "/staff": [<MastersHeroAnimation key="masters" />],
   "/services": [],

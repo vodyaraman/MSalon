@@ -6,6 +6,7 @@ import service2 from '@/assets/photos/services/brows.png';
 import service3 from '@/assets/photos/services/device.png';
 import service4 from '@/assets/photos/services/injection.png';
 import serviceFooter from '@/assets/photos/services/service-footer.webp';
+import StyledButton from '@/components/buttons/StyledButton';
 ---
 
 <section class="services" aria-labelledby="services-title">
@@ -38,6 +39,6 @@ import serviceFooter from '@/assets/photos/services/service-footer.webp';
 
 <div class="services__footer">
   <img src={serviceFooter.src} alt="Оборудование и работа мастера" />
-  <button class="services__button">все услуги</button>
+  <div class="services__button"><StyledButton text="Все услуги" href="/services" client:visible/></div>
 </div>
 

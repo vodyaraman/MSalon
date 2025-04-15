@@ -148,3 +148,50 @@
     }
   }
 }
+
+@media (max-width: 700px) {
+  .team-lead {
+    display: none;
+    &__scroller {}
+
+    &__left {
+      min-width: 90vw;
+    }
+
+    &__content {}
+
+    &__name {}
+
+    &__role {}
+
+    &__photo-oval {
+      overflow: hidden;
+      min-width: 400px;
+      img {}
+    }
+
+    &__center {
+      min-width: 1500px;
+    }
+
+    &__feature {
+      &--bottom {}
+
+      h3 {
+        &::before {}
+      }
+
+      p {}
+    }
+
+    &__right {}
+
+    &__photo-box {
+      img {}
+    }
+
+    &__play {
+      &::before {}
+    }
+  }
+}

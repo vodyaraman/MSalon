@@ -1,0 +1,24 @@
+.styled-button {
+    @include no-def-styles;
+    @include flexbox(row);
+    @include roboto-text(false, center);
+    width: 100%;
+    border-radius: 25px;
+    box-shadow: $text-shadow;
+    background-color: $primary-color;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    transition: all 0.75s ease;
+
+    .button-text {
+        transition: all 0.5s ease;
+    }
+
+    &:hover {
+        filter: brightness(1.25);
+
+        .button-text {
+            scale: 1.05;
+        }
+    }
+}

@@ -42,7 +42,7 @@ function animateServicesSection() {
 function animateServicesFooterParallax() {
   gsap.fromTo(
     ".services__footer img",
-    { y: -120 },
+    { y: -240 },
     {
       y: 0,
       ease: "none",

@@ -28,17 +28,19 @@ $light: false;
       max-width: 85%;
       height: auto;
       opacity: 0;
+      text-shadow: 9px 9px 9px #c75b5b25;
+      @include tenor-title(true, center);
 
-      @include ubuntu-title-font($light, left);
       font-size: calc(2 * (1vw + 1vh));
       color: $secondary-font-color;
 
       &.extra {
+        @include ubuntu-title-font($light, left);
         font-size: calc(4 * (1vw + 1vh));
         line-height: calc(4 * (1vw + 1vh));
         letter-spacing: -0.35vw;
         z-index: 10;
-        text-shadow: $text-shadow;
+        text-shadow: 9px 9px 9px #77533e;
       }
     }
 
@@ -89,7 +91,7 @@ $light: false;
           }
 
           &__number {
-            font-weight: bold;
+            @include unbounded-title(true, center);
             line-height: 1;
             position: relative;
           }
@@ -139,26 +141,49 @@ $light: false;
         width: 100%;
         max-width: unset;
         text-align: center;
+        align-items: center;
         font-size: calc(1.9 * (1vw + 1vh));
 
         .extra {
           font-size: calc(3 * (1vw + 1vh));
+          text-align: center;
         }
       }
 
       &.subtext {
+        position: relative;
+        z-index: 100;
+        bottom: 0%;
         width: 100%;
         max-width: unset;
         text-align: center;
-        font-size: 1rem
+
+        .subtext {
+          z-index: 10;
+          &__item {
+            font-size: 1rem;
+            width: 100%;
+
+            .number-wrapper {
+              font-size: 2rem;
+            }
+
+            &__number {
+              @include unbounded-title(true, center);
+              line-height: 1;
+              position: relative;
+            }
+          }
+        }
       }
     }
 
     &__showcase {
       @include flexbox(column);
-      width: 100vw;
-      height: 70vh;
+      width: 75vw;
+      height: 60vh;
       right: 0;
+      z-index: 9;
       bottom: 0;
       transform: translateY(0);
     }

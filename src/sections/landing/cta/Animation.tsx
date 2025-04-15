@@ -9,9 +9,9 @@ export default function CtaAnimation() {
     const ctx = gsap.context(() => {
       gsap.fromTo(
         '.cta__image',
-        { y: -120 },
+        { y: -240 },
         {
-          y: 120,
+          y: 60,
           ease: 'none',
           scrollTrigger: {
             trigger: '.cta__bottom',

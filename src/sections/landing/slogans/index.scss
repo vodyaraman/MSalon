@@ -3,6 +3,7 @@
   background-color: $primary-color;
   padding: $section-padding;
   text-align: center;
+  box-sizing: border-box;
 
   .slogan__quote {
     width: 2.5rem;
@@ -30,6 +31,9 @@
     color: $secondary-font-color;
     padding: 10vh 0;
     box-sizing: border-box;
+    white-space: normal;
+    word-break: break-word;
+    display: inline;
 
     .slogan__accent {
       display: block;
