@@ -6,8 +6,7 @@
     padding-bottom: 0;
   
     &__title {
-      @include tenor-title(false, center);
-      color: $secondary-font-color;
+      @include tenor-title(true, center);
     }
   
     &__slider-wrapper {

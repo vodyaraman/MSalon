@@ -9,7 +9,7 @@
     padding: $section-padding;
 
     &__title {
-        @include tenor-title(false, left);
+        @include tenor-title(true, left);
     }
 
     &__content {

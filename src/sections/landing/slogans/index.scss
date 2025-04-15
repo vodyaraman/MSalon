@@ -28,7 +28,6 @@
     @include flexbox(column);
     @include ubuntu-title-font(true, center);
     font-size: calc(1.75 * (1vh + 1vw));
-    color: $secondary-font-color;
     padding: 10vh 10vw;
     box-sizing: border-box;
     white-space: normal;

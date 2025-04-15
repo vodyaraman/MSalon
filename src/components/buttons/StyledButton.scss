@@ -1,7 +1,7 @@
 .styled-button {
     @include no-def-styles;
     @include flexbox(row);
-    @include roboto-text(false, center);
+    @include roboto-text(true, center);
     width: 100%;
     border-radius: 25px;
     box-shadow: $text-shadow;

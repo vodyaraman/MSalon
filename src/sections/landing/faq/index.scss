@@ -38,7 +38,7 @@
   }
 
   &__answer {
-    @include prata-text(false, left);
+    @include prata-text(true, left);
     color: $font-color-text;
     font-size: 1.5rem;
     line-height: 1.6;
@@ -58,34 +58,35 @@
     border-radius: 1rem;
     gap: 1.5rem;
     position: relative;
-    color: $secondary-color;
   }
 
   &__icon {
     width: 2.5rem;
     height: auto;
+    filter: invert(1);
   }
 
   &__number {
     font-size: 2rem;
     font-weight: 700;
     margin-right: 0.75rem;
-    color: $secondary-color;
+    color: $font-color-text;
   }
 
   &__question {
-    @include roboto-text(false, left);
+    @include roboto-text(true, left);
     font-size: 1.5rem;
     flex-grow: 1;
   }
 
   &__toggle {
     position: absolute;
+    right: 20px;
     @include no-def-styles;
     font-size: 2rem;
     width: 2.5rem;
     height: 2.5rem;
-    background-color: $secondary-color;
+    background-color: $font-color-text;
     border-radius: 0.5rem;
     color: $primary-color;
     font-weight: 700;
@@ -99,7 +100,7 @@
     @include prata-text(true, left);
     font-size: 1.25rem;
     line-height: 1.5;
-    background-color: #fddbb6;
+    background-color: $primary-color;
     padding: 1.5rem 2rem;
     border-radius: 1rem;
     margin-top: 0.5rem;

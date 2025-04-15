@@ -25,7 +25,7 @@
 
     &__card {
         @include flexbox(column);
-        @include prata-text(false, center);
+        @include prata-text(true, center);
         min-height: 100%;
         width: 100%;
         background-color: $primary-color;
@@ -36,14 +36,14 @@
         gap: 10px;
 
         p {
+            @include prata-text(true, center);
             @include no-padding;           
-            font-size: 1rem;
+            font-size: 1.25rem;
         }
 
         & .business__name {
-            @include ubuntu-title-font(false, center);
-            font-weight: 400;
-            font-size: 1.2rem;
+            @include ubuntu-title-font(true, center);
+            font-size: 1.5rem;
             margin-bottom: 10px;
         }
     }

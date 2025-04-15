@@ -59,13 +59,13 @@
 			@include full-parent;
 			@include no-def-styles;
 			border-radius: 10px;
-			background-color: $primary-color;
+			background-color: $secondary-color;
 			box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.568);
 
 			img {
 				width: 30px;
 				height: 30px;
-				filter: invert(1);
+				filter: invert(0);
 				object-fit: fill;
 			}
 

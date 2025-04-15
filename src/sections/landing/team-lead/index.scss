@@ -3,6 +3,7 @@
   height: 100vh;
   background-color: $primary-color;
   position: relative;
+  padding-left: 10vw;
 
   &__scroller {
     display: flex;
@@ -16,7 +17,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 3rem 2rem;
+    padding: 3rem 0;
     position: relative;
     color: #fff;
   }
@@ -24,19 +25,21 @@
   &__content {
     @include flexbox(column);
     @include full-parent;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: flex-start;
+    gap: 2rem;
   }
 
   &__name {
-    @include tenor-title(false, left);
+    @include tenor-title(true, left);
     font-size: calc(3.5 * (1vh + 1vw));
   }
 
   &__role {
-    @include prata-text(false, left);
-    font-size: 1.25rem;
-    opacity: 0.8;
+    @include prata-text(true, left);
+    width: 80%;
+    font-size: 1.5rem;
+    opacity: 1;
   }
 
   &__photo-oval {
@@ -55,6 +58,7 @@
     img {
       height: 100%;
       object-fit: cover;
+      border-radius: 25px;
     }
   }
 
@@ -62,7 +66,7 @@
     @include flexbox(row);
     @include full-parent;
     max-width: 150vw;
-    background-color: #fce6cf;
+    background-color: $secondary-color;
     padding: 5vh 0 5vh 50vw;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -79,7 +83,7 @@
     }
 
     h3 {
-      @include roboto-text(false, left);
+      @include roboto-text(true, left);
       font-size: 2.5rem;
       color: $font-color;
 
@@ -95,7 +99,7 @@
     }
 
     p {
-      @include prata-text(false, left);
+      @include prata-text(true, left);
       font-size: 1.25rem;
       line-height: 1.4;
       margin: 0;
@@ -116,6 +120,8 @@
     @include full-parent;
     border-radius: 1rem;
     overflow: hidden;
+    width: 50vw;
+    height: 80vh;
 
     img {
       width: 100%;
