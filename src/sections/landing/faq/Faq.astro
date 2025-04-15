@@ -1,34 +1,57 @@
 ---
+import StyledButton from '@/components/buttons/StyledButton';
 import './index.scss';
+import DiamondIcon from '@/assets/icons/diamond.svg';
 ---
-
 <section class="faq" aria-labelledby="faq-title">
   <h2 id="faq-title" class="faq__title">Часто задаваемые вопросы</h2>
 
-  <div class="faq__item">
-    <h3 class="faq__question">
-      <span class="faq__number">1.</span> Насколько стойким является перманентный макияж?
-    </h3>
-    <p class="faq__answer">
-      Мы внимательно выслушиваем ваши пожелания и предлагаем решения, идеально подходящие именно вам. Мы разрабатываем персональные программы ухода и преображения, учитывая ваши индивидуальные особенности и потребности.
-    </p>
+  <div class="faq__list">
+    <div class="faq__item">
+      <div class="faq__row">
+        <img src={DiamondIcon.src} alt="" class="faq__icon" />
+        <h3 class="faq__question">
+          <span class="faq__number">1</span>
+          Насколько стойким является перманентный макияж?
+        </h3>
+        <button class="faq__toggle" aria-label="Показать ответ">+</button>
+      </div>
+      <p class="faq__answer">
+        Мы внимательно выслушиваем ваши пожелания и предлагаем решения, идеально подходящие именно вам. Мы разрабатываем персональные программы ухода и преображения, учитывая ваши индивидуальные особенности и потребности.
+      </p>
+    </div>
+
+    <div class="faq__item">
+      <div class="faq__row">
+        <img src={DiamondIcon.src} alt="" class="faq__icon" />
+        <h3 class="faq__question">
+          <span class="faq__number">2</span>
+          Как подготовиться к процедуре?
+        </h3>
+        <button class="faq__toggle" aria-label="Показать ответ">+</button>
+      </div>
+      <p class="faq__answer">
+        Накануне желательно не принимать алкоголь, кофеин и разжижающие кровь препараты. При необходимости — мы дадим подробную инструкцию индивидуально.
+      </p>
+    </div>
+
+    <div class="faq__item faq__item--open">
+      <div class="faq__row">
+        <img src={DiamondIcon.src} alt="" class="faq__icon" />
+        <h3 class="faq__question">
+          <span class="faq__number">3</span>
+          Какие противопоказания к татуажу и косметологии?
+        </h3>
+        <button class="faq__toggle" aria-label="Скрыть ответ">+</button>
+      </div>
+      <p class="faq__answer">
+        Абсолютные противопоказания: беременность, лактация, онкология, активные вирусные и кожные заболевания. Перед визитом мы всегда уточняем ваше состояние.
+      </p>
+    </div>
   </div>
 
-  <div class="faq__item">
-    <h3 class="faq__question">
-      <span class="faq__number">2.</span> Как подготовиться к процедуре?
-    </h3>
-    <p class="faq__answer">
-      Накануне желательно не принимать алкоголь, кофеин и разжижающие кровь препараты. При необходимости — мы дадим подробную инструкцию индивидуально.
-    </p>
-  </div>
-
-  <div class="faq__item">
-    <h3 class="faq__question">
-      <span class="faq__number">3.</span> Какие противопоказания к татуажу и косметологии?
-    </h3>
-    <p class="faq__answer">
-      Абсолютные противопоказания: беременность, лактация, онкология, активные вирусные и кожные заболевания. Перед визитом мы всегда уточняем ваше состояние.
-    </p>
+  <div class="faq__cta">
+    <p class="faq__cta-text">Не нашли ответ на свой вопрос? <br />Свяжитесь с нами!</p>
+    <div class="faq__cta-button"><StyledButton text="Связаться с нами" href='/booking'/></div>
   </div>
 </section>

@@ -27,24 +27,12 @@
   .slogan__text {
     @include flexbox(column);
     @include ubuntu-title-font(true, center);
-    font-size: calc(2 * (1vh + 1vw));
+    font-size: calc(1.75 * (1vh + 1vw));
     color: $secondary-font-color;
-    padding: 10vh 0;
+    padding: 10vh 10vw;
     box-sizing: border-box;
     white-space: normal;
     word-break: break-word;
     display: inline;
-
-    .slogan__accent {
-      display: block;
-      font-weight: 500;
-      color: $secondary-font-color;
-      margin-bottom: 0.5rem;
-    }
-
-    .slogan__continuation {
-      display: block;
-      opacity: 0.6;
-    }
   }
 }

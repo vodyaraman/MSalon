@@ -1,8 +1,9 @@
 .portfolio {
     @include flexbox(column);
     padding: $section-padding;
-    background-color: $primary-color;
+    background: linear-gradient(to bottom, $primary-color 80%, $secondary-color 81%);
     gap: 2rem;
+    padding-bottom: 0;
   
     &__title {
       @include tenor-title(false, center);
@@ -13,20 +14,6 @@
       width: 100%;
       max-width: 1200px;
       margin: 0 auto;
-    }
-  
-    &__description {
-      @include prata-text(false, center);
-      font-size: 1.5rem;
-      transform: rotateY(-25deg);
-      max-width: 700px;
-    }
-  
-    &__cta {
-      @include ubuntu-title-font(false, center);
-      font-weight: 700;
-      text-transform: none;
-      position: relative;
     }
   }
   

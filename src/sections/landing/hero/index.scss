@@ -32,7 +32,7 @@ $light: false;
       @include tenor-title(true, center);
 
       font-size: calc(2 * (1vw + 1vh));
-      color: $secondary-font-color;
+      color: $font-color-text;
 
       &.extra {
         @include ubuntu-title-font($light, left);
@@ -40,7 +40,7 @@ $light: false;
         line-height: calc(4 * (1vw + 1vh));
         letter-spacing: -0.35vw;
         z-index: 10;
-        text-shadow: 9px 9px 9px #77533e;
+        text-shadow: 12px 12px 12px #4d3629;
       }
     }
 

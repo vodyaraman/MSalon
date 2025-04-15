@@ -94,18 +94,20 @@
 @media (max-width: 600px) {
 	.staff {
 			&__item {
-				img {}
-
 				.info {
-					.title {
-						width: 150px;
-					}
-
-					p {}
+					min-width: 40vw;
+					max-width: 40vw;
+				}
+				.image-overlay {
+					right: 0vw;
+					bottom: -5vh;
+					min-width: 300px;
 				}
 			}
 
-			&__arrow {
+			&__arrow-container {
+				bottom: -7%;
+				width: 7rem;
 				&.left {}
 
 				&.right {}

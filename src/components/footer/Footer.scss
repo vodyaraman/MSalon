@@ -5,6 +5,7 @@
     background-color: $secondary-color;
     gap: 2rem;
     box-sizing: border-box;
+    z-index: 1;
   
     &__content {
       @include flexbox(row);
@@ -23,7 +24,7 @@
     }
   
     &__slogan {
-      @include unbounded-title(true, left);
+      @include ubuntu-title-font(true, left);
       font-size: calc(1.6 * (1vw + 1vh));
       line-height: 1.4;
     }
@@ -80,6 +81,9 @@
     }
   
     &__photo {
+      position: absolute;
+      right: -5vw;
+      bottom: -10vh;
       z-index: 1;
       max-width: 220px;
   

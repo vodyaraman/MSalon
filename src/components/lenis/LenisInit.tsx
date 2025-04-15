@@ -5,9 +5,9 @@ export default function LenisInit() {
 	useEffect(() => {
 		if (typeof window === "undefined") return;
 
-		window.scrollTo(0, 0);
-		document.documentElement.scrollTop = 0;
-		document.body.scrollTop = 0;
+		// window.scrollTo(0, 0);
+		// document.documentElement.scrollTop = 0;
+		// document.body.scrollTop = 0;
 
 		if (window.lenis && typeof window.lenis.destroy === "function") {
 			window.lenis.destroy();

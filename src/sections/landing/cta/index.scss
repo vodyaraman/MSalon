@@ -5,6 +5,8 @@
     gap: 1rem;
 
     &__top {
+        @include flexbox(column);
+        gap: 3rem;
         width: 100%;
         padding: 2rem 0;
         background-color: $secondary-color;
@@ -32,8 +34,21 @@
         top: 20%;
         left: 50%;
         transform: translateX(-50%);
-        overflow: visible;
         min-width: 300px;
+    }
+
+    &__description {
+        @include prata-text(true, center);
+        font-size: 1.5rem;
+        max-width: 700px;
+        transform: rotate(-1deg);
+    }
+
+    &__subtitle {
+        @include ubuntu-title-font(true, center);
+        font-weight: 700;
+        text-transform: none;
+        position: relative;
     }
 }
 
