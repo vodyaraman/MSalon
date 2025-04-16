@@ -1,0 +1,54 @@
+---
+import "./index.scss"
+import "@/components/buttons/StyledButton.scss"
+import servicesData from "@/data/services.json"
+
+import whatsappIcon from "@/assets/icons/whatsapp.svg"
+import telegramIcon from "@/assets/icons/telegram.svg"
+import instagramIcon from "@/assets/icons/instagram.svg"
+import phoneIcon from "@/assets/icons/phone.svg"
+
+---
+
+<section class="booking">
+    <div class="booking__background">
+        <img class="booking__background-image" src="/backgrounds/main-background.svg" alt="salon background" />
+    </div>
+    <div class="booking__content">
+        <a href="/" class="booking__logo text">Darina Solovyeva Beauty Salon</a>
+
+        <h1 class="booking__title"><span class="highlighted">Запись на услугу</span></h1>
+        <form class="booking__form">
+            <input type="text" name="name" class="booking__input" placeholder="Ваше имя" required />
+            <input type="tel" name="phone" class="booking__input" placeholder="Телефон" required />
+            <select name="service" class="booking__input" required>
+                <option value="">Желаемая услуга</option>
+                {
+                    servicesData.map((category) => (
+                        <optgroup label={category.category}>
+                            {
+                                category.services.map((service) => (
+                                    <option value={service.name}>{service.name}</option>
+                                ))
+                            }
+                        </optgroup>
+                    ))
+                }
+            </select>
+            <textarea name="comment" class="booking__input" placeholder="Комментарий"></textarea>
+            <button type="submit" class="styled-button">Записаться</button>
+        </form>
+
+        <h2 class="booking__title"><span class="highlighted">Связаться с нами</span></h2>
+      
+        <article class="booking__contacts">
+            <div class="booking__socials">
+                <a href="#" class="booking__social"><img src={whatsappIcon.src} alt="WhatsApp" /></a>
+                <a href="#" class="booking__social"><img src={telegramIcon.src} alt="Telegram" /></a>
+                <a href="#" class="booking__social"><img src={instagramIcon.src} alt="Instagram" /></a>
+                <a href="#" class="booking__social"><img src={phoneIcon.src} alt="Phone" /></a>
+            </div>
+            <div class="booking__phone">8-888-888-88-88</div>
+        </article>
+    </div>
+</section>

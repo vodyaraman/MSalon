@@ -16,6 +16,7 @@ import HeroParallaxAnimation from "@/components/animations/SmoothScrollEffect";
 import SloganAnimation from "@/sections/landing/slogans/Animation";
 import FaqAnimation from "@/sections/landing/faq/Animation";
 import FooterAnimation from "@/components/footer/Animatiom";
+import BookingAnimation from "@/sections/booking/Animation";
 
 const globalAnimations: JSX.Element[] = [
   <HeaderAnimation key="global-header" />,
@@ -40,6 +41,9 @@ const animationsByPath: Record<string, JSX.Element[]> = {
   ],
   "/staff": [<MastersHeroAnimation key="masters" />],
   "/services": [],
+  "/booking": [
+    <BookingAnimation key="booking"/>
+  ]
 };
 
 export default function AnimationManager() {
