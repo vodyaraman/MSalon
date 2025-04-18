@@ -37,7 +37,7 @@
             transform: scale(1.2);
             transition: transform 1.5s ease;
             box-shadow: 9px 9px 9px #00000046;
-    
+
             &:hover {
                 transform: scale(1);
             }
@@ -55,7 +55,7 @@
     &__footer {
         position: relative;
         overflow: hidden;
-        max-height: 600px;
+        max-height: 400px;
 
         img {
             width: 100%;
@@ -64,10 +64,11 @@
 
     &__button {
         position: absolute;
-        top: 20%;
+        top: 50%;
         left: 50%;
-        transform: translateX(-50%);
+        transform: translate(-50%, -50%);
         min-width: 300px;
+        text-transform: uppercase;
     }
 }
 
