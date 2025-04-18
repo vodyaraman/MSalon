@@ -9,8 +9,6 @@ export default function TeamLeadAnimation() {
 
   const scrollerElement = document.querySelector(".team-lead__scroller");
   const scrollerWidth = scrollerElement ? scrollerElement.scrollWidth : 0;
-  console.log('scrollerWidth:', scrollerWidth);
-  console.log('viewPort Width:', window.innerWidth)
 
   useEffect(() => {
     const ctx = gsap.context(() => {

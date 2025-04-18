@@ -12,7 +12,6 @@
   }
 
   &__left {
-    width: 55vw;
     background-color: $primary-color;
     display: flex;
     flex-direction: column;
@@ -25,7 +24,7 @@
   &__content {
     @include flexbox(column);
     @include full-parent;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: flex-start;
     gap: 2rem;
     padding-top: 60px;
@@ -45,15 +44,9 @@
 
   &__photo-oval {
     position: absolute;
-    top: 50%;
-    right: -100%;
-    transform: translateY(-50%);
-    width: 50vw;
+    left: 85%;
+    top: 12%;
     height: 80vh;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     z-index: 5;
 
     img {
@@ -64,14 +57,11 @@
   }
 
   &__center {
-    @include flexbox(row);
-    @include full-parent;
-    max-width: 150vw;
     background-color: $secondary-color;
-    padding: 5vh 0 5vh 50vw;
+    @include flexbox(row);
+    padding: 5vh 10vh 5vh 30vw;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    clip-path: polygon(4% 0, 100% 0, 96% 100%, 0% 100%);
   }
 
   &__feature {
@@ -111,12 +101,14 @@
 
   &__right {
     @include flexbox(column);
-    width: 100vw;
     background-color: $primary-color;
     padding: 2rem;
+    position: relative;
   }
 
   &__photo-box {
+    position: absolute;
+    left: 35%;
     @include flexbox(column);
     @include full-parent;
     border-radius: 1rem;
@@ -157,6 +149,7 @@
 @media (max-width: 700px) {
   .team-lead {
     display: none;
+
     &__scroller {}
 
     &__left {
@@ -172,6 +165,7 @@
     &__photo-oval {
       overflow: hidden;
       min-width: 400px;
+
       img {}
     }
 
