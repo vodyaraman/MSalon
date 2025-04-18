@@ -3,7 +3,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./GeoMap.scss";
 
-gsap.registerPlugin(ScrollTrigger);
+
 
 export default function GeoMap() {
     const [activeMap, setActiveMap] = useState<"kremlin" | "pasternak">("kremlin");

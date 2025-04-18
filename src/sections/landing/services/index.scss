@@ -10,12 +10,18 @@
 
     &__title {
         @include tenor-title(true, left);
+        transform: translateX(-100px);
+        opacity: 0;
+        will-change: transform;
     }
 
     &__content {
         @include flexbox(row);
         @include full-parent;
         gap: 2rem;
+        transform: translateX(100px);
+        opacity: 0;
+        will-change: transform;
     }
 
     &__column {
@@ -37,6 +43,7 @@
             transform: scale(1.2);
             transition: transform 1.5s ease;
             box-shadow: 9px 9px 9px #00000046;
+            will-change: transform;
     
             &:hover {
                 transform: scale(1);
@@ -59,6 +66,8 @@
 
         img {
             width: 100%;
+            transform: translateY(-240);
+            will-change: transform;
         }
     }
 

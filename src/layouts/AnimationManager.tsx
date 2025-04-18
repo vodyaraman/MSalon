@@ -1,4 +1,5 @@
 import { useEffect, useState, type JSX } from "react";
+import "@/components/gsap/ScrollTriggerInit";
 
 import HeroTextAnimation from "@/sections/landing/hero/Animation";
 import HeaderAnimation from "@/components/header/Animation";
@@ -15,7 +16,7 @@ import HeroNumberSpin from "@/sections/landing/hero/HeroNumberSpin";
 import HeroParallaxAnimation from "@/components/animations/SmoothScrollEffect";
 import SloganAnimation from "@/sections/landing/slogans/Animation";
 import FaqAnimation from "@/sections/landing/faq/Animation";
-import FooterAnimation from "@/components/footer/Animatiom";
+//import FooterAnimation from "@/components/footer/Animation";
 import BookingAnimation from "@/sections/booking/Animation";
 
 const globalAnimations: JSX.Element[] = [
@@ -37,7 +38,6 @@ const animationsByPath: Record<string, JSX.Element[]> = {
     <FaqAnimation key="faq" />,
     <BusinessAnimation key="business" />,
     <SloganAnimation key="slogan" />,
-    <FooterAnimation key="footer" />,
   ],
   "/staff": [<MastersHeroAnimation key="masters" />],
   "/services": [],

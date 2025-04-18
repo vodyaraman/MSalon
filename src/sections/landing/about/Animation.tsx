@@ -1,10 +1,6 @@
 import { useEffect } from "react";
 import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger);
-
-// ===== Анимации появления =====
 function animateAboutTitle() {
   gsap.fromTo(
     ".about__title",
@@ -16,24 +12,6 @@ function animateAboutTitle() {
       ease: "power2.out",
       scrollTrigger: {
         trigger: ".about__title",
-        start: "top 90%",
-      },
-    }
-  );
-}
-
-function animateAboutSubtitle() {
-  gsap.fromTo(
-    ".about__subtitle",
-    { opacity: 0, y: 20 },
-    {
-      opacity: 1,
-      y: 0,
-      duration: 1,
-      delay: 0.2,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: ".about__subtitle",
         start: "top 90%",
       },
     }
@@ -129,7 +107,6 @@ export default function AboutAnimation() {
   useEffect(() => {
     const ctx = gsap.context(() => {
       animateAboutTitle();
-      animateAboutSubtitle();
       animateSlideFirst();
       animateSlideSecond();
       animateSlideThird();
