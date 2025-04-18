@@ -9,7 +9,7 @@ export default function GeoAnimation() {
     const ctx = gsap.context(() => {
       gsap.fromTo(
         ".geo",
-        { opacity: 0.5, scale: 0.8 },
+        { opacity: 0.5, scale: 0.95 },
         {
           opacity: 1,
           scale: 1,
