@@ -5,11 +5,15 @@
     gap: 1rem;
 
     &__top {
-        @include flexbox(column);
-        gap: 3rem;
+        position: relative;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 6rem;
         width: 100%;
         padding: 2rem 0;
-        background-color: $secondary-color;
+        background-color: #FFF9E4;
+        height: 55vh;
     }
 
     &__title {
@@ -21,7 +25,7 @@
     &__bottom {
         position: relative;
         overflow: hidden;
-        max-height: 600px;
+        max-height: 400px;
 
         img {
             width: 100%;
@@ -33,10 +37,11 @@
 
     &__button {
         position: absolute;
-        top: 20%;
+        top: 50%;
         left: 50%;
-        transform: translateX(-50%);
+        transform: translate(-50%, -50%);
         min-width: 300px;
+        text-transform: uppercase;
     }
 
     &__description {
@@ -52,6 +57,22 @@
         text-transform: none;
         position: relative;
     }
+
+    &__arrows {
+        display: flex;
+        flex-direction: column;
+
+        .relative-arrow {
+            position: relative;
+            top: -2.5rem;
+        }
+    }
+
+    &__arrow-down {
+        path {
+            fill: rgb(191, 191, 191);
+        }
+    }
 }
 
 @media (max-width: 700px) {
@@ -59,7 +80,7 @@
         &__bottom {
             img {
                 min-width: 600px;
-                min-height: 600px;
+                min-height: 350px;
                 scale: 1.6;
             }
         }
