@@ -1,7 +1,7 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger);
+
 
 // ScrollTrigger Proxy setup
 ScrollTrigger.scrollerProxy = (scroller: HTMLElement, config?: any) => {

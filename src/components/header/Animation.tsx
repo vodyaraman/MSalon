@@ -6,7 +6,7 @@ gsap.registerPlugin(ScrollTrigger)
 
 export default function HeaderAnimation() {
     useEffect(() => {
-        if (typeof window === "undefined" || !window.lenis) return
+        if (typeof window === "undefined") return
 
         const header = document.querySelector('.header')
         const logo = document.querySelector('.header__logo.text')
@@ -24,7 +24,7 @@ export default function HeaderAnimation() {
 
         ScrollTrigger.create({
             start: 400,
-            end: 801,
+            end: 401,
             onEnter: applyLight,
             onEnterBack: applyDark,
         })

@@ -161,6 +161,7 @@ $light: false;
 
         .subtext {
           z-index: 10;
+
           &__item {
             font-size: 1rem;
             width: 100%;
@@ -187,6 +188,18 @@ $light: false;
       z-index: 9;
       bottom: 0;
       transform: translateY(0);
+    }
+
+    .main-background-blur {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 410px) {
+  .hero {
+    &__showcase {
+      width: 60vw;
     }
   }
 }

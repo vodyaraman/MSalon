@@ -1,15 +1,8 @@
-import { useEffect, useRef } from "react";
+import { useEffect} from "react";
 import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
-
-gsap.registerPlugin(ScrollTrigger);
-
 export default function TeamLeadAnimation() {
 
   const scrollerElement = document.querySelector(".team-lead__scroller");
-  const scrollerWidth = scrollerElement ? scrollerElement.scrollWidth : 0;
-
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.to(

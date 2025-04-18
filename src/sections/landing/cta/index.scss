@@ -30,6 +30,8 @@
         img {
             width: 100%;
             scale: 1.2;
+            transform: translateY(-240);
+            will-change: transform;
         }
     }
 
