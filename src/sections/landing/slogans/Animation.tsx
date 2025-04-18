@@ -17,17 +17,39 @@ function setupHighlight(id: string) {
       scrollTrigger: {
         trigger: container,
         start: "center center",
-        end: "bottom center",
+        end: "bottom 40%",
         scrub: true,
       },
     }
   );
 }
 
+function setupFillText(id: string) {
+  const container = document.getElementById(id);
+  if (!container) return;
+
+  const target = container.querySelector<HTMLElement>('.slogan__continuation');
+
+  if (!target) {
+    return;
+  }
+
+  gsap.to(target, {
+    scrollTrigger: {
+      trigger: container,
+      start: "top 60%",
+      end: "bottom 40%",
+      scrub: true,
+    },
+    backgroundPosition: '-100% 0',
+  });
+}
+
 // 🔹 Первый слоган
 function AnimateSloganMain() {
   useEffect(() => {
     setupHighlight("slogan-text-main");
+    setupFillText("slogan-text-main")
   }, []);
   return null;
 }
