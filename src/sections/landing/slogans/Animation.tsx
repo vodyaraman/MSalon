@@ -39,7 +39,7 @@ function setupFillText(id: string) {
       trigger: container,
       start: "top 60%",
       end: "bottom 40%",
-      scrub: 2,
+      scrub: 1,
     },
     backgroundPosition: '-100% 0',
   });

@@ -21,6 +21,37 @@ export default function CtaAnimation() {
           },
         }
       );
+
+      // Анимация стрелок
+      const arrow1 = document.querySelector('.cta__arrow-1');
+      const arrow2 = document.querySelector('.cta__arrow-2');
+
+      if (!arrow1 && !arrow2) {
+        return;
+      }
+
+      const tl = gsap.timeline({
+        repeat: -1,
+        repeatDelay: 1.5,
+      });
+
+      tl.to(
+        arrow1,
+        {
+          y: 10,
+          duration: 0.2,
+          yoyo: true,
+          ease: 'power1.inOut',
+        })
+
+      tl.to(
+        arrow2,
+        {
+          y: 10,
+          duration: 0.3,
+          yoyo: true,
+          ease: 'power1.inOut',
+        })
     });
 
     return () => ctx.revert();
