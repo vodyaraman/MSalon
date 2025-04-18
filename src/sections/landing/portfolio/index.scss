@@ -1,18 +1,16 @@
 .portfolio {
-    @include flexbox(column);
-    padding: $section-padding;
-    background: linear-gradient(to bottom, $primary-color 80%, $secondary-color 81%);
-    gap: 2rem;
-    padding-bottom: 0;
-  
-    &__title {
-      @include tenor-title(true, center);
-    }
-  
-    &__slider-wrapper {
-      width: 100%;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
+  @include flexbox(column);
+  padding: $section-padding;
+  background: linear-gradient(to bottom, $primary-color 80%, $secondary-color 81%);
+  gap: 2rem;
+  padding-bottom: 0;
+
+  &__title {
+    @include tenor-title(true, center);
   }
-  
+
+  &__slider-wrapper {
+    width: 100%;
+    max-width: 1600px;
+  }
+}
