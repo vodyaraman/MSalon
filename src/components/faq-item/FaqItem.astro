@@ -15,5 +15,7 @@ const { faqNumber = 1, faqQuestion = '', faqAnswer = '' } = Astro.props;
       <button class="faq__toggle" aria-label="Показать ответ">+</button>
     </div>
   </div>
-  <p class="faq__answer">{faqAnswer}</p>
+  <div class="faq__answer">
+    <p class="faq__answer-text">{faqAnswer}</p>
+  </div>
 </div>

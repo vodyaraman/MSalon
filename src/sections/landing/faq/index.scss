@@ -75,15 +75,20 @@
 
   &__answer {
     @include tenor-title(true, left);
-    color: $font-color-text;
-    font-size: 1.5rem;
-    line-height: 1.5;
-    display: none;
     background-color: $third-color;
-    padding: 1.3rem;
     border-radius: 30px;
     border-top-right-radius: 0;
     margin-top: 1rem;
+    max-height: 0;
+    overflow: hidden;
+  }
+
+  &__answer-text {
+    padding: 1.3rem;
+    color: $font-color-text;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    margin: 0;
   }
 
   &__icon {
@@ -94,6 +99,7 @@
     position: absolute;
     right: 3rem;
     bottom: -1rem;
+    cursor: pointer;
 
     @include no-def-styles;
     font-size: 2rem;
@@ -108,13 +114,6 @@
     justify-content: center;
   }
 
-  &__item--open {
-    .faq__answer {
-      display: block;
-      overflow: hidden;
-    }
-  }
-
   &__cta {
     @include flexbox(column);
     width: 100%;
@@ -126,5 +125,44 @@
     font-size: 1.3rem;
     color: $font-color-text;
     margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 660px) {
+  .faq {
+    &__row {
+      gap: 1rem;
+    }
+
+    &__number {
+      font-size: 2rem;
+    }
+
+    &__icon {
+      height: 40px;
+      width: 40px;
+    }
+
+    &__question {
+      font-size: 1rem;
+    }
+
+    &__answer-text {
+      font-size: 1.1rem;
+    }
+
+    &__toggle {
+      width: 2rem;
+      height: 2rem;
+    }
+
+    &__cta-text {
+      font-size: 1rem;
+    }
+
+    &__cta-btn {
+      padding-block: 12px;
+      font-size: 1.1rem;
+    }
   }
 }
