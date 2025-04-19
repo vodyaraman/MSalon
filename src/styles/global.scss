@@ -2,6 +2,14 @@
 @use 'mixins' as *;
 @use 'responsive' as *;
 
+
+@font-face {
+  font-family: 'etude-b';
+  src: url('/public/fonts/Etude/Etude-bold.ttf');
+  font-style: normal;
+  font-display: swap;
+}
+
 *,
 *::before,
 *::after {
@@ -58,19 +66,20 @@ main {
   color: #5a2a00;
 
   &::after {
-      content: "";
-      position: absolute;
-      left: 5%;
-      bottom: -0.15em;
-      width: 100%;
-      height: 0.6em;
-      background-color: #FFE4C5;
-      z-index: -1;
+    content: "";
+    position: absolute;
+    left: 5%;
+    bottom: -0.15em;
+    width: 100%;
+    height: 0.6em;
+    background-color: #FFE4C5;
+    z-index: -1;
   }
 }
 
 * {
-  scrollbar-width: thin; /* для Firefox */
+  scrollbar-width: thin;
+  /* для Firefox */
   scrollbar-color: #211311 transparent;
 }
 

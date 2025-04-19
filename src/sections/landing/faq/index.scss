@@ -2,8 +2,9 @@
   @include flexbox(column);
   background-color: $secondary-color;
   padding: $section-padding;
-  align-items: flex-start;
-  gap: 3rem;
+  justify-content: space-around;
+  height: 100vh;
+  font-family: 'etude-b';
 
   &__title {
     @include tenor-title(true, left);
@@ -24,25 +25,6 @@
     }
   }
 
-  &__item {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    width: 100%;
-  }
-
-  &__number {
-    color: $primary-color;
-    font-weight: 700;
-    margin-right: 0.3rem;
-  }
-
-  &__answer {
-    @include prata-text(true, left);
-    color: $font-color-text;
-    font-size: 1.5rem;
-    line-height: 1.6;
-  }
   &__list {
     width: 100%;
     display: flex;
@@ -50,67 +32,86 @@
     gap: 2rem;
   }
 
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+  }
+
   &__row {
     display: flex;
     align-items: center;
-    background-color: $primary-color;
-    padding: 1.5rem 2rem;
-    border-radius: 1rem;
-    gap: 1.5rem;
-    position: relative;
-  }
+    gap: 3rem;
 
-  &__icon {
-    width: 2.5rem;
-    height: auto;
-    filter: invert(1);
+    &-left {
+      position: relative;
+    }
+
+    &-right {
+      padding-inline: 3rem;
+      border-bottom-left-radius: 50px;
+      border-top-right-radius: 50px;
+      background-color: $font-color-text;
+      width: 100%;
+      position: relative;
+    }
   }
 
   &__number {
-    font-size: 2rem;
-    font-weight: 700;
-    margin-right: 0.75rem;
     color: $font-color-text;
+    font-weight: 700;
+    font-size: 3rem;
+
+    position: absolute;
+    left: -.5rem;
+    top: -.7rem;
   }
 
   &__question {
-    @include roboto-text(true, left);
+    color: $secondary-color;
     font-size: 1.5rem;
-    flex-grow: 1;
+  }
+
+  &__answer {
+    @include tenor-title(true, left);
+    background-color: $third-color;
+    border-radius: 30px;
+    border-top-right-radius: 0;
+    margin-top: 1rem;
+    max-height: 0;
+    overflow: hidden;
+  }
+
+  &__answer-text {
+    padding: 1.3rem;
+    color: $font-color-text;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  &__icon {
+    color: $third-color;
   }
 
   &__toggle {
     position: absolute;
-    right: 20px;
+    right: 3rem;
+    bottom: -1rem;
+    cursor: pointer;
+
     @include no-def-styles;
     font-size: 2rem;
     width: 2.5rem;
     height: 2.5rem;
-    background-color: $font-color-text;
+    background-color: $third-color;
     border-radius: 0.5rem;
-    color: $primary-color;
+    color: #8b7937;
     font-weight: 700;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-shrink: 0;
-  }
-
-  &__answer {
-    @include prata-text(true, left);
-    font-size: 1.25rem;
-    line-height: 1.5;
-    background-color: $primary-color;
-    padding: 1.5rem 2rem;
-    border-radius: 1rem;
-    margin-top: 0.5rem;
-    display: none;
-  }
-
-  &__item--open {
-    .faq__answer {
-      display: block;
-    }
   }
 
   &__cta {
@@ -121,8 +122,47 @@
   }
 
   &__cta-text {
-    @include roboto-text(true, center);
-    font-size: 1.25rem;
+    font-size: 1.3rem;
+    color: $font-color-text;
     margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 660px) {
+  .faq {
+    &__row {
+      gap: 1rem;
+    }
+
+    &__number {
+      font-size: 2rem;
+    }
+
+    &__icon {
+      height: 40px;
+      width: 40px;
+    }
+
+    &__question {
+      font-size: 1rem;
+    }
+
+    &__answer-text {
+      font-size: 1.1rem;
+    }
+
+    &__toggle {
+      width: 2rem;
+      height: 2rem;
+    }
+
+    &__cta-text {
+      font-size: 1rem;
+    }
+
+    &__cta-btn {
+      padding-block: 12px;
+      font-size: 1.1rem;
+    }
   }
 }

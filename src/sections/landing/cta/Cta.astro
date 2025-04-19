@@ -1,22 +1,28 @@
 ---
-import StyledButton from "@/components/buttons/StyledButton";
-import "./index.scss";
-import ctaBg from "@/assets/photos/cta/cta-background.png";
+import StyledButton from '@/components/buttons/StyledButton';
+import './index.scss';
+import ctaBg from '@/assets/photos/cta/cta-background.png';
+import ArrowDown from '@/components/arrow-down/ArrowDown.astro';
 ---
 
 <section class="cta">
-    <div class="cta__top">
-        <p class="cta__description">
-            Наша команда мастеров – настоящие художники, которые помогут вам
-            подчеркнуть вашу естественную красоту и создать неповторимый образ.
-        </p>
+  <div class="cta__top">
+    <p class="cta__description">
+      Наша команда мастеров – настоящие художники, которые помогут вам подчеркнуть вашу естественную
+      красоту и создать неповторимый образ.
+    </p>
 
-        <h2 class="cta__subtitle">Готовы к преображению?</h2>
+    <h2 class="cta__subtitle">Готовы к преображению?</h2>
+
+    <div class="cta__arrows">
+      <ArrowDown className="cta__arrow-down cta__arrow-1" />
+      <ArrowDown className="cta__arrow-down cta__arrow-2 relative-arrow" />
     </div>
+  </div>
 </section>
 <div class="cta__bottom">
-    <img class="cta__image" src={ctaBg.src} alt="Салон красоты" />
-    <div class="cta__button">
-        <StyledButton text="Записаться" href="/booking" client:only />
-    </div>
+  <img class="cta__image" src={ctaBg.src} alt="Салон красоты" />
+  <div class="cta__button">
+    <StyledButton text="Записаться" href="/booking" client:only />
+  </div>
 </div>
