@@ -8,6 +8,7 @@
     padding: $section-padding;
     background-color: $secondary-color;
     gap: 2rem;
+    margin-bottom: 45vh;
 
     &__title {
         @include no-padding();
@@ -37,7 +38,7 @@
 
         p {
             @include prata-text(true, center);
-            @include no-padding;           
+            @include no-padding;
             font-size: 1.25rem;
         }
 
@@ -95,10 +96,10 @@
     .business {
         height: auto;
         padding: 5vh 1px;
-    
+
         &__content {
             @include flexbox(column);
         }
     }
-    
+
 }

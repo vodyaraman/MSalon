@@ -16,7 +16,7 @@ import HeroNumberSpin from "@/sections/landing/hero/HeroNumberSpin";
 import HeroParallaxAnimation from "@/components/animations/SmoothScrollEffect";
 import SloganAnimation from "@/sections/landing/slogans/Animation";
 import FaqAnimation from "@/sections/landing/faq/Animation";
-//import FooterAnimation from "@/components/footer/Animation";
+import FooterAnimation from "@/components/footer/Animation";
 import BookingAnimation from "@/sections/booking/Animation";
 
 const globalAnimations: JSX.Element[] = [
@@ -25,10 +25,10 @@ const globalAnimations: JSX.Element[] = [
 
 const animationsByPath: Record<string, JSX.Element[]> = {
   "/": [
-    <HeroParallaxAnimation key="hero-parallax"/>,
+    <HeroParallaxAnimation key="hero-parallax" />,
     <HeroTextAnimation key="hero" />,
     <HeroTiltScript key="hero-improved" />,
-    <HeroNumberSpin key="hero-spin" />, 
+    <HeroNumberSpin key="hero-spin" />,
     <TeamLeadAnimation key="team" />,
     <AboutAnimation key="about" />,
     <ServicesAnimation key="services" />,
@@ -38,11 +38,12 @@ const animationsByPath: Record<string, JSX.Element[]> = {
     <FaqAnimation key="faq" />,
     <BusinessAnimation key="business" />,
     <SloganAnimation key="slogan" />,
+    <FooterAnimation key="footer" />,
   ],
   "/staff": [<MastersHeroAnimation key="masters" />],
   "/services": [],
   "/booking": [
-    <BookingAnimation key="booking"/>
+    <BookingAnimation key="booking" />
   ]
 };
 
