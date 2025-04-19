@@ -11,43 +11,31 @@ export default function FaqAnimation() {
 
       if (!toggle || !answer) return;
 
-      // Инициализация начальных стилей
-      gsap.set(answer, {
-        height: 0,
-        opacity: 0,
-        overflow: "hidden"
-      });
-
       toggle.addEventListener("click", () => {
         const isOpen = item.classList.contains("faq__item--open");
 
         if (isOpen) {
           // скрываем
           gsap.to(answer, {
-            height: 0,
-            opacity: 0,
-            duration: 0.3,
+            maxHeight: 0,
+            duration: 0.4,
             onComplete: () => {
               item.classList.remove("faq__item--open");
-              answer.style.display = 'none';
             },
           });
 
         } else {
           // показываем
           item.classList.add("faq__item--open");
+
+          const content = answer.querySelector('.faq__answer-text');
+          const height = content?.clientHeight;
+
           gsap.to(
             answer,
             {
-              height: 'auto',
-              opacity: 1,
-              duration: 0.3,
-              onStart: () => {
-                answer.style.display = 'block';
-              },
-              onComplete: () => {
-                answer.style.height = 'auto';
-              }
+              maxHeight: height,
+              duration: 0.4,
             },
 
           );
