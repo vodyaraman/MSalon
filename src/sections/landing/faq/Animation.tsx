@@ -11,7 +11,12 @@ export default function FaqAnimation() {
 
       if (!toggle || !answer) return;
 
-      gsap.set(answer, { height: 0, opacity: 0, display: "none" });
+      // Инициализация начальных стилей
+      gsap.set(answer, {
+        height: 0,
+        opacity: 0,
+        overflow: "hidden"
+      });
 
       toggle.addEventListener("click", () => {
         const isOpen = item.classList.contains("faq__item--open");
@@ -23,22 +28,29 @@ export default function FaqAnimation() {
             opacity: 0,
             duration: 0.3,
             onComplete: () => {
-              answer.style.display = "none";
+              item.classList.remove("faq__item--open");
+              answer.style.display = 'none';
             },
           });
-          item.classList.remove("faq__item--open");
+
         } else {
           // показываем
-          answer.style.display = "block";
-          const fullHeight = answer.scrollHeight + 30;
-
-          gsap.fromTo(
-            answer,
-            { height: 0, opacity: 0 },
-            { height: fullHeight, opacity: 1, duration: 0.3 }
-          );
-
           item.classList.add("faq__item--open");
+          gsap.to(
+            answer,
+            {
+              height: 'auto',
+              opacity: 1,
+              duration: 0.3,
+              onStart: () => {
+                answer.style.display = 'block';
+              },
+              onComplete: () => {
+                answer.style.height = 'auto';
+              }
+            },
+
+          );
         }
       });
     });

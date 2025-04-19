@@ -62,7 +62,7 @@
   font-family: "Prata", serif;
   font-weight: 400;
   font-style: normal;
-  color: if($light, $font-color-text, $secondary-font-color); 
+  color: if($light, $font-color-text, $secondary-font-color);
   font-size: 1rem;
   text-align: $align;
 
@@ -112,4 +112,3 @@
   width: 100%;
   @include no-padding();
 }
-

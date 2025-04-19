@@ -1,0 +1,19 @@
+---
+import Diamond from '../diamond/Diamond.astro';
+
+const { faqNumber = 1, faqQuestion = '', faqAnswer = '' } = Astro.props;
+---
+
+<div class="faq__item">
+  <div class="faq__row">
+    <div class="faq__row-left">
+      <Diamond className="faq__icon" />
+      <span class="faq__number">{faqNumber}</span>
+    </div>
+    <div class="faq__row-right">
+      <h3 class="faq__question">{faqQuestion}</h3>
+      <button class="faq__toggle" aria-label="Показать ответ">+</button>
+    </div>
+  </div>
+  <p class="faq__answer">{faqAnswer}</p>
+</div>
