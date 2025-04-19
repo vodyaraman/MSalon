@@ -1,13 +1,16 @@
 import { useEffect, useState } from "react";
 import "./MastersHeroSlider.scss";
-import ArrorIcon from "@/assets/icons/arror-icon.svg"
+import ArrorIcon from "@/assets/icons/arror-icon.svg";
+import { staffImages } from "@/data/staffImages";
 
 interface Staff {
   id: number;
   name: string;
   position: string;
-  image: string;
+  imageKey: string;
   slug: string;
+  experience?: string;
+  bio?: string;
 }
 
 interface Props {
@@ -28,7 +31,6 @@ export default function MastersHeroSlider({ staffList }: Props) {
     }
   }, [staffList]);
 
-  // Обновляем hash при смене мастера
   const updateHash = (newIndex: number) => {
     const newId = staffList[newIndex].id;
     window.history.replaceState(null, "", `#${newId}`);
@@ -53,38 +55,35 @@ export default function MastersHeroSlider({ staffList }: Props) {
   const current = staffList[index];
 
   return (
-    <>
-      <article className="hero__content">
-        <div className="hero__text">
-          {(() => {
-            const [firstName, lastName] = current.name.split(' ');
-            return (
-              <h1 className="hero__text-title">
-                {firstName}<br />
-                {lastName}
-              </h1>
-            );
-          })()}
+    <article className="hero__content">
+      <div className="hero__text">
+        {(() => {
+          const [firstName, lastName] = current.name.split(" ");
+          return (
+            <h1 className="hero__text-title">
+              {firstName}
+              <br />
+              {lastName}
+            </h1>
+          );
+        })()}
+        <span className="hero__text-subtitle">{current.position}</span>
+      </div>
 
-          <span className="hero__text-subtitle">{current.position}</span>
-        </div>
+      <img
+        src={staffImages[current.imageKey].src}
+        alt={current.name}
+        className="hero__showcase"
+      />
 
-        <img
-          src={current.image}
-          alt={current.name}
-          className="hero__showcase"
-        />
-
-        <div className="hero__arrow-container">
-          <button className="arrow left" onClick={handlePrev} aria-label="Предыдущий слайд">
-            <img src={ArrorIcon.src} />
-          </button>
-          <button className="arrow right" onClick={handleNext} aria-label="Следующий слайд" >
-            <img src={ArrorIcon.src} />
-          </button>
-        </div>
-      </article>
-    </>
+      <div className="hero__arrow-container">
+        <button className="arrow left" onClick={handlePrev} aria-label="Предыдущий слайд">
+          <img src={ArrorIcon.src} />
+        </button>
+        <button className="arrow right" onClick={handleNext} aria-label="Следующий слайд">
+          <img src={ArrorIcon.src} />
+        </button>
+      </div>
+    </article>
   );
-
 }

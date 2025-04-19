@@ -89,12 +89,13 @@ $light: false;
             font-size: 4rem;
             gap: 5px;
           }
+        }
 
-          &__number {
-            @include unbounded-title(true, center);
-            line-height: 1;
-            position: relative;
-          }
+        &__number {
+          @include tenor-title(false, center);
+          font-weight: 800;
+          line-height: 1;
+          position: relative;
         }
       }
     }
@@ -182,7 +183,7 @@ $light: false;
 
     &__showcase {
       @include flexbox(column);
-      width: 75vw;
+      width: auto;
       height: 60vh;
       right: 0;
       z-index: 9;
@@ -196,10 +197,11 @@ $light: false;
   }
 }
 
-@media (max-width: 410px) {
+@media (max-width: 430px) {
   .hero {
     &__showcase {
-      width: 60vw;
+      height: 49vh;
+      width: auto;
     }
   }
 }

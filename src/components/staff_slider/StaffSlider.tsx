@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import masters from "../../data/masters.json";
-import TemplatePhoto from "@/assets/photos/masters/template.png";
+import { staffImages } from "@/data/staffImages";
 import ArrorIcon from "@/assets/icons/arror-icon.svg";
 import "./StaffSlider.scss";
 import gsap from "gsap";
@@ -35,26 +35,29 @@ export default function StaffSlider() {
 			gsap.fromTo(
 				imageRef.current,
 				{ x: 30, opacity: 0 },
-				{ x: "-5vw", opacity: 1, duration: 0.6, ease: "power1.out" }
+				{ x: "-10vw", opacity: 1, duration: 0.6, ease: "power1.out" }
 			);
 		}
 	}, [activeIndex]);
+
+	const current = masters[activeIndex];
+	const imageSrc = staffImages[current.imageKey]?.src;
 
 	return (
 		<figure className="staff__item">
 			<figcaption className="info">
 				<h3 className="title" ref={titleRef}>
-					{masters[activeIndex].name}
+					{current.name}
 				</h3>
 				<p className="desc" ref={descRef}>
-					{masters[activeIndex].position}
+					{current.position}
 				</p>
 			</figcaption>
 			<div className="image-overlay">
 				<img
 					ref={imageRef}
-					src={TemplatePhoto.src}
-					alt={masters[activeIndex].name}
+					src={imageSrc}
+					alt={current.name}
 				/>
 			</div>
 
@@ -62,7 +65,7 @@ export default function StaffSlider() {
 				<button className="arrow left" onClick={prev} aria-label="Предыдущий слайд">
 					<img src={ArrorIcon.src} />
 				</button>
-				<button className="arrow right" onClick={next} aria-label="Следующий слайд" >
+				<button className="arrow right" onClick={next} aria-label="Следующий слайд">
 					<img src={ArrorIcon.src} />
 				</button>
 			</div>
