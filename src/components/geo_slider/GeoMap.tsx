@@ -35,10 +35,6 @@ export default function GeoMap() {
 
     return (
         <article className="geo__content" ref={sectionRef}>
-            <h2 className="geo__title"><span className="highlighted">Мы на карте Москвы</span></h2>
-            <p className="geo__discription">
-                Ostrovityanova str. 7, metro Yugo-Zapadnaya, Konkovo, Moscow, Russia
-            </p>
 
             <div className="geo__map">
                 {!mapUnlocked && (

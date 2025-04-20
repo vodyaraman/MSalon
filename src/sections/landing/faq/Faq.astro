@@ -3,12 +3,11 @@ import StyledButton from '@/components/buttons/StyledButton';
 import './index.scss';
 import DiamondIcon from '@/assets/icons/diamond.svg';
 import FaqItem from '@/components/faq-item/FaqItem.astro';
+import HighLightTitle from '@/components/high-light-title/HighLightTitle.astro';
 ---
 
 <section class="faq" aria-labelledby="faq-title">
-  <h2 id="faq-title" class="faq__title">
-    <span class="highlighted">Часто задаваемые вопросы</span>
-  </h2>
+  <HighLightTitle titleText="Часто задаваемые вопросы" />
 
   <div class="faq__list">
     <FaqItem

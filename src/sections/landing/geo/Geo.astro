@@ -1,8 +1,13 @@
 ---
-import GeoMap from "@/components/geo_slider/GeoMap";
-import "./index.scss";
+import GeoMap from '@/components/geo_slider/GeoMap';
+import './index.scss';
+import HighLightTitle from '@/components/high-light-title/HighLightTitle.astro';
 ---
 
 <section class="geo">
-    <GeoMap client:only/>
+  <HighLightTitle titleText="Мы на карте москвы" textAlign="right" />
+  <p class="geo__discription">
+    Ostrovityanova str. 7, metro Yugo-Zapadnaya, Konkovo, Moscow, Russia
+  </p>
+  <GeoMap client:only />
 </section>
