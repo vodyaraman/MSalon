@@ -1,12 +1,13 @@
 ---
+import HighLightTitle from '@/components/high-light-title/HighLightTitle.astro';
 import './index.scss';
 import PortfolioSlider from '@/components/portfolio_slider/PortfolioSlider';
 ---
 
 <section class="portfolio" aria-labelledby="portfolio-title">
-  <h2 id="portfolio-title" class="portfolio__title"><span class="highlighted">Наши работы</span></h2>
+  <HighLightTitle titleText="Наши работы" highLightColor="dark" />
 
   <div class="portfolio__slider-wrapper">
-    <PortfolioSlider client:only/>
+    <PortfolioSlider client:only />
   </div>
 </section>

@@ -1,0 +1,38 @@
+---
+import './index.scss';
+
+interface Props {
+  titleColor?: 'dark' | 'light';
+  highLightColor?: 'dark' | 'light';
+  textAlign?: 'left' | 'center' | 'right';
+  titleText: string;
+}
+
+const {
+  titleColor = 'dark',
+  highLightColor = 'light',
+  titleText = '',
+  textAlign = 'left',
+} = Astro.props;
+
+const titleColors = {
+  dark: '#5a2a00',
+  light: '#fce6cf',
+}[titleColor];
+
+const hightLightColor = {
+  dark: '#f1cca1',
+  light: '#FFE4C5',
+}[highLightColor];
+---
+
+<div
+  class="high-light"
+  style={{
+    '--title-color': titleColors,
+    '--highLight-color': hightLightColor,
+    '--text-align': textAlign,
+  }}
+>
+  <h2 class="high-light__title">{titleText}</h2>
+</div>

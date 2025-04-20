@@ -1,105 +1,110 @@
 .footer {
+  @include flexbox(column);
+  width: 100vw;
+  padding: $section-padding;
+  background-color: $secondary-color;
+  gap: 2rem;
+  box-sizing: border-box;
+  z-index: -1;
+  height: 36vh;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+
+  &__content {
+    @include flexbox(row);
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+    position: relative;
+  }
+
+  &__left {
     @include flexbox(column);
-    width: 100vw;
-    padding: $section-padding;
-    background-color: $secondary-color;
+    align-items: flex-start;
+    flex: 1;
     gap: 2rem;
-    box-sizing: border-box;
-    z-index: 1;
-  
-    &__content {
-      @include flexbox(row);
-      justify-content: space-between;
-      align-items: center;
-      width: 100%;
-      flex-wrap: wrap;
-      position: relative;
-    }
-  
-    &__left {
-      @include flexbox(column);
-      align-items: flex-start;
-      flex: 1;
-      gap: 2rem;
-    }
-  
-    &__slogan {
-      @include ubuntu-title-font(true, left);
-      font-size: calc(1.6 * (1vw + 1vh));
-      line-height: 1.4;
-    }
-  
-    &__contacts {
-      @include flexbox(column);
-      align-items: flex-start;
-      gap: 1rem;
-    }
-  
-    &__icons {
-      @include flexbox(row);
-      gap: 1.5rem;
-      padding: 0;
-      margin: 0;
-  
-      li {
-        @include no-def-styles;
-        width: 32px;
-        height: 32px;
-  
-        img {
-          width: 100%;
-          height: auto;
-          display: block;
-        }
-      }
-    }
-  
-    &__phone {
-      @include roboto-text(true, left);
-      font-size: 1.2rem;
-    }
-  
-    &__right {
-      flex: 1;
-      @include flexbox(center);
-      justify-content: flex-end;
-      position: relative;
-    }
-  
-    &__bg-icon {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      opacity: 0.15;
-      width: 120px;
-  
+  }
+
+  &__slogan {
+    @include ubuntu-title-font(true, left);
+    font-size: calc(1.6 * (1vw + 1vh));
+    line-height: 1.4;
+  }
+
+  &__contacts {
+    @include flexbox(column);
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  &__icons {
+    @include flexbox(row);
+    gap: 1.5rem;
+    padding: 0;
+    margin: 0;
+
+    li {
+      @include no-def-styles;
+      width: 32px;
+      height: 32px;
+
       img {
         width: 100%;
         height: auto;
-      }
-    }
-  
-    &__photo {
-      position: absolute;
-      right: -5vw;
-      bottom: -10vh;
-      z-index: 1;
-      max-width: 220px;
-  
-      img {
-        width: 100%;
-        height: auto;
-        object-fit: contain;
         display: block;
       }
     }
-  
-    &__copyright {
-      @include roboto-text(true, center);
-      font-size: 0.9rem;
-      opacity: 0.7;
+  }
+
+  &__phone {
+    @include roboto-text(true, left);
+    font-size: 1.2rem;
+  }
+
+  &__right {
+    flex: 1;
+    @include flexbox(center);
+    justify-content: flex-end;
+    position: relative;
+  }
+
+  &__bg-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.15;
+    width: 120px;
+
+    img {
       width: 100%;
+      height: auto;
     }
   }
-  
+
+  &__photo {
+    position: absolute;
+    right: -5vw;
+    bottom: -10vh;
+    z-index: 1;
+    max-width: 220px;
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      display: block;
+    }
+  }
+
+  &__copyright {
+    @include roboto-text(true, center);
+    font-size: 0.9rem;
+    opacity: 0.7;
+    width: 100%;
+    z-index: 2;
+  }
+}

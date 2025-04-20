@@ -2,8 +2,6 @@ import { useEffect } from "react";
 import gsap from "gsap";
 
 
-
-
 export default function MastersHeroAnimation() {
   useEffect(() => {
     const ctx = gsap.context(() => {

@@ -1,9 +1,10 @@
 ---
-import slidesData from "@/data/about-slides.json";
-import "./index.scss";
+import slidesData from '@/data/about-slides.json';
+import './index.scss';
 
-import LipsSeparator from "@/assets/icons/lips-separator.svg";
-import SeasorsSeparator from "@/assets/icons/seasors-separator.svg";
+import LipsSeparator from '@/assets/icons/lips-separator.svg';
+import SeasorsSeparator from '@/assets/icons/seasors-separator.svg';
+import HighLightTitle from '@/components/high-light-title/HighLightTitle.astro';
 
 const [slide1, slide2, slide3] = [slidesData[0], slidesData[1], slidesData[2]];
 
@@ -11,17 +12,15 @@ const [slide1, slide2, slide3] = [slidesData[0], slidesData[1], slidesData[2]];
 ---
 
 <section class="about" aria-labelledby="about-title">
-  <h1 id="about-title" class="about__title">
+  <HighLightTitle titleText="О нашем салоне" />
+  <!-- <h1 id="about-title" class="about__title">
     <span class="highlighted">О нашем салоне</span>
-  </h1>
+  </h1> -->
 
   <article class="about__content">
     <section class="about__slide about__slide--first">
       <div class="image">
-        <img
-          src={slide1.image}
-          alt="Опытные мастера Maria Salon"
-        />
+        <img src={slide1.image} alt="Опытные мастера Maria Salon" />
       </div>
       <div class="about__content description-wrapper">
         <p class="title"><span class="highlighted">{slide1.title}</span></p>
@@ -37,10 +36,7 @@ const [slide1, slide2, slide3] = [slidesData[0], slidesData[1], slidesData[2]];
 
     <section class="about__slide about__slide--second">
       <div class="image">
-        <img
-          src={slide2.image}
-          alt="Индивидуальный подход в Maria Salon"
-        />
+        <img src={slide2.image} alt="Индивидуальный подход в Maria Salon" />
       </div>
       <div class="about__content description-wrapper">
         <p class="title"><span class="highlighted">{slide2.title}</span></p>
@@ -48,18 +44,11 @@ const [slide1, slide2, slide3] = [slidesData[0], slidesData[1], slidesData[2]];
       </div>
     </section>
 
-    <img
-      class="about__content separator"
-      src={LipsSeparator.src}
-      alt="Декоративная иконка губ"
-    />
+    <img class="about__content separator" src={LipsSeparator.src} alt="Декоративная иконка губ" />
 
     <section class="about__slide about__slide--third">
       <div class="image">
-        <img
-          src={slide3.image}
-          alt="Качественная продукция в Maria Salon"
-        />
+        <img src={slide3.image} alt="Качественная продукция в Maria Salon" />
       </div>
       <div class="about__content description-wrapper">
         <p class="title"><span class="highlighted">{slide3.title}</span></p>
@@ -68,4 +57,3 @@ const [slide1, slide2, slide3] = [slidesData[0], slidesData[1], slidesData[2]];
     </section>
   </article>
 </section>
-

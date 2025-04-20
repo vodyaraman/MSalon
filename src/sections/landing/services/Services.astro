@@ -7,10 +7,11 @@ import service3 from '@/assets/photos/services/device.png';
 import service4 from '@/assets/photos/services/injection.png';
 import serviceFooter from '@/assets/photos/services/service-footer.webp';
 import StyledButton from '@/components/buttons/StyledButton';
+import HighLightTitle from '@/components/high-light-title/HighLightTitle.astro';
 ---
 
 <section class="services" aria-labelledby="services-title">
-  <h2 id="services-title" class="services__title"><span class="highlighted">Наши услуги</span></h2>
+  <HighLightTitle titleText="Наши услуги" highLightColor="dark" />
 
   <div class="services__content">
     <div class="services__column services__column--left">
@@ -39,6 +40,7 @@ import StyledButton from '@/components/buttons/StyledButton';
 
 <div class="services__footer">
   <img src={serviceFooter.src} alt="Оборудование и работа мастера" />
-  <div class="services__button"><StyledButton text="Все услуги" href="/services" client:visible/></div>
+  <div class="services__button">
+    <StyledButton text="Все услуги" href="/services" client:visible />
+  </div>
 </div>
-
